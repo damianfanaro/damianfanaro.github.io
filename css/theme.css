@@ -51,10 +51,10 @@ body {
 }
 
 .well h1 {
-  color: #000000;
+    color: #000000;
 }
 
 #headerButtons > li > a:hover, .nav .navbar-nav > li > a:focus {
     color: white;
     background-color: #428bca !important;
-    }
+}
