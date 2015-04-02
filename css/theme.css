@@ -1,6 +1,6 @@
 body {
     padding-top: 60px;
-    padding-bottom: 60px;
+    padding-bottom: 0px;
 }
 
 .copyright {
@@ -49,3 +49,12 @@ body {
 .author a {
     color: #ee4444;
 }
+
+.well h1 {
+  color: #000000;
+}
+
+#headerButtons > li > a:hover, .nav .navbar-nav > li > a:focus {
+    color: white;
+    background-color: #428bca !important;
+    }

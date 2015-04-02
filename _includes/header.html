@@ -9,6 +9,8 @@
     <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
     <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ site.baseurl }}/css/theme.css" rel="stylesheet">
+    <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}/favicon.ico' />
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
 
 <body>
@@ -26,12 +28,12 @@
                 <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.name }}</a>
               </div>
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
+                <ul class="nav navbar-nav" id="headerButtons">
                     <li class="active visible-xs-block"><a href="{{ site.baseurl }}/links.html">Páginas</a></li>
                     <li class="active"><a href="{{ site.baseurl }}/archive.html">Artículos</a></li>
-                    <li class="active"><a href="{{ site.baseurl }}/feed.xml" target="blank">RSS</a></li>
+                    <li class="active"><a href="{{ site.baseurl }}/feed.xml" target="blank"><i class="fa fa-rss"></i></a></li>
                     {% if site.github != '' %}
-                      <li class="active"><a href="https://github.com/{{ site.github }}" target="blank">Github</a></li>
+                      <li class="active"><a href="https://github.com/{{ site.github }}" target="blank"><i class="fa fa-github"></i></a></li>
                     {% endif %}
                 </ul>
               </div>
