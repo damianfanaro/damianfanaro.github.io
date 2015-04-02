@@ -1,9 +1,9 @@
 # Jekyll configuration
 
-name: Tech blog
-description: A jekyll theme
+name: Jspañol
+description: Blog de Java
 
-# url is curredamianfanarontly only used only for the RSS feed in feed.xml
+# url is currently only used only for the RSS feed in feed.xml
 url: http://damianfanaro.github.io
 
 # baseurl will often be '', but for a project page on gh-pages, it needs to
