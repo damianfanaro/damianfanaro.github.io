@@ -5,21 +5,16 @@ date: 2015-04-02
 comments: false
 ---
 
-Qué es Jekyll?
-==============
+## Qué es Jekyll?
 
-[Jekyll](http://jekyllrb.com) is a static site generator, an open-source tool for creating simple yet powerful websites of all shapes and sizes. From [the project's readme](https://github.com/mojombo/jekyll/blob/master/README.markdown):
+[Jekyll](http://jekyllrb.com) es un generador de sitios estáticos, una herramienta de código abierto para crear simples pero poderosos sitios web de todas las formas y tamaños. Desde [la página oficial](https://github.com/mojombo/jekyll/blob/master/README.markdown):
 
-  > Jekyll is a simple, blog aware, static site generator. It takes a template directory [...] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.
+> Jekyll is a simple, blog aware, static site generator. It takes a template directory [...] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.
 
-Find out more by [visiting the project on GitHub](https://github.com/mojombo/jekyll).
+Más información [aquí](https://github.com/mojombo/jekyll).
 
 Algunos Ejemplos de Uso
 =======================
-
-<div class="message">
-  Howdy! This is an example blog post that shows several types of HTML content supported in this theme.
-</div>
 
 Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, nascetur ridiculus mus. *Aenean eu leo quam.* Pellentesque ornare sem lacinia quam venenatis vestibulum. Sed posuere consectetur est at lobortis. Cras mattis consectetur purus sit amet fermentum.
 
@@ -27,18 +22,19 @@ Cum sociis natoque penatibus et magnis <a href="#">dis parturient montes</a>, na
 
 Etiam porta **sem malesuada magna** mollis euismod. Cras mattis consectetur purus sit amet fermentum. Aenean lacinia bibendum nulla sed consectetur.
 
-## Inline HTML elements
+Elementos HTML Inline
+=====================
 
-HTML defines a long list of available inline tags, a complete list of which can be found on the [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
+HTML define una larga lista de tags que se definen Inline. La lista completa se puede encontrar en [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
 
-- **To bold text**, use `<strong>`.
-- *To italicize text*, use `<em>`.
-- Abbreviations, like <abbr title="HyperText Markup Langage">HTML</abbr> should use `<abbr>`, with an optional `title` attribute for the full phrase.
-- Citations, like <cite>&mdash; Mark otto</cite>, should use `<cite>`.
-- <del>Deleted</del> text should use `<del>` and <ins>inserted</ins> text should use `<ins>`.
-- Superscript <sup>text</sup> uses `<sup>` and subscript <sub>text</sub> uses `<sub>`.
+- **Texto en negrita**, usar `<strong>`.
+- *Texto en cursiva*, use `<em>`.
+- En abreviaciones, como <abbr title="HyperText Markup Langage">HTML</abbr>, usar `<abbr>` con el atributo opcional `title` para la frase completa.
+- En citas, como <cite>&mdash; John Doe</cite>, usar `<cite>`.
+- Con <del>texto borrado</del> usar `<del>` e `<ins>` para <ins>texto insertado</ins>.
+- Para supertexto <sup>texto</sup> usar `<sup>` y `<sub>` para subtexto <sub>text</sub>.
 
-Most of these elements are styled by browsers with few modifications on our part.
+La mayoría de los navegadores le dan estilo a estos elementos sin modificación necesaria por parte del desarrollador. 
 
 ## Heading
 

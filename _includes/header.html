@@ -9,6 +9,7 @@
     <script src="{{ site.baseurl }}/js/bootstrap.min.js"></script>
     <link href="{{ site.baseurl }}/css/bootstrap.min.css" rel="stylesheet">
     <link href="{{ site.baseurl }}/css/theme.css" rel="stylesheet">
+    <link href="{{ site.baseurl }}/css/syntax.css" rel="stylesheet">
     <link rel='shortcut icon' type='image/x-icon' href='{{ site.baseurl }}/favicon.ico' />
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 </head>
@@ -30,7 +31,16 @@
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" id="headerButtons">
                     <li class="active"><a href="{{ site.baseurl }}/">Home</a></li>
-                    <li class="active"><a href="{{ site.baseurl }}/links.html">Páginas</a></li>
+                    <li class="active">
+                      <a href="{{ site.baseurl }}/links.html">Páginas</a>
+                      <ul class="dropdown-menu">
+                        <li><a href="#">Java</a></li>
+                        <li><a href="#">Maven</a></li>
+                        <li><a href="#">Spring</a></li>
+                        <li><a href="#">Hibernate</a></li>
+                        <li><a href="#">SQL</a></li>
+                      </ul>
+                    </li>
                     <li class="active"><a href="{{ site.baseurl }}/archive.html">Artículos</a></li>
                     <li class="active"><a href="{{ site.baseurl }}/feed.xml" target="blank"><i class="fa fa-rss"></i></a></li>
                     {% if site.github != '' %}
