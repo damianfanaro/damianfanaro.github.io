@@ -5,6 +5,8 @@ date: 2015-04-06
 comments: false
 ---
 
+![Markdown]({{ site.baseurl }}/images/markdown-logo.jpg)
+
 # Typography 
 
 ## Headings
