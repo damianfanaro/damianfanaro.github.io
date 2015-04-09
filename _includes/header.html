@@ -31,8 +31,9 @@
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" id="headerButtons">
                     <li class="active"><a href="{{ site.baseurl }}/">Home</a></li>
+                                        <li class="active"><a href="{{ site.baseurl }}/archive.html">Artículos</a></li>
                     <li class="active">
-                      <a href="{{ site.baseurl }}/links.html">Páginas</a>
+                      <a href="{{ site.baseurl }}/links.html">Categorías</a>
                       <ul class="dropdown-menu">
                         <li><a href="#">Java</a></li>
                         <li><a href="#">Maven</a></li>
@@ -41,7 +42,6 @@
                         <li><a href="#">SQL</a></li>
                       </ul>
                     </li>
-                    <li class="active"><a href="{{ site.baseurl }}/archive.html">Artículos</a></li>
                     <li class="active"><a href="{{ site.baseurl }}/feed.xml" target="blank"><i class="fa fa-rss"></i></a></li>
                     {% if site.github != '' %}
                       <li class="active"><a href="https://github.com/{{ site.github }}" target="blank"><i class="fa fa-github"></i></a></li>
