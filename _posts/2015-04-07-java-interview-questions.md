@@ -3,6 +3,8 @@ layout: post
 title: "Java Interview Questions"
 date: 2015-04-07
 comments: true
+category: programming
+tags: [java, interviews, j2ee]
 ---
 
 ![Java]({{ site.baseurl }}/images/java-logo.png)

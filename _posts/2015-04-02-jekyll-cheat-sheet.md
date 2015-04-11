@@ -3,6 +3,8 @@ layout: post
 title: "Jekyll Cheat Sheet"
 date: 2015-04-02
 comments: true
+category: blogging
+tags: [jekyll, markdown, cheat-sheet]
 ---
 
 ![Jekyll]({{ site.baseurl }}/images/jekyll-logo.png)

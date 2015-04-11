@@ -1,0 +1,26 @@
+- slug: java
+  name: Java
+
+- slug: interviews
+  name: Interviews
+
+- slug: j2ee
+  name: J2EE
+
+- slug: spring
+  name: Spring
+
+- slug: mvc
+  name: MVC
+
+- slug: jekyll
+  name: Jekyll
+
+- slug: markdown
+  name: Markdown
+
+- slug: cheat-sheet
+  name: Cheat-Sheet
+
+- slug: web-frameworks
+  name: Web Frameworks

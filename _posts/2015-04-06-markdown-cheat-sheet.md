@@ -3,6 +3,8 @@ layout: post
 title: "Markdown Cheat Sheet"
 date: 2015-04-06
 comments: true
+category: blogging
+tags: [markdown, cheat-sheet]
 ---
 
 ![Markdown]({{ site.baseurl }}/images/markdown-logo.png)

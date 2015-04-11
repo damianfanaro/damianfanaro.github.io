@@ -3,6 +3,8 @@ layout: post
 title: "Spring Framework - Q&A"
 date: 2015-04-08
 comments: true
+category: programming
+tags: [spring, mvc, web-frameworks]
 ---
 
 ![Spring]({{ site.baseurl }}/images/spring-logo.png)
