@@ -2,12 +2,10 @@
 layout: post
 title: "Markdown Cheat Sheet"
 date: 2015-04-06
-comments: false
+comments: true
 ---
 
-![Markdown]({{ site.baseurl }}/images/markdown-logo.jpg)
-
-# Typography 
+![Markdown]({{ site.baseurl }}/images/markdown-logo.png)
 
 ## Headings
 
@@ -42,11 +40,6 @@ HTML:
 <h6>h6 Heading</h6>
 ```
 
-<br>
-<br>
-<br>
-
-
 ## Horizontal Rules
 
 The HTML `<hr>` element is for creating a "thematic break" between paragraph-level elements. In , you can create a `<hr>` with any of the following:
@@ -55,19 +48,13 @@ The HTML `<hr>` element is for creating a "thematic break" between paragraph-lev
 * `---`: three consecutive dashes
 * `***`: three consecutive asterisks
 
-renders to:
+Renders to:
 
 ___
 
 ---
 
 ***
-
-
-<br>
-<br>
-<br>
-
 
 ## Body Copy 
 
@@ -78,17 +65,11 @@ So this body copy:
 ``` 
 Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.
 ```
-renders to this HTML:
+Renders to this HTML:
 
 ``` html
 <p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</p>
 ```
-
-
-<br>
-<br>
-<br>
-
 
 ## Emphasis
 
@@ -100,11 +81,11 @@ The following snippet of text is **rendered as bold text**.
 ``` 
 **rendered as bold text**
 ```
-renders to:
+Renders to:
 
 **rendered as bold text**
 
-and this HTML
+And this HTML:
 
 ``` html
 <strong>rendered as bold text</strong>
@@ -119,18 +100,17 @@ The following snippet of text is _rendered as italicized text_.
 _rendered as italicized text_
 ```
 
-renders to:
+Renders to:
 
 _rendered as italicized text_
 
-and this HTML:
+And this HTML:
 
 ``` html
 <em>rendered as italicized text</em>
 ```
 
-
-### strikethrough
+### Strikethrough
 In GFM you can do strickthroughs. 
 
 ``` 
@@ -140,11 +120,18 @@ Which renders to:
 
 ~~Strike through this text.~~
 
+### Resumen de elementos HTML inline
 
-<br>
-<br>
-<br>
+La lista completa se puede encontrar en [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
 
+- **Texto en negrita**, usar `<strong>`.
+- *Texto en cursiva*, use `<em>`.
+- En abreviaciones, como <abbr title="HyperText Markup Langage">HTML</abbr>, usar `<abbr>` con el atributo opcional `title` para la frase completa.
+- En citas, como <cite>&mdash; John Doe</cite>, usar `<cite>`.
+- Con <del>texto borrado</del> usar `<del>` e `<ins>` para <ins>texto insertado</ins>.
+- Para supertexto <sup>texto</sup> usar `<sup>` y `<sub>` para subtexto <sub>text</sub>.
+
+La mayoría de los navegadores le dan estilo a estos elementos sin modificación necesaria por parte del desarrollador.
 
 ## Blockquotes
 For quoting blocks of content from another source within your document.
@@ -159,7 +146,7 @@ Renders to:
 
 > Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.
 
-and this HTML:
+And this HTML:
 
 ``` html
 <blockquote>
@@ -186,11 +173,6 @@ Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi.
 odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac eu diam.
 >>> Donec massa lacus, ultricies a ullamcorper in, fermentum sed augue. 
 Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. 
-
-
-<br>
-<br>
-<br>
 
 
 ## Lists
@@ -237,7 +219,7 @@ Renders to:
 + Aenean sit amet erat nunc
 + Eget porttitor lorem
 
-And this HTML
+And this HTML:
 
 ``` html
 <ul>
@@ -323,12 +305,6 @@ Renders to:
 7. Aenean sit amet erat nunc
 8. Eget porttitor lorem
 
-
-<br>
-<br>
-<br>
-
-
 ## Code
 
 ### Inline code
@@ -340,23 +316,21 @@ For example, `<section></section>` should be wrapped as "inline".
 For example, `<section></section>` should be wrapped as "inline".
 ```
 
-
 ### Indented code
 
 Or indent several lines of code by at least four spaces, as in:
 
 ``` js
-    // Some comments
-    line 1 of code
-    line 2 of code
-    line 3 of code
+// Some comments in JS
+line 1 of code
+line 2 of code
+line 3 of code
 ```
 
-    // Some comments
+    // Some comments without wrapping (4 spaces added before each line)
     line 1 of code
     line 2 of code
     line 3 of code
-
 
 ### Block code "fences"
 
@@ -367,7 +341,6 @@ Use "fences"  ```` ``` ```` to block in multiple lines of code.
 Sample text here...
 ```
 </pre>
-
 
 ```
 Sample text here...
@@ -434,74 +407,111 @@ grunt.initConfig({
 And this complicated HTML:
 
 ``` xml
-<div class="highlight"><pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
-  <span class="nx">assemble</span><span class="o">:</span> <span class="p">{</span>
-    <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-      <span class="nx">assets</span><span class="o">:</span> <span class="s1">'docs/assets'</span><span class="p">,</span>
-      <span class="nx">data</span><span class="o">:</span> <span class="s1">'src/data/*.{json,yml}'</span><span class="p">,</span>
-      <span class="nx">helpers</span><span class="o">:</span> <span class="s1">'src/custom-helpers.js'</span><span class="p">,</span>
-      <span class="nx">partials</span><span class="o">:</span> <span class="p">[</span><span class="s1">'src/partials/**/*.{hbs,md}'</span><span class="p">]</span>
-    <span class="p">},</span>
-    <span class="nx">pages</span><span class="o">:</span> <span class="p">{</span>
+<div class="highlight">
+  <pre><span class="nx">grunt</span><span class="p">.</span><span class="nx">initConfig</span><span class="p">({</span>
+    <span class="nx">assemble</span><span class="o">:</span> <span class="p">{</span>
       <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
-        <span class="nx">layout</span><span class="o">:</span> <span class="s1">'default.hbs'</span>
+        <span class="nx">assets</span><span class="o">:</span> <span class="s1">'docs/assets'</span><span class="p">,</span>
+        <span class="nx">data</span><span class="o">:</span> <span class="s1">'src/data/*.{json,yml}'</span><span class="p">,</span>
+        <span class="nx">helpers</span><span class="o">:</span> <span class="s1">'src/custom-helpers.js'</span><span class="p">,</span>
+        <span class="nx">partials</span><span class="o">:</span> <span class="p">[</span><span class="s1">'src/partials/**/*.{hbs,md}'</span><span class="p">]</span>
       <span class="p">},</span>
-      <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
-        <span class="s1">'./'</span><span class="o">:</span> <span class="p">[</span><span class="s1">'src/templates/pages/index.hbs'</span><span class="p">]</span>
+      <span class="nx">pages</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">options</span><span class="o">:</span> <span class="p">{</span>
+          <span class="nx">layout</span><span class="o">:</span> <span class="s1">'default.hbs'</span>
+        <span class="p">},</span>
+        <span class="nx">files</span><span class="o">:</span> <span class="p">{</span>
+          <span class="s1">'./'</span><span class="o">:</span> <span class="p">[</span><span class="s1">'src/templates/pages/index.hbs'</span><span class="p">]</span>
+        <span class="p">}</span>
       <span class="p">}</span>
     <span class="p">}</span>
-  <span class="p">}</span>
-<span class="p">};</span>
-</pre></div>
+  <span class="p">};</span>
+  </pre>
+</div>
 ```
 
+More examples:
 
-<br>
-<br>
-<br>
+``` java
+// Java
+public class Test {
+  public static void main(String[] args) {
+    System.out.println("Hello world!");
+  }
+}
+```
 
+``` ruby
+# My first Ruby program
+# On my way to Ruby fame & fortune!
+ 
+puts 'Hello world'
+```
 
+``` php
+<?php
+ 
+/**
+ * Execute a PHP template file and return the result as a string.
+ */
+function apply_template($tpl_file, $vars = array(), $include_globals = true)
+{
+  extract($vars);
+ 
+  if ($include_globals) extract($GLOBALS, EXTR_SKIP);
+ 
+  ob_start();
+ 
+  require($tpl_file);
+ 
+  $applied_template = ob_get_contents();
+  ob_end_clean();
+ 
+  return $applied_template;
+}
+ 
+?>
+```
+
+Click [here](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml) for a full list of supported languages.
 
 ## Tables
 Tables are created by adding pipes as dividers between each cell, and by adding a line of dashes (also separated by bars) beneath the header. Note that the pipes do not need to be vertically aligned.
 
-
 ``` 
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 ```
 
 Renders to:
 
-| Option | Description |
-| ------ | ----------- |
-| data   | path to data files to supply the data that will be passed into templates. |
-| engine | engine to be used for processing templates. Handlebars is the default. |
-| ext    | extension to be used for dest files. |
+| First Header  | Second Header |
+| ------------- | ------------- |
+| Content Cell  | Content Cell  |
+| Content Cell  | Content Cell  |
 
 And this HTML:
 
 ``` html
 <table>
-  <tr>
-    <th>Option</th>
-    <th>Description</th>
-  </tr>
-  <tr>
-    <td>data</td>
-    <td>path to data files to supply the data that will be passed into templates.</td>
-  </tr>
-  <tr>
-    <td>engine</td>
-    <td>engine to be used for processing templates. Handlebars is the default.</td>
-  </tr>
-  <tr>
-    <td>ext</td>
-    <td>extension to be used for dest files.</td>
-  </tr>
+  <thead>
+    <tr>
+      <th>First Header</th>
+      <th>Second Header</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Content Cell</td>
+      <td>Content Cell</td>
+    </tr>
+    <tr>
+      <td>Content Cell</td>
+      <td>Content Cell</td>
+    </tr>
+  </tbody>
 </table>
 ```
 
@@ -522,11 +532,6 @@ Adding a colon on the right side of the dashes below any heading will right alig
 | data   | path to data files to supply the data that will be passed into templates. |
 | engine | engine to be used for processing templates. Handlebars is the default. |
 | ext    | extension to be used for dest files. |
-
-
-<br>
-<br>
-<br>
 
 
 ## Links
@@ -574,7 +579,8 @@ Named anchors enable you to jump to the specified anchor point on the same page.
   * [Chapter 2](#chapter-2)
   * [Chapter 3](#chapter-3)
 ```
-will jump to these sections:
+
+Will jump to these sections:
 
 ```
 ## Chapter 1 <a id="chapter-1"></a>
@@ -586,29 +592,33 @@ Content for chapter one.
 ## Chapter 3 <a id="chapter-3"></a>
 Content for chapter one.
 ```
-**NOTE** that specific placement of the anchor tag seems to be arbitrary. They are placed inline here since it seems to be unobtrusive, and it works.
 
+Example:
 
-<br>
-<br>
-<br>
+# Table of Contents
+  * [Headings](#headings)
+  * [Emphasis](#emphasis)
+  * [Blockquotes](#blockquotes)
 
 
 ## Images
 Images have a similar syntax to links but include a preceding exclamation point.
 
 ``` 
-![Minion](http://octodex.github.com/images/minion.png)
+![Java]({{ site.baseurl }}/images/java-logo.png)
 ```
-![Minion](http://octodex.github.com/images/minion.png)
+
+![Java]({{ site.baseurl }}/images/java-logo.png)
 
 or
-``` 
-![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
-```
-![Alt text](http://octodex.github.com/images/stormtroopocat.jpg "The Stormtroopocat")
 
-Like links, Images also have a footnote style syntax
+``` 
+![Java]({{ site.baseurl }}/images/java-logo.png "This is a Java logo")
+```
+
+![Java]({{ site.baseurl }}/images/java-logo.png "This is a Java logo")
+
+Like links, images also have a footnote style syntax:
 
 ``` 
 ![Alt text][id]
@@ -617,8 +627,6 @@ Like links, Images also have a footnote style syntax
 
 With a reference later in the document defining the URL location:
 
-[id]: http://octodex.github.com/images/dojocat.jpg  "The Dojocat"
+[id]: {{ site.baseurl }}/images/java-logo.png "Java"
 
-
-    [id]: http://octodex.github.com/images/dojocat.jpg  "The Dojocat"
-
+    [id]: {{ site.baseurl }}/images/java-logo.png  "Java"

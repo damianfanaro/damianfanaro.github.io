@@ -2,7 +2,7 @@
 layout: post
 title: "Spring Framework - Q&A"
 date: 2015-04-08
-comments: false
+comments: true
 ---
 
 ![Spring]({{ site.baseurl }}/images/spring-logo.png)

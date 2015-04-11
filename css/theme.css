@@ -49,7 +49,7 @@ body {
 }
 
 .author a {
-    color: #ee4444;
+    color: #337ab7;
 }
 
 .well h1 {
@@ -75,4 +75,35 @@ ul li ul {
 
 ul li:hover ul {
     display: block;
+}
+
+pre {
+    background-color: white;
+}
+
+pre code {
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
+}
+
+hr {
+    border-top: 1px solid #17181B;
+}
+
+table {
+    background-color: white;
+}
+
+thead {
+    background: rgb(23, 24, 27);
+    color: white;
+}
+
+.td-bottom-line {
+    border-bottom: 1px solid rgb(51, 122, 188);
+}
+
+#disqus_thread {
+    padding-top: 60px;
 }

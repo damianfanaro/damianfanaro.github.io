@@ -2,7 +2,7 @@
 layout: post
 title: "Java Interview Questions"
 date: 2015-04-07
-comments: false
+comments: true
 ---
 
 ![Java]({{ site.baseurl }}/images/java-logo.png)
