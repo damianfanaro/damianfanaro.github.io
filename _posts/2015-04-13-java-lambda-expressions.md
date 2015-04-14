@@ -55,3 +55,8 @@ public interface ActionListener extends EventListener {
 Como se ve, esta interfaz contiene sólo un método. Ahora, en Java SE 8, las interfaces que siguen este patrón se las conoce como **Interfaces Funcionales**.
 
 > Este tipo de interfaces se las conocía como <abbr title="Single Abstract Method Type">SAM</abbr>.
+
+Usar interfaces funcionales con clases internas anónimas es muy común en Java. En adición a las clases **EventListener**, interfaces como **Runnable** y **Comparator** se usan de manera similar. Por lo tanto, las interfaces funcionales son ideales para usar con expresiones lambda.
+
+### Sintáxis de una expresión lambda
+
