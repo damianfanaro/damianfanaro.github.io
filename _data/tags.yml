@@ -27,3 +27,6 @@
 
 - slug: web-frameworks
   name: Web Frameworks
+
+- slug: regex
+  name: Regular Expressions
