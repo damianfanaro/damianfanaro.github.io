@@ -7,6 +7,9 @@
 - slug: j2ee
   name: J2EE
 
+- slug: jdk-se-8
+  name: JDK - SE 8
+
 - slug: spring
   name: Spring
 
