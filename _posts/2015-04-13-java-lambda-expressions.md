@@ -68,4 +68,56 @@ Una expresión lambda se compone de 3 partes:
 | -------------- | ----------- | ----- |
 | (int x, int y) | ->          | x + y |
 
-El cuerpo puede ser una expresión simple o un bloque de sentencias.
+El cuerpo puede ser una expresión simple o un bloque de sentencias. En la forma de expresión, el cuerpo es simplemente evaluado y retornado. En la forma de bloque, el cuerpo es evaluado como el cuerpo de un método y luego una sentencia retorna el control al llamador del método anónimo. Las palabras reservadas ``break`` y ``continue`` son ilegales en el top level del bloque, pero están permitidas dentro los loops. Si el cuerpo produce un resultado, cada ruta de control debe retornar algo o arrojar una excepción.
+
+Algunos ejemplos:
+
+``` java
+(int x, int y) -> x + y
+
+() -> 42
+
+(String s) -> { System.out.println(s); }
+```
+
+La primera expresión toma dos argumentos enteros, llamados ``x`` e ``y``, y usa la forma de expresión para retornar ``x + y``. La segunda expresión toma **cero** argumentos usa la forma de expresión para retornar el entero 42. Po último, la tercera expresión toma un ``string`` y usa la forma de bloque de sentencias para imprimirlo en la consola sin retornar ningún valor.
+
+## Ejemplos lambda
+
+A continuación se presentan algunos casos de uso comunes que fueron cubiertos en los ejemplos anteriores.
+
+Runnable Lambda
+
+Here is how you write a Runnable using lambdas.
+
+``` java
+public class RunnableTest {
+  
+  public static void main(String[] args) {
+    
+    System.out.println("=== RunnableTest ===");
+    
+    // Anonymous Runnable
+    Runnable r1 = new Runnable(){
+      
+      @Override
+      public void run(){
+         System.out.println("Hello world one!");
+      }
+
+    };
+     
+    // Lambda Runnable
+    Runnable r2 = () -> System.out.println("Hello world two!");
+     
+    // Run em!
+    r1.run();
+    r2.run();
+     
+  }
+}
+```
+
+
+In both cases, notice that no parameter is passed and is returned. The Runnable lambda expression, which uses the block format, converts five lines of code into one statement.
+
