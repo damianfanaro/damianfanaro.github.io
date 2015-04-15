@@ -9,3 +9,7 @@
 - slug: blogging
   name: Blogging
   color: '#000'
+
+- slug: databases
+  name: Databases
+  color: '#c7254e'
