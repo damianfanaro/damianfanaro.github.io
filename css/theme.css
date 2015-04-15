@@ -1,7 +1,7 @@
 body {
     padding-top: 60px;
     padding-bottom: 0px;
-    background-color: #17181B;
+    background-color: rgba(0, 10, 18, 0.87);
 }
 
 .copyright {
@@ -52,6 +52,10 @@ body {
     color: #337ab7;
 }
 
+.well {
+    background-color: #ffffff;
+}
+
 .well h1 {
     color: #000000;
 }
@@ -78,7 +82,7 @@ ul li:hover ul {
 }
 
 pre {
-    background-color: white;
+    background-color: rgba(123, 126, 145, 0.25);
 }
 
 pre code {
@@ -96,7 +100,7 @@ table {
 }
 
 thead {
-    background: rgb(23, 24, 27);
+    background: #428bca;
     color: white;
 }
 
@@ -110,4 +114,18 @@ thead {
 
 .category-label {
     color: white;
+}
+
+a.list-group-item:focus, a.list-group-item:hover {
+  background-color: #428bca;
+}
+
+a.list-group-item:hover > h5 {
+    color: white;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+  color: white;
+  text-decoration: none;
+  background-color: #c7254e;
 }

@@ -39,22 +39,39 @@
               </div>
               <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav" id="headerButtons">
+                    
                     <li class="active"><a href="{{ site.baseurl }}/">Home</a></li>
-                                        <li class="active"><a href="{{ site.baseurl }}/archive.html">Artículos</a></li>
+                    
+                    <li class="active"><a href="{{ site.baseurl }}/jblog/archive.html">Artículos</a></li>
+                    
                     <li class="active">
-                      <a href="{{ site.baseurl }}/links.html">Categorías</a>
+                      <a href="{{ site.baseurl }}/jblog/category/">Categorías</a>
                       <ul class="dropdown-menu">
-                        <li><a href="#">Java</a></li>
-                        <li><a href="#">Maven</a></li>
-                        <li><a href="#">Spring</a></li>
-                        <li><a href="#">Hibernate</a></li>
-                        <li><a href="#">SQL</a></li>
+                        {% for category in site.data.categories %}
+                            <li>
+                            <a href="{{ site.baseurl}}/jblog/category/{{ category.slug }}/">{{ category.name }}</a>
+                            </li>
+                        {% endfor %}
                       </ul>
                     </li>
+
+                    <li class="active">
+                      <a href="{{ site.baseurl }}/jblog/tag/">Tags</a>
+                      <ul class="dropdown-menu">
+                        {% for tag in site.data.tags %}
+                            <li>
+                            <a href="{{ site.baseurl}}/jblog/tag/{{ tag.slug }}/">{{ tag.name }}</a>
+                            </li>
+                        {% endfor %}
+                      </ul>
+                    </li>
+                    
                     <li class="active"><a href="{{ site.baseurl }}/feed.xml" target="blank"><i class="fa fa-rss"></i></a></li>
+                    
                     {% if site.github != '' %}
                       <li class="active"><a href="https://github.com/{{ site.github }}" target="blank"><i class="fa fa-github"></i></a></li>
                     {% endif %}
+                
                 </ul>
               </div>
         </div>

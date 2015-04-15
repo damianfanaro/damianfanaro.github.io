@@ -60,3 +60,12 @@ Usar interfaces funcionales con clases internas anónimas es muy común en Java.
 
 ### Sintáxis de una expresión lambda
 
+Las expresiones lambda manejan el volumen de las clases internas anónimas convirtiendo 5 líneas de código en solo una declaración. Esta solución horizontal resuelve el problema vertical presentado por las clases internas.
+
+Una expresión lambda se compone de 3 partes:
+
+| Argument list  | Arrow token | Body  |
+| -------------- | ----------- | ----- |
+| (int x, int y) | ->          | x + y |
+
+El cuerpo puede ser una expresión simple o un bloque de sentencias.
