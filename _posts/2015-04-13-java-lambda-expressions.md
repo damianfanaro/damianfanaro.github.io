@@ -86,9 +86,9 @@ La primera expresión toma dos argumentos enteros, llamados ``x`` e ``y``, y usa
 
 A continuación se presentan algunos casos de uso comunes que fueron cubiertos en los ejemplos anteriores.
 
-Runnable Lambda
+### Runnable Lambda
 
-Here is how you write a Runnable using lambdas.
+Para usar en la definición del método ``run()`` de la interfaz [Runnable](http://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html):
 
 ``` java
 public class RunnableTest {
@@ -98,7 +98,7 @@ public class RunnableTest {
     System.out.println("=== RunnableTest ===");
     
     // Anonymous Runnable
-    Runnable r1 = new Runnable(){
+    Runnable r1 = new Runnable() {
       
       @Override
       public void run(){
@@ -118,6 +118,108 @@ public class RunnableTest {
 }
 ```
 
+En ambos casos es importante destacar que no se pasa ningún parámetro y que tampoco se retorna ningún valor.
 
-In both cases, notice that no parameter is passed and is returned. The Runnable lambda expression, which uses the block format, converts five lines of code into one statement.
+### Comparator Lambda
 
+En Java, la clase [Comparator](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html) es usada para ordenar colleciones de datos. En el siguiente ejemplo, un ``ArrayList`` que consiste de objetos de tipo ``Person`` es ordenado basado en el campo ``surName``.
+
+Clase ``Person``:
+
+``` java
+public class Person {
+  
+  private String givenName;
+  private String surName;
+  private int age;
+  private Gender gender;
+  private String eMail;
+  private String phone;
+  private String address;
+
+  // Getters and Setters omitted...
+}
+```
+
+El siguiente código aplica un ``Comparator`` usando una clase interna anónima y un par de expresiones lambda:
+
+``` java
+public class ComparatorTest {
+ 
+   public static void main(String[] args) {
+    
+     List<Person> personList = Person.createShortList();
+   
+     // Sort with Inner Class
+     Collections.sort(personList, new Comparator<Person>(){
+       public int compare(Person p1, Person p2){
+         return p1.getSurName().compareTo(p2.getSurName());
+       }
+     });
+     
+     System.out.println("=== Sorted Asc SurName ===");
+     for(Person p:personList){
+       p.printName();
+     }
+     
+     // Use Lambda instead
+     
+     // Print Asc
+     System.out.println("=== Sorted Asc SurName ===");
+     Collections.sort(personList, (Person p1, Person p2) -> p1.getSurName().compareTo(p2.getSurName()));
+ 
+     for(Person p:personList){
+       p.printName();
+     }
+     
+     // Print Desc
+     System.out.println("=== Sorted Desc SurName ===");
+     Collections.sort(personList, (p1,  p2) -> p2.getSurName().compareTo(p1.getSurName()));
+ 
+     for(Person p:personList){
+       p.printName();
+     }
+     
+   }
+}
+```
+
+Notar que la primera expresión lambda declara el tipo de parámatro pasado. Sin embargo, como se puede ver en la segunda expresión, esto es opcional. Lambda soporta ``target typing`` el cual infiere el tipo del objeto desde el contexto en el que es usado. Dado que se esta asignando el resultado a un ``Comparator`` definido con un **generic**, el compilador infiere que los dos parámetros son de tipo ``Person``.
+
+### Listener Lambda
+
+``` java
+public class ListenerTest {
+
+   public static void main(String[] args) {
+         
+     JButton testButton = new JButton("Test Button");
+     testButton.addActionListener(new ActionListener(){
+     @Override public void actionPerformed(ActionEvent ae){
+         System.out.println("Click Detected by Anon Class");
+       }
+     });
+     
+     testButton.addActionListener(e -> System.out.println("Click Detected by Lambda Listner"));
+     
+     // Swing stuff
+     JFrame frame = new JFrame("Listener Test");
+     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+     frame.add(testButton, BorderLayout.CENTER);
+     frame.pack();
+     frame.setVisible(true);
+     
+   }
+ }
+```
+
+Notar que la expresión lambda se pasa como parámetro. **Target typing** es usada en un número de contextos incluyendo los siguientes:
+
+- Declaración de variables
+- Asignaciones
+- Retornos de bloques
+- Argumentos de método o constructor
+- Inicializadores de arreglos
+- Cuerpos de expresión lambda
+- Expresiones condicionales '?'
+- Cast expressions
