@@ -161,3 +161,8 @@ a.list-group-item:hover > h5 {
 #post-header {
   padding-bottom: 15px;
 }
+
+iframe {
+    padding-top: 5px;
+    padding-bottom: 25px;
+}

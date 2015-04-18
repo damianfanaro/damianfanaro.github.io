@@ -5,6 +5,7 @@ date: 2015-04-13
 comments: true
 category: programming
 tags: [java, jdk-se-8]
+authors: [damianfanaro]
 ---
 
 ![Java - Lambda Expressions]({{ site.baseurl }}/images/java-lambda.png)
@@ -223,4 +224,69 @@ Notar que la expresión lambda se pasa como parámetro. **Target typing** es usa
 - Cuerpos de expresión lambda
 - Expresiones condicionales '?'
 - Cast expressions
+
+## Mejorando el código con expresiones lambda
+
+Esta sección se basa en los ejemplos anteriores para mostrar como las expresiones lambda pueden mejorar el código. Las lambdas deberían proveer un buen medio para respetar el principio DRY (del inglés, Don't Repeat Yourself) y hacer el código más simple y legible.
+
+### Un caso de uso común de consulta
+
+Es muy común ver programas que buscan a través de una colección de datos para encontrar items que "matcheen" un criterio específico.
+
+Por ejemplo, dada una lista de personas, varios criterios son usados para hacer _robo calls_ (llamadas por teléfono automatizadas) a las personas apropiadas. Este tutorial sigue la premisa básica con pequeñas variaciones.
+
+Aquí hay una explicación en inglés del evento JavaOne 2012:
+
+<iframe width="640" height="390" src="https://www.youtube.com/embed/bzO5GSujdqI" frameborder="0" allowfullscreen></iframe>
+
+En este ejemplo, nuestro mensaje necesita ser enviado a 3 grupos diferentes en Argentina:
+
+- Conductores (Drivers): Personas mayores a 16 años de edad.
+- Recluta (Draftees): Personas masculinas entre los 18 y 25 años de edad.
+- Pilotos (Pilots): Específicamente de aviones comerciales. Personas entre 23 y 65 años de edad.
+
+Actualmente el robot actual imprime un mensaje en la consola en vez de llamar, enviar un correo o enviar un correo electrónico. El mensaje contiene el nombre, la edad e información específica de la persona dependiendo el objetivo (por ejemplo, el mensaje contendrá la dirección de email o el teléfono dependiendo el caso).
+
+La clase ``Person`` (detallada anteriormente) usa un ``Builder`` para crear nuevos objetos. Una lista de personas de ejemplo es creada con el método ``createShortList``. A continuación se muestra un pequeño fragmento de código de este método.
+
+``` java
+public static List<Person> createShortList(){
+     List<Person> people = new ArrayList<>();
+     
+     people.add(
+       new Person.Builder()
+             .givenName("Bob")
+             .surName("Baker")
+             .age(21)
+             .gender(Gender.MALE)
+             .email("bob.baker@example.com")
+             .phoneNumber("201-121-4678")
+             .address("44 4th St, Smallville, KS 12333")
+             .build() 
+       );
+     
+     people.add(
+       new Person.Builder()
+             .givenName("Jane")
+             .surName("Doe")
+             .age(25)
+             .gender(Gender.FEMALE)
+             .email("jane.doe@example.com")
+             .phoneNumber("202-123-4678")
+             .address("33 3rd St, Smallville, KS 12333")
+             .build() 
+       );
+     
+     people.add(
+       new Person.Builder()
+             .givenName("John")
+             .surName("Doe")
+             .age(25)
+             .gender(Gender.MALE)
+             .email("john.doe@example.com")
+             .phoneNumber("202-123-4678")
+             .address("33 3rd St, Smallville, KS 12333")
+             .build()
+     );
+```
 
