@@ -13,3 +13,7 @@
 - slug: databases
   name: Databases
   color: '#c7254e'
+
+- slug: projects
+  name: Projects
+  color: '#EF7F00'

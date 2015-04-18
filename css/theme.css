@@ -2,6 +2,28 @@ body {
     padding-top: 60px;
     padding-bottom: 0px;
     background-color: rgba(0, 10, 18, 0.87);
+    font-size: 13px;
+}
+
+.h5, h5 {
+  font-size: 13px;
+}
+
+
+.h4, h4 {
+  font-size: 16px;
+}
+
+.h3, h3 {
+  font-size: 20px;
+}
+
+.h2, h2 {
+  font-size: 24px;
+}
+
+blockquote {
+    font-size: 13px;
 }
 
 .copyright {
@@ -82,7 +104,9 @@ ul li:hover ul {
 }
 
 pre {
-    background-color: rgba(123, 126, 145, 0.25);
+    background-color: rgba(255, 213, 0, 0.17);
+    margin-bottom: 25px;
+    margin-top: 20px;
 }
 
 pre code {
@@ -128,4 +152,12 @@ a.list-group-item:hover > h5 {
   color: white;
   text-decoration: none;
   background-color: #c7254e;
+}
+
+.dropdown-menu {
+  font-size: 12px; 
+}
+
+#post-header {
+  padding-bottom: 15px;
 }
