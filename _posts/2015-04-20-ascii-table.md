@@ -8,7 +8,7 @@ tags: [cheat-sheet]
 authors: [damianfanaro]
 ---
 
-# The periodic table for software developers
+# The periodic table for software developers:
 
 Dec|Hex|Oct|HTML|Chr|Description|
 |---|---|---|------|---|-------------|
@@ -22,9 +22,9 @@ Dec|Hex|Oct|HTML|Chr|Description|
 7|7|007||BELL|bell|
 8|8|010||BSP|backspace|
 9|9|011||HTAB|horizontal tab|
-10|A|012||LFEED|"NL line feed, new line"|
+10|A|012||LFEED|NL line feed, new line|
 11|B|013||VTAB|vertical tab|
-12|C|014||FFEED|"NP form feed, new page"|
+12|C|014||FFEED|NP form feed, new page|
 13|D|015||CR|carriage return|
 14|E|016||SOUT|shift out|
 15|F|017||SIN|shift in|
@@ -136,7 +136,7 @@ Dec|Hex|Oct|HTML|Chr|Description|
 121|79|171|&#121;|y||
 122|7A|172|&#122;|z||
 123|7B|173|&#123;|{||
-124|7C|174|&#124;||||
+124|7C|174|\&#124;|\|||
 125|7D|175|&#125;|}||
 126|7E|176|&#126;|~||
 127|7F|177|&#127;|Delete||

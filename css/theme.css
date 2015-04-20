@@ -166,3 +166,7 @@ iframe {
     padding-top: 5px;
     padding-bottom: 25px;
 }
+
+.label {
+    font-size: 13px;
+}
