@@ -174,3 +174,8 @@ iframe {
 .label {
     font-size: 13px;
 }
+
+.list-group-item-heading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
