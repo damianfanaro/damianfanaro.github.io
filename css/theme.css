@@ -109,6 +109,10 @@ pre {
     margin-top: 20px;
 }
 
+code {
+    font-size: 105%;
+}
+
 pre code {
     overflow: auto;
     word-wrap: normal;
