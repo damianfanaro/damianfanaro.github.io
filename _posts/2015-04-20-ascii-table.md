@@ -8,7 +8,12 @@ tags: [cheat-sheet]
 authors: [damianfanaro]
 ---
 
-# The periodic table for software developers:
+# The periodic table for software developers
+
+#### Download it here:
+
+- [Ready to print version]({{ site.baseurl }}/files/ASCII-TABLE.pdf)
+- [XLS for edition version]({{ site.baseurl }}/files/ASCII-TABLE.xlsx)
 
 |    Dec|    Hex|    Oct|          HTML|      Chr|               Description|    
 |-------|-------|-------|--------------|---------|--------------------------|    
