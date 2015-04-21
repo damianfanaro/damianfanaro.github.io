@@ -11,8 +11,8 @@ tags: [jekyll, markdown, cheat-sheet]
 
 ## Qué es Jekyll?
 
-[Jekyll](http://jekyllrb.com) es un generador de sitios estáticos, una herramienta de código abierto para crear simples pero poderosos sitios web de todas las formas y tamaños. Desde [la página oficial](https://github.com/mojombo/jekyll/blob/master/README.markdown):
+[Jekyll](http://jekyllrb.com) es un generador de sitios estáticos, una herramienta de código abierto para crear simples pero poderosos sitios web de todas las formas y tamaños. Desde [la página oficial](http://jekyllrb.com/docs/home/):
 
-> Jekyll is a simple, blog aware, static site generator. It takes a template directory [...] and spits out a complete, static website suitable for serving with Apache or your favorite web server. This is also the engine behind GitHub Pages, which you can use to host your project’s page or blog right here from GitHub.
+> Jekyll is a simple, blog-aware, static site generator. It takes a template directory containing raw text files in various formats, runs it through a converter (like Markdown) and our Liquid renderer, and spits out a complete, ready-to-publish static website suitable for serving with your favorite web server. Jekyll also happens to be the engine behind GitHub Pages, which means you can use Jekyll to host your project’s page, blog, or website from GitHub’s servers for free.
 
-Más información [aquí](https://github.com/mojombo/jekyll).
+Jekyll se puede descargar desde [aquí](https://github.com/jekyll/jekyll).

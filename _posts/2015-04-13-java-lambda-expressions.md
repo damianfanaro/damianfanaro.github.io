@@ -290,3 +290,314 @@ public static List<Person> createShortList(){
      );
 ```
 
+### Primer intento
+
+Con la clase `Person` y un criterio de búsqueda definido, podemos escribir la clase `RoboContact`. Una posible solución es la que define un método por cada caso de uso:
+
+````java
+package com.example.lambda;
+
+import java.util.List;
+
+/**
+ * @author MikeW
+ */
+public class RoboContactMethods {
+   
+  public void callDrivers(List<Person> pl) {
+    for(Person p:pl) {
+      if (p.getAge() >= 16){
+        roboCall(p);
+      }
+    }
+  }
+
+  public void emailDraftees(List<Person> pl) {
+    for(Person p:pl) {
+      if (p.getAge() >= 18 && p.getAge() <= 25 && p.getGender() == Gender.MALE) {
+        roboEmail(p);
+      }
+    }
+  }
+     
+  public void mailPilots(List<Person> pl) {
+    for(Person p:pl) {
+      if (p.getAge() >= 23 && p.getAge() <= 65) {
+        roboMail(p);
+      }
+    }
+  }
+      
+  public void roboCall(Person p) {
+    System.out.println("Calling " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getPhone());
+  }
+     
+  public void roboEmail(Person p) {
+    System.out.println("EMailing " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getEmail());
+  }
+     
+  public void roboMail(Person p) {
+    System.out.println("Mailing " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getAddress());
+  }
+   
+}
+```
+
+Como se puede observar desde los nombres: _callDrivers_, _emailDraftees_ y _mailPilots_; los métodos describen la clase de comportamiento que se lleva a cabo. El criterio de búsqueda está explícitamente indicado y una llamada es hecha a cada "robo action". Sin embargo, este diseño tiene algunos aspectos negativos:
+
+- No se sigue el principio DRY:
+    * Cada método repite el mecanismo de iteración.
+    * El criterio de selección debe escribirse por cada método.
+- Un gran número de métodos son requeridos para implementar cada caso de uso.
+- El código es inflexible. Si el criterio de búsqueda cambia, requeriría también realizar una serie de actualizaciones en el código. En consecuencia, el código no es lo suficientemente mantenible.
+
+### Refactorizando los métodos
+
+Comenzar revisando el criterio de búsqueda sería un buen comienzo. Si las condiciones de test se aislaran en métodos separados, eso sería una mejora:
+
+``` java
+package com.example.lambda;
+
+import java.util.List;
+ 
+/**
+ * @author MikeW
+ */
+public class RoboContactMethods2 {
+  
+  public void callDrivers(List<Person> pl) {
+     for(Person p:pl) {
+       if (isDriver(p)) {
+         roboCall(p);
+       }
+     }
+  }
+   
+  public void emailDraftees(List<Person> pl) {
+     for(Person p:pl) {
+       if (isDraftee(p)) {
+         roboEmail(p);
+       }
+     }
+  }
+   
+  public void mailPilots(List<Person> pl) {
+     for(Person p:pl) {
+       if (isPilot(p)) {
+         roboMail(p);
+       }
+     }
+  }
+  
+  public boolean isDriver(Person p) {
+     return p.getAge() >= 16;
+  }
+  
+  public boolean isDraftee(Person p) {
+     return p.getAge() >= 18 && p.getAge() <= 25 && p.getGender() == Gender.MALE;
+  }
+   
+  public boolean isPilot(Person p) {
+     return p.getAge() >= 23 && p.getAge() <= 65;
+  }
+   
+  public void roboCall(Person p) {
+     System.out.println("Calling " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getPhone());
+  }
+   
+  public void roboEmail(Person p) {
+     System.out.println("EMailing " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getEmail());
+  }
+   
+  public void roboMail(Person p) {
+     System.out.println("Mailing " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getAddress());
+  }
+ 
+}
+```
+
+Ahora, el criterio de búsqueda está encapsulado en un método, una mejora sobre el ejemplo previo. Las condiciones de test pueden ser reusadas y los cambios que se hagan se propagarán en todos los lugares en donde estas condiciones son utilizadas. Pero una vez más, todavía hay un montón de código repetido y aún se requiere un método por cada caso de uso.
+
+### Clases anónimas
+
+Antes de las expresiones lambda, las clases internas anónimas eran una opción. Por ejemplo, una interfaz (`MyTest.java`) escrita con sólo un método `test` que retorna un **boolean** (una interfaz funcional) es una posible solución. El criterio de búsqueda podría ser pasado como parámetro a los métodos que lo requieran.
+
+La interfaz sería así:
+
+``` java
+public interface MyTest<T> {
+  
+  public boolean test(T t);
+
+}
+```
+
+La clase robot actualizada quedaría:
+
+``` java
+public class RoboContactAnon {
+ 
+   public void phoneContacts(List<Person> pl, MyTest<Person> aTest) {
+     for(Person p:pl) {
+       if (aTest.test(p)) {
+         roboCall(p);
+       }
+     }
+   }
+ 
+   public void emailContacts(List<Person> pl, MyTest<Person> aTest) {
+     for(Person p:pl) {
+       if (aTest.test(p)) {
+         roboEmail(p);
+       }
+     }
+   }
+ 
+   public void mailContacts(List<Person> pl, MyTest<Person> aTest) {
+     for(Person p:pl) {
+       if (aTest.test(p)) {
+         roboMail(p);
+       }
+     }
+   }  
+   
+   public void roboCall(Person p) {
+     System.out.println("Calling " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getPhone());
+   }
+   
+   public void roboEmail(Person p) {
+     System.out.println("EMailing " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getEmail());
+   }
+   
+   public void roboMail(Person p) {
+     System.out.println("Mailing " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getAddress());
+   }
+   
+}
+```
+
+Definitivamente acá tenemos otra mejora, porque ahora solo 3 métodos se necesitan para ejecutar las operaciones automáticas. Sin embargo, existe un pequeño problema con la legibilidad del código cuando se llaman a los métodos.
+
+A continuación, la clase de ejemplo:
+
+``` java
+package com.example.lambda;
+ 
+import java.util.List;
+ 
+/**
+ * @author MikeW
+ */
+public class RoboCallTest03 {
+ 
+   public static void main(String[] args) {
+     
+     List<Person> pl = Person.createShortList();
+     RoboContactAnon robo = new RoboContactAnon();
+     
+     System.out.println("\n==== Test 03 ====");
+     System.out.println("\n=== Calling all Drivers ===");
+     robo.phoneContacts(pl, 
+         new MyTest<Person>() {
+           @Override
+           public boolean test(Person p) {
+             return p.getAge() >=16;
+           }
+         }
+     );
+     
+     System.out.println("\n=== Emailing all Draftees ===");
+     robo.emailContacts(pl, 
+         new MyTest<Person>() {
+           @Override
+           public boolean test(Person p) {
+             return p.getAge() >= 18 && p.getAge() <= 25 && p.getGender() == Gender.MALE;
+           }
+         }
+     );
+     
+     System.out.println("\n=== Mail all Pilots ===");
+     robo.mailContacts(pl, 
+         new MyTest<Person>() {
+           @Override
+           public boolean test(Person p) {
+             return p.getAge() >= 23 && p.getAge() <= 65;
+           }
+         }
+     );
+
+   }
+}
+```
+
+Este es un gran ejemplo del problema vertical en práctica. Este código es un poco difícil de leer. Además, tenemos que escribir criterios de búsqueda personalizados para cada caso de uso.
+
+### Expresiones lambda
+
+Las expresiones lambda resuelven todos los problemas mencionados hasta aquí.
+
+En el ejemplo previo, la interfaz funcional `MyTest.java` se pasa como una clase anónima a los métodos, aunque no era necesario. [Java SE 8]({{ site.baseurl }}/jblog/tag/jdk-se-8/) provee el paquete `java.util.function` con una serie de interfaces funcionales estándar. En este caso, la interfaz `Predicate` resuelve nuestros problemas:
+
+``` java
+public interface Predicate<T> {
+  
+  public boolean test(T t);
+
+}
+```
+
+El método `test` toma una clase genérica y retorna un resultado **boolean**. Es justo lo necesario para hacer selecciones. A continuación la versión final de la clase _robot_:
+
+``` java
+package com.example.lambda;
+ 
+import java.util.List;
+import java.util.function.Predicate;
+ 
+/**
+ * @author MikeW
+ */
+public class RoboContactLambda {
+
+   public void phoneContacts(List<Person> pl, Predicate<Person> pred) {
+     for(Person p:pl) {
+       if (pred.test(p)) {
+         roboCall(p);
+       }
+     }
+   }
+ 
+   public void emailContacts(List<Person> pl, Predicate<Person> pred) {
+     for(Person p:pl) {
+       if (pred.test(p)) {
+         roboEmail(p);
+       }
+     }
+   }
+ 
+   public void mailContacts(List<Person> pl, Predicate<Person> pred) {
+     for(Person p:pl) {
+       if (pred.test(p)) {
+         roboMail(p);
+       }
+     }
+   }  
+   
+   public void roboCall(Person p) {
+     System.out.println("Calling " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getPhone());
+   }
+   
+   public void roboEmail(Person p) {
+     System.out.println("EMailing " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getEmail());
+   }
+   
+   public void roboMail(Person p) {
+     System.out.println("Mailing " + p.getGivenName() + " " + p.getSurName() + " age " + p.getAge() + " at " + p.getAddress());
+   }
+ 
+}
+```
+
+Con este enfoque solo se necesitan 3 métodos, uno por cada forma de contacto. La expresión lambda pasada al método selecciona las instancias de `Person` que cumple las condiciones de test.
+
+## Problema vertical resuelto
