@@ -1,7 +1,7 @@
 body {
     padding-top: 60px;
     padding-bottom: 0px;
-    background-color: rgba(0, 10, 18, 0.87);
+    background-color: #fff;
     font-size: 13px;
 }
 
@@ -76,6 +76,8 @@ blockquote {
 
 .well {
     background-color: #ffffff;
+    padding: 0px;
+
 }
 
 .well h1 {
