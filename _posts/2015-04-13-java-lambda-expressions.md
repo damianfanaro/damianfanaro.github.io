@@ -601,3 +601,65 @@ public class RoboContactLambda {
 Con este enfoque solo se necesitan 3 métodos, uno por cada forma de contacto. La expresión lambda pasada al método selecciona las instancias de `Person` que cumple las condiciones de test.
 
 ## Problema vertical resuelto
+
+Las expresiones lambda resuelven el problema vertical y permiten el reúso de cualquier expresión.
+
+A continuación se presenta la clase de test actualizada con expresiones lambda:
+
+``` java
+package com.example.lambda;
+ 
+import java.util.List;
+import java.util.function.Predicate;
+
+/**
+ * @author MikeW
+ */
+public class RoboCallTest04 {
+   
+   public static void main(String[] args) { 
+ 
+     List<Person> pl = Person.createShortList();
+     RoboContactLambda robo = new RoboContactLambda();
+     
+     // Predicates
+     Predicate<Person> allDrivers = p -> p.getAge() >= 16;
+     Predicate<Person> allDraftees = p -> p.getAge() >= 18 && p.getAge() <= 25 && p.getGender() == Gender.MALE;
+     Predicate<Person> allPilots = p -> p.getAge() >= 23 && p.getAge() <= 65;
+     
+     System.out.println("\n==== Test 04 ====");
+     System.out.println("\n=== Calling all Drivers ===");
+     robo.phoneContacts(pl, allDrivers);
+     
+     System.out.println("\n=== Emailing all Draftees ===");
+     robo.emailContacts(pl, allDraftees);
+     
+     System.out.println("\n=== Mail all Pilots ===");
+     robo.mailContacts(pl, allPilots);
+     
+     // Mix and match becomes easy
+     System.out.println("\n=== Mail all Draftees ===");
+     robo.mailContacts(pl, allDraftees);  
+     
+     System.out.println("\n=== Call all Pilots ===");
+     robo.phoneContacts(pl, allPilots);    
+     
+   }
+}
+```
+
+Notar que un `Predicate` es configurado para cada grupo: _allDrivers_, _allDraftees_ y _allPilots_. Se puede pasar cualquiera de estas interfaces `Predicate` a nuestros métodos de contacto. El código es compacto y fácil de leer, además de no ser repetitivo.
+
+## El paquete `java.util.function`
+
+Una variedad de interfaces estándar están diseñadas como punto de partida para los developers:
+
+- `Predicate`: una propiedad del objeto pasada como parámetro.
+- `Consumer`: una acción a ser ejecutada con el objeto pasado como parámetro.
+- `Function`: transformación de un objeto de tipo **T** a un objeto de tipo **U**.
+- `Supplier`: proveer una instancia de un objeto de tipo **T** (como si fuera un _factory_).
+- `UnaryOperator`: operador unario de **T** -> **T**.
+- `BinaryOperator`: operador binario de **(T,T)** -> **T**.
+
+Además, muchas de estas interfaces tienen también sus versiones con primitivos.
+
