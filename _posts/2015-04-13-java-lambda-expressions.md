@@ -663,3 +663,104 @@ Una variedad de interfaces estándar están diseñadas como punto de partida par
 
 Además, muchas de estas interfaces tienen también sus versiones con primitivos.
 
+## Estilo de nombres oriental y referencias a métodos
+
+Siguiendo con el ejemplo anterior, supongamos que ahora queremos tener un sistema flexible que imprima los datos de la clase `Person`. Se requiere mostrar los nombres en dos estilos: **oriental** y **occidental**. En el occidente, los nombres se muestran con el nombre de pila primero y luego el apellido, mientras que el oriente primero el apellido y luego el nombre de pila.
+
+### Implementación sin lambda
+
+``` java
+public void printWesternName() {
+  
+  System.out.println("\nName: " + this.getGivenName() + " " + this.getSurName() + "\n" +
+           "Age: " + this.getAge() + "  " + "Gender: " + this.getGender() + "\n" +
+           "EMail: " + this.getEmail() + "\n" + 
+           "Phone: " + this.getPhone() + "\n" +
+           "Address: " + this.getAddress());
+  }
+  
+public void printEasternName() {
+    
+  System.out.println("\nName: " + this.getSurName() + " " + this.getGivenName() + "\n" +
+           "Age: " + this.getAge() + "  " + "Gender: " + this.getGender() + "\n" +
+           "EMail: " + this.getEmail() + "\n" + 
+           "Phone: " + this.getPhone() + "\n" +
+           "Address: " + this.getAddress());
+}
+```
+
+Exite un método que imprime los datos de la persona por cada estilo.
+
+### La interfaz `Function`
+
+La interfaz `Function` nos resulta útil para resolver este problema. Sólo tiene un método, `apply`, con la siguiente firma:
+
+`public R apply(T t) { }`
+
+Toma una clase genérica T como parámetro y retorna otra clase genérica R. Para este ejemplo, se le pasa como parámetro a `Person` y retorna el tipo `String`.
+
+Entonces, una forma más versátil del método que muestra los nombres prodría definirse así:
+
+``` java
+public String printCustom(Function<Person, String> f) {
+  return f.apply(this);
+}
+```
+
+Es bastante más simple, una función se pasa como parámetro y un string es retornado. El método `apply` procesa una expresión lambda la cual determina que información de `Person` se retorna.
+
+A continuación la clase de test:
+
+``` java
+public class NameTestNew {
+  
+  public static void main(String[] args) {
+    
+    System.out.println("\n==== NameTestNew02 ===");
+    
+    List<Person> list1 = Person.createShortList();
+    
+    // Print Custom First Name and e-mail
+    System.out.println("===Custom List===");
+    for (Person person:list1) {
+        System.out.println(
+            person.printCustom(p -> "Name: " + p.getGivenName() + " EMail: " + p.getEmail())
+        );
+    }
+    
+    // Define Western and Eastern Lambdas
+    
+    Function<Person, String> westernStyle = p -> {
+      return "\nName: " + p.getGivenName() + " " + p.getSurName() + "\n" +
+             "Age: " + p.getAge() + "  " + "Gender: " + p.getGender() + "\n" +
+             "EMail: " + p.getEmail() + "\n" + 
+             "Phone: " + p.getPhone() + "\n" +
+             "Address: " + p.getAddress();
+    };
+    
+    Function<Person, String> easternStyle =  p -> "\nName: " + p.getSurName() + " " 
+            + p.getGivenName() + "\n" + "Age: " + p.getAge() + "  " + 
+            "Gender: " + p.getGender() + "\n" +
+            "EMail: " + p.getEmail() + "\n" + 
+            "Phone: " + p.getPhone() + "\n" +
+            "Address: " + p.getAddress();   
+    
+    // Print Western List
+    System.out.println("\n===Western List===");
+    for (Person person:list1) {
+        System.out.println(
+            person.printCustom(westernStyle)
+        );
+    }
+  
+    // Print Eastern List
+    System.out.println("\n===Eastern List===");
+    for (Person person:list1) {
+        System.out.println(
+            person.printCustom(easternStyle)
+        );
+    }
+    
+  }
+}
+``` 
