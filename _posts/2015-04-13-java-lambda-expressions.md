@@ -763,4 +763,197 @@ public class NameTestNew {
     
   }
 }
-``` 
+```
+
+La primera iteración imprime el primer nombre y la dirección de email, aunque expresión se puede pasar al método `printCustom`. Los estilos orientales y occidentales están definidos con expresiones lambda y se almacenan en una variable. Luego estas variables son pasadas como parámetro en las dos iteraciones siguientes. 
+
+Las expresiones lambda podrían ser incorporadas en un `Map` para hacer su reúso mucho más fácil. Esto muestra la gran flexibilidad que estas expresiones proveen.
+
+### Muestra de salida
+
+A continuación, un ejemplo de salida por consola del código:
+
+``` txt
+==== NameTestNew02 ===
+===Custom List===
+Name: Bob EMail: bob.baker@example.com
+Name: Jane EMail: jane.doe@example.com
+Name: John EMail: john.doe@example.com
+Name: James EMail: james.johnson@example.com
+Name: Joe EMail: joebob.bailey@example.com
+Name: Phil EMail: phil.smith@examp;e.com
+Name: Betty EMail: betty.jones@example.com
+
+===Western List===
+
+Name: Bob Baker
+Age: 21  Gender: MALE
+EMail: bob.baker@example.com
+Phone: 201-121-4678
+Address: 44 4th St, Smallville, KS 12333
+
+Name: Jane Doe
+Age: 25  Gender: FEMALE
+EMail: jane.doe@example.com
+Phone: 202-123-4678
+Address: 33 3rd St, Smallville, KS 12333
+
+Name: John Doe
+Age: 25  Gender: MALE
+EMail: john.doe@example.com
+Phone: 202-123-4678
+Address: 33 3rd St, Smallville, KS 12333
+
+Name: James Johnson
+Age: 45  Gender: MALE
+EMail: james.johnson@example.com
+Phone: 333-456-1233
+Address: 201 2nd St, New York, NY 12111
+
+Name: Joe Bailey
+Age: 67  Gender: MALE
+EMail: joebob.bailey@example.com
+Phone: 112-111-1111
+Address: 111 1st St, Town, CA 11111
+
+Name: Phil Smith
+Age: 55  Gender: MALE
+EMail: phil.smith@examp;e.com
+Phone: 222-33-1234
+Address: 22 2nd St, New Park, CO 222333
+
+Name: Betty Jones
+Age: 85  Gender: FEMALE
+EMail: betty.jones@example.com
+Phone: 211-33-1234
+Address: 22 4th St, New Park, CO 222333
+
+===Eastern List===
+
+Name: Baker Bob
+Age: 21  Gender: MALE
+EMail: bob.baker@example.com
+Phone: 201-121-4678
+Address: 44 4th St, Smallville, KS 12333
+
+Name: Doe Jane
+Age: 25  Gender: FEMALE
+EMail: jane.doe@example.com
+Phone: 202-123-4678
+Address: 33 3rd St, Smallville, KS 12333
+
+Name: Doe John
+Age: 25  Gender: MALE
+EMail: john.doe@example.com
+Phone: 202-123-4678
+Address: 33 3rd St, Smallville, KS 12333
+
+Name: Johnson James
+Age: 45  Gender: MALE
+EMail: james.johnson@example.com
+Phone: 333-456-1233
+Address: 201 2nd St, New York, NY 12111
+
+Name: Bailey Joe
+Age: 67  Gender: MALE
+EMail: joebob.bailey@example.com
+Phone: 112-111-1111
+Address: 111 1st St, Town, CA 11111
+
+Name: Smith Phil
+Age: 55  Gender: MALE
+EMail: phil.smith@examp;e.com
+Phone: 222-33-1234
+Address: 22 2nd St, New Park, CO 222333
+
+Name: Jones Betty
+Age: 85  Gender: FEMALE
+EMail: betty.jones@example.com
+Phone: 211-33-1234
+Address: 22 4th St, New Park, CO 222333
+```
+
+## Expresiones lambda y las colecciones
+
+En el ejemplo previo se introdujo la interfaz `Function` y se terminó con ejemplos básicos de la sintáxis de lambda. Esta sección revisa como las expresiones lambda mejoran las clases dentro del framework `Collections`.
+
+### Adiciones de clase
+
+Los criterios de búsqueda de los pilotos, los reclutas y los chofores han sido encapsulados en la clase `SearchCriteria`.
+
+``` java
+package com.example.lambda;
+
+import java.util.HashMap;
+import java.util.Map;
+import java.util.function.Predicate;
+
+/**
+ *
+ * @author MikeW
+ */
+public class SearchCriteria {
+
+  private final Map<String, Predicate<Person>> searchMap = new HashMap<>();
+
+  private SearchCriteria() {
+    super();
+    initSearchMap();
+  }
+
+  private void initSearchMap() {
+    Predicate<Person> allDrivers = p -> p.getAge() >= 16;
+    Predicate<Person> allDraftees = p -> p.getAge() >= 18 && p.getAge() <= 25 && p.getGender() == Gender.MALE;
+    Predicate<Person> allPilots = p -> p.getAge() >= 23 && p.getAge() <= 65;
+
+    searchMap.put("allDrivers", allDrivers);
+    searchMap.put("allDraftees", allDraftees);
+    searchMap.put("allPilots", allPilots);
+  }
+
+  public Predicate<Person> getCriteria(String PredicateName) {
+    Predicate<Person> target;
+
+    target = searchMap.get(PredicateName);
+
+    if (target == null) {
+      System.out.println("Search Criteria not found... ");
+      System.exit(1); 
+    }
+      
+    return target;
+  }
+
+  public static SearchCriteria getInstance() {
+    return new SearchCriteria();
+  }
+}
+```
+
+Los criterios de búsqueda basados en el `Predicate` están alamcenados en este clase y disponibles para nuestros métodos de test.
+
+### Iteraciones
+
+La primer característica para mirar es el nuevo método `forEach` que se encuentra en cualquier clase de `Collections`. A continuación, un par de ejemplos que imprimen la lista de personas.
+
+``` java
+public class Test01ForEach {
+  
+  public static void main(String[] args) {
+    
+    List<Person> pl = Person.createShortList();
+    
+    System.out.println("\n=== Western Phone List ===");
+    pl.forEach( p -> p.printWesternName() );
+    
+    System.out.println("\n=== Eastern Phone List ===");
+    pl.forEach(Person::printEasternName);
+    
+    System.out.println("\n=== Custom Phone List ===");
+    pl.forEach(p -> { System.out.println(p.printCustom(r -> "Name: " + r.getGivenName() + " EMail: " + r.getEmail())); });
+    
+  }
+
+}
+```
+
