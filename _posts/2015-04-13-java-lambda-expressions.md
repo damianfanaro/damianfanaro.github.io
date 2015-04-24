@@ -775,7 +775,9 @@ A continuación, un ejemplo de salida por consola del código:
 
 ```
 ==== NameTestNew02 ===
+
 ===Custom List===
+
 Name: Bob EMail: bob.baker@example.com
 Name: Jane EMail: jane.doe@example.com
 Name: John EMail: john.doe@example.com
@@ -873,7 +875,7 @@ Phone: 211-33-1234
 Address: 22 4th St, New Park, CO 222333
 ```
 
-## Expresiones lambda y las colecciones
+## Expresiones lambda y colecciones
 
 En el ejemplo previo se introdujo la interfaz `Function` y se terminó con ejemplos básicos de la sintáxis de lambda. Esta sección revisa como las expresiones lambda mejoran las clases dentro del framework `Collections`.
 
@@ -956,4 +958,67 @@ public class Test01ForEach {
 
 }
 ```
+
+El primer ejemplo muestra una expresión lambda estándar que llama al método `printWesternName` para imprimir cada persona de la lista. El segundo, muestra una **referencia a método** que llama a `printEasternName`. En el caso donde un método exista para ejecutar una operación en la clase, esta sintaxis puede ser usada en vez de la expresión lambda que hemos visto antes. Finalmente, el último ejemplo muestra como el método `printCustom` es implementado dentro del bloque de la expresión lambda. Notar de este último la variación en el nombre de las variables usadas cuando una expresión se incluye dentro de otra.
+
+Se puede iterar a través de cualquier colección de esta manera. La estructura bpasica es similar a la mejorada en el loop `for`. Sin embargo, incluir un mecanismo de iteración dentro de la clase provee ciertos beneficios.
+
+### Encadenando y filtrando
+
+En adición a iterar sobre los contenidos de una colección, también se pueden encadenar métodos juntos. El primer método para observar es el `filter` el cual toma la interfaz `Predicate` como parámetro.
+
+El siguiente ejemplo itera a través de una `List` luego de filtrar primero los resultados.
+
+``` java
+public class Test02Filter {
+  
+  public static void main(String[] args) {
+
+    List<Person> pl = Person.createShortList();
+    
+    SearchCriteria search = SearchCriteria.getInstance();
+    
+    System.out.println("\n=== Western Pilot Phone List ===");
+
+    pl.stream().filter(search.getCriteria("allPilots"))
+      .forEach(Person::printWesternName);
+    
+   
+    System.out.println("\n=== Eastern Draftee Phone List ===");
+
+    pl.stream().filter(search.getCriteria("allDraftees"))
+      .forEach(Person::printEasternName);
+    
+  }
+}
+```
+
+El primero y último loop demuestra como la `List` es filtrada en base al criterio de búsqueda. La salida sería la siguiente:
+
+```
+=== Eastern Draftee Phone List ===
+
+Name: Baker Bob
+Age: 21  Gender: MALE
+EMail: bob.baker@example.com
+Phone: 201-121-4678
+Address: 44 4th St, Smallville, KS 12333
+
+Name: Doe John
+Age: 25  Gender: MALE
+EMail: john.doe@example.com
+Phone: 202-123-4678
+Address: 33 3rd St, Smallville, KS 12333
+```
+
+Estas características son útiles, pero: ¿Por qué agregar el mecanismo de iteración a las clases de `Collection` cuando ya hay un buen loop `for`?
+
+La razón es porque esto le permite a los desarrolladores de Java hacer más optimizaciones de código. Hay dos términos que valen la pena destacar:
+
+- **Laziness**: En programación, laziness se refiere al procesamiento de solo los objetos que se quieren procesar cuando se necesita procesarlos. En el ejemplo previo, el último loop es "lazy" porque itera solo sobre las dos instancias de `Person` que quedaron luego de que la lista sea filtrada. El código debería ser más eficiente porque el paso del procesamiento final ocurre solo en los objetos seleccionados.
+- **Eagerness**: Código que ejecuta operaciones en cada objeto de una lista es considerado "eager". Por ejemplo, el iterador `for` mejorado que itera a través de la lista entera para procesar dos objetos es considerado un enfoque más **eager**.
+
+### El método `stream`
+
+En el código de ejemplo anterior, el método `stream` es llamado antes que el filtrado y la iteración comiencen. Este método toma una `Collection` como input y retorna una interfaz de tipo `java.util.stream.Stream` como output. Un `Stream` representa una secuencia de elementos en la cual varios métodos pueden ser encadenados. Por defecto, una vez que los elementos son consumidos ya no están disponibles desde el stream. En consecuencia, una cadena de operaciones pueden ocurrir solo una vez en un stream particular. Además, un stream puede ser _serial_ (por defecto) o _parallel_ dependiendo en el método llamado.
 
