@@ -8,7 +8,7 @@ tags: [cheat-sheet]
 authors: [damianfanaro]
 ---
 
-# The periodic table for software developers
+## The periodic table for software developers
 
 #### Download it here:
 

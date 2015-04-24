@@ -1,4 +1,6 @@
-Java Blog. Language: Spanish and English.
+## Java Blog
+
+Language: Spanish and English.
 
 
 This blog uses Jekyll-Clean Theme as basis

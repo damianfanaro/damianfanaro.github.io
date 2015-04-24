@@ -181,3 +181,16 @@ iframe {
   margin-top: 0px;
   margin-bottom: 0px;
 }
+
+.table>thead>tr>th {
+  padding: 7px;
+}
+
+.table>tbody>tr>td {
+  padding: 3px;
+}
+
+.table>tbody>tr:hover {
+  color: white;
+  background-color: #c7254e;
+}
