@@ -1018,7 +1018,10 @@ La razón es porque esto le permite a los desarrolladores de Java hacer más opt
 - **Laziness**: En programación, laziness se refiere al procesamiento de solo los objetos que se quieren procesar cuando se necesita procesarlos. En el ejemplo previo, el último loop es "lazy" porque itera solo sobre las dos instancias de `Person` que quedaron luego de que la lista sea filtrada. El código debería ser más eficiente porque el paso del procesamiento final ocurre solo en los objetos seleccionados.
 - **Eagerness**: Código que ejecuta operaciones en cada objeto de una lista es considerado "eager". Por ejemplo, el iterador `for` mejorado que itera a través de la lista entera para procesar dos objetos es considerado un enfoque más **eager**.
 
-### El método `stream`
+#### El método `stream`
 
 En el código de ejemplo anterior, el método `stream` es llamado antes que el filtrado y la iteración comiencen. Este método toma una `Collection` como input y retorna una interfaz de tipo `java.util.stream.Stream` como output. Un `Stream` representa una secuencia de elementos en la cual varios métodos pueden ser encadenados. Por defecto, una vez que los elementos son consumidos ya no están disponibles desde el stream. En consecuencia, una cadena de operaciones pueden ocurrir solo una vez en un stream particular. Además, un stream puede ser _serial_ (por defecto) o _parallel_ dependiendo en el método llamado.
 
+### Mutación y resultados
+
+Como se acaba de mencionar, un `Stream` se borra luego de su uso. Por lo tanto, los elementos en una colección no pueden ser cambiados o mutados con un `Stream`. Sin embargo, ¿Qué pasa si queremos mantener los elementos retornados por nuestra?
