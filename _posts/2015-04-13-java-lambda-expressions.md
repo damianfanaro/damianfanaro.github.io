@@ -773,7 +773,7 @@ Las expresiones lambda podrían ser incorporadas en un `Map` para hacer su reús
 
 A continuación, un ejemplo de salida por consola del código:
 
-``` txt
+```
 ==== NameTestNew02 ===
 ===Custom List===
 Name: Bob EMail: bob.baker@example.com
