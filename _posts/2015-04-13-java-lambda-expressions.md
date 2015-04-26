@@ -12,22 +12,23 @@ authors: [damianfanaro]
 
 ## Guía rápida de las expresiones Lambda en Java SE 8
 
-El presente post es una traducción del [tutorial de Oracle](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html).
+> El presente post es una traducción del [tutorial de Oracle](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html).
 
-Las expresiones lambda son una nueva e importante herramienta incluida en la edición JDK 8 Standard Edition. Proveen una clara y concisa forma para representar un método de una interfaz usando una expresión. Las expresiones lambda también mejoran las librerías dentro del framework Collection haciendolas más fácil de iterar, filtrar y extraer datos desde una colección. Además, nuevas mejoras de concurrencia mejoran la performance en ambientes de múltipĺes núcleos o cores.
+Las expresiones lambda son una nueva e importante herramienta incluida en la edición JDK 8 Standard Edition. Proveen de forma clara y concisa una manera de representar un método de una interfaz usando una expresión. Las expresiones lambda también mejoran las librerías dentro del framework Collection haciendolas más fácil de iterar, filtrar y extraer datos desde una colección. Además, nuevas optimizaciones de concurrencia mejoran la performance en ambientes de múltiples núcleos o cores.
 
-A continuación se presenta un caso de uso común en donde la inclusión de expresiones lambda muestra como el código puede ser mejorado. También se verán algunas <abbr title="Son las interfaces que tienen sólo un método abstracto">interfaces funcionales</abbr> como **Predicate** y **Function** provistas en el paquete ``java.util.function``.
+En este artículo se presentarán casos de uso comunes en donde la inclusión de expresiones lambda muestran como el código puede ser mejorado. También se verán algunas <abbr title="Son las interfaces que tienen sólo un método abstracto">interfaces funcionales</abbr> como **Predicate** y **Function** provistas en el paquete ``java.util.function``.
 
 ## Repaso de conceptos
 
 ### Clases internas anónimas (Anonymous Inner Class)
 
-En Java, las clases internas anónimas proveen una forma de implementar clases que pueden ocurrir solo una vez en una aplicación. Por ejemplo, en una aplicación Swing o JavaFX estándar, un número de _event handlers_ son requeridos para los eventos de teclado y mouse. En vez de escribir una clase _event-handling_ para cada evento, se puede definir algo como esto:
+En Java, las clases internas anónimas proveen una forma de implementar clases que pueden ocurrir solo una vez en una aplicación. Por ejemplo, en una aplicación Swing o JavaFX estándar, un número de _event handlers_ son requeridos para los eventos de teclado y mouse. En vez de escribir una clase _event-handling_ para cada evento, se puede definir algo así:
 
 ``` java
 JButton testButton = new JButton("Test Button");
-testButton.addActionListener(new ActionListener(){
-	@Override public void actionPerformed(ActionEvent ae){
+
+testButton.addActionListener(new ActionListener() {
+	@Override public void actionPerformed(ActionEvent ae) {
  		System.out.println("Click Detected by Anon Class");
 	}
 });
@@ -53,9 +54,7 @@ public interface ActionListener extends EventListener {
 }
 ```
 
-Como se ve, esta interfaz contiene sólo un método. Ahora, en Java SE 8, las interfaces que siguen este patrón se las conoce como **Interfaces Funcionales**.
-
-> Este tipo de interfaces se las conocía como <abbr title="Single Abstract Method Type">SAM</abbr>.
+Como se observa, esta interfaz contiene sólo un método. Ahora, en Java SE 8, las interfaces que siguen este patrón se las conoce como **Interfaces Funcionales**. Anteriormente, a este tipo de interfaces se las conocía como <abbr title="Single Abstract Method Type">SAM</abbr>.
 
 Usar interfaces funcionales con clases internas anónimas es muy común en Java. En adición a las clases **EventListener**, interfaces como **Runnable** y **Comparator** se usan de manera similar. Por lo tanto, las interfaces funcionales son ideales para usar con expresiones lambda.
 
@@ -81,13 +80,11 @@ Algunos ejemplos:
 (String s) -> { System.out.println(s); }
 ```
 
-La primera expresión toma dos argumentos enteros, llamados ``x`` e ``y``, y usa la forma de expresión para retornar ``x + y``. La segunda expresión toma **cero** argumentos usa la forma de expresión para retornar el entero 42. Po último, la tercera expresión toma un ``string`` y usa la forma de bloque de sentencias para imprimirlo en la consola sin retornar ningún valor.
+La primera expresión toma dos argumentos enteros, llamados ``x`` e ``y``, y usa la forma de expresión para retornar ``x + y``. La segunda expresión toma **cero** argumentos y usa la forma de expresión para retornar el entero 42. Po último, la tercera expresión toma un ``String`` y usa la forma de bloque de sentencias para imprimirlo en la consola sin retornar ningún valor.
 
 ## Ejemplos lambda
 
-A continuación se presentan algunos casos de uso comunes que fueron cubiertos en los ejemplos anteriores.
-
-### Runnable Lambda
+### Runnable
 
 Para usar en la definición del método ``run()`` de la interfaz [Runnable](http://docs.oracle.com/javase/8/docs/api/java/lang/Runnable.html):
 
@@ -100,12 +97,10 @@ public class RunnableTest {
     
     // Anonymous Runnable
     Runnable r1 = new Runnable() {
-      
       @Override
       public void run(){
          System.out.println("Hello world one!");
       }
-
     };
      
     // Lambda Runnable
@@ -121,11 +116,9 @@ public class RunnableTest {
 
 En ambos casos es importante destacar que no se pasa ningún parámetro y que tampoco se retorna ningún valor.
 
-### Comparator Lambda
+### Comparator
 
 En Java, la clase [Comparator](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html) es usada para ordenar colleciones de datos. En el siguiente ejemplo, un ``ArrayList`` que consiste de objetos de tipo ``Person`` es ordenado basado en el campo ``surName``.
-
-Clase ``Person``:
 
 ``` java
 public class Person {
@@ -138,7 +131,7 @@ public class Person {
   private String phone;
   private String address;
 
-  // Getters and Setters omitted...
+  // Constructor, getters and setters omitted...
 }
 ```
 
@@ -185,9 +178,9 @@ public class ComparatorTest {
 }
 ```
 
-Notar que la primera expresión lambda declara el tipo de parámatro pasado. Sin embargo, como se puede ver en la segunda expresión, esto es opcional. Lambda soporta ``target typing`` el cual infiere el tipo del objeto desde el contexto en el que es usado. Dado que se esta asignando el resultado a un ``Comparator`` definido con un **generic**, el compilador infiere que los dos parámetros son de tipo ``Person``.
+Notar que la primera expresión lambda declara el tipo de parámatro pasado, pero como se ve en la segunda expresión esto es opcional. Lambda soporta _target typing_ el cual infiere el tipo del objeto desde el contexto en el que es usado. Dado que se esta asignando el resultado a un ``Comparator`` definido con un **generic**, el compilador infiere que los dos parámetros son de tipo ``Person``.
 
-### Listener Lambda
+### Listener
 
 ``` java
 public class ListenerTest {
@@ -195,9 +188,10 @@ public class ListenerTest {
    public static void main(String[] args) {
          
      JButton testButton = new JButton("Test Button");
-     testButton.addActionListener(new ActionListener(){
-     @Override public void actionPerformed(ActionEvent ae){
-         System.out.println("Click Detected by Anon Class");
+     testButton.addActionListener(new ActionListener() {
+          @Override 
+          public void actionPerformed(ActionEvent ae) {
+            System.out.println("Click Detected by Anon Class");
        }
      });
      
@@ -227,9 +221,9 @@ Notar que la expresión lambda se pasa como parámetro. **Target typing** es usa
 
 ## Mejorando el código con expresiones lambda
 
-Esta sección se basa en los ejemplos anteriores para mostrar como las expresiones lambda pueden mejorar el código. Las lambdas deberían proveer un buen medio para respetar el principio DRY (del inglés, Don't Repeat Yourself) y hacer el código más simple y legible.
+Esta sección se basa en los ejemplos anteriores para mostrar como las expresiones lambda pueden mejorar el código. Las lambdas deberían proveer un buen medio para respetar el principio **DRY** (del inglés, Don't Repeat Yourself) y hacer el código más simple y legible.
 
-### Un caso de uso común de consulta
+### Haciendo consultas
 
 Es muy común ver programas que buscan a través de una colección de datos para encontrar items que "matcheen" un criterio específico.
 
@@ -299,9 +293,6 @@ package com.example.lambda;
 
 import java.util.List;
 
-/**
- * @author MikeW
- */
 public class RoboContactMethods {
    
   public void callDrivers(List<Person> pl) {
@@ -343,7 +334,7 @@ public class RoboContactMethods {
 }
 ```
 
-Como se puede observar desde los nombres: _callDrivers_, _emailDraftees_ y _mailPilots_; los métodos describen la clase de comportamiento que se lleva a cabo. El criterio de búsqueda está explícitamente indicado y una llamada es hecha a cada "robo action". Sin embargo, este diseño tiene algunos aspectos negativos:
+Como se puede observar desde los métodos: _callDrivers_, _emailDraftees_ y _mailPilots_; los nombres describen la clase de comportamiento que se lleva a cabo. El criterio de búsqueda está explícitamente indicado y una llamada es hecha a cada "robo action". Sin embargo, este diseño tiene algunos aspectos negativos:
 
 - No se sigue el principio DRY:
     * Cada método repite el mecanismo de iteración.
@@ -360,9 +351,6 @@ package com.example.lambda;
 
 import java.util.List;
  
-/**
- * @author MikeW
- */
 public class RoboContactMethods2 {
   
   public void callDrivers(List<Person> pl) {
@@ -427,7 +415,7 @@ La interfaz sería así:
 ``` java
 public interface MyTest<T> {
   
-  public boolean test(T t);
+  boolean test(T t);
 
 }
 ```
@@ -485,9 +473,6 @@ package com.example.lambda;
  
 import java.util.List;
  
-/**
- * @author MikeW
- */
 public class RoboCallTest03 {
  
    public static void main(String[] args) {
@@ -541,12 +526,12 @@ En el ejemplo previo, la interfaz funcional `MyTest.java` se pasa como una clase
 ``` java
 public interface Predicate<T> {
   
-  public boolean test(T t);
+  boolean test(T t);
 
 }
 ```
 
-El método `test` toma una clase genérica y retorna un resultado **boolean**. Es justo lo necesario para hacer selecciones. A continuación la versión final de la clase _robot_:
+El método `test` toma una clase genérica y retorna un resultado **boolean**. Es justo lo necesario para hacer selecciones. A continuación la versión final de la clase _robo_:
 
 ``` java
 package com.example.lambda;
@@ -554,9 +539,6 @@ package com.example.lambda;
 import java.util.List;
 import java.util.function.Predicate;
  
-/**
- * @author MikeW
- */
 public class RoboContactLambda {
 
    public void phoneContacts(List<Person> pl, Predicate<Person> pred) {
@@ -602,9 +584,7 @@ Con este enfoque solo se necesitan 3 métodos, uno por cada forma de contacto. L
 
 ## Problema vertical resuelto
 
-Las expresiones lambda resuelven el problema vertical y permiten el reúso de cualquier expresión.
-
-A continuación se presenta la clase de test actualizada con expresiones lambda:
+Las expresiones lambda resuelven el problema vertical y permiten el reúso de cualquier expresión. A continuación se presenta la clase de test actualizada con expresiones lambda:
 
 ``` java
 package com.example.lambda;
@@ -612,9 +592,6 @@ package com.example.lambda;
 import java.util.List;
 import java.util.function.Predicate;
 
-/**
- * @author MikeW
- */
 public class RoboCallTest04 {
    
    public static void main(String[] args) { 
@@ -628,6 +605,7 @@ public class RoboCallTest04 {
      Predicate<Person> allPilots = p -> p.getAge() >= 23 && p.getAge() <= 65;
      
      System.out.println("\n==== Test 04 ====");
+     
      System.out.println("\n=== Calling all Drivers ===");
      robo.phoneContacts(pl, allDrivers);
      
@@ -648,26 +626,28 @@ public class RoboCallTest04 {
 }
 ```
 
-Notar que un `Predicate` es configurado para cada grupo: _allDrivers_, _allDraftees_ y _allPilots_. Se puede pasar cualquiera de estas interfaces `Predicate` a nuestros métodos de contacto. El código es compacto y fácil de leer, además de no ser repetitivo.
+Notar que un `Predicate` es configurado para cada grupo: _allDrivers_, _allDraftees_ y _allPilots_. Se puede pasar cualquiera de estas interfaces a nuestros métodos de contacto. El código es compacto y fácil de leer, además de no ser repetitivo.
 
 ## El paquete `java.util.function`
 
 Una variedad de interfaces estándar están diseñadas como punto de partida para los developers:
 
-- `Predicate`: una propiedad del objeto pasada como parámetro.
-- `Consumer`: una acción a ser ejecutada con el objeto pasado como parámetro.
-- `Function`: transformación de un objeto de tipo **T** a un objeto de tipo **U**.
-- `Supplier`: proveer una instancia de un objeto de tipo **T** (como si fuera un _factory_).
-- `UnaryOperator`: operador unario de **T** -> **T**.
-- `BinaryOperator`: operador binario de **(T,T)** -> **T**.
+- **Predicate**: una propiedad del objeto pasada como parámetro.
+- **Consumer**: una acción a ser ejecutada con el objeto pasado como parámetro.
+- **Function**: transformación de un objeto de tipo **T** a un objeto de tipo **U**.
+- **Supplier**: proveer una instancia de un objeto de tipo **T** (como si fuera un _factory_).
+- **UnaryOperator**: operador unario de **T** -> **T**.
+- **BinaryOperator**: operador binario de **(T,T)** -> **T**.
 
 Además, muchas de estas interfaces tienen también sus versiones con primitivos.
 
-## Estilo de nombres oriental y referencias a métodos
+## Estilo de nombres y referencias a métodos
 
-Siguiendo con el ejemplo anterior, supongamos que ahora queremos tener un sistema flexible que imprima los datos de la clase `Person`. Se requiere mostrar los nombres en dos estilos: **oriental** y **occidental**. En el occidente, los nombres se muestran con el nombre de pila primero y luego el apellido, mientras que el oriente primero el apellido y luego el nombre de pila.
+Siguiendo con el ejemplo anterior, supongamos que ahora queremos tener un sistema flexible que imprima los datos de la clase `Person`. Se requiere mostrar los nombres en dos estilos: **oriental** y **occidental**. En el occidente, los nombres se muestran con el nombre de pila primero y luego el apellido, mientras que en el oriente primero el apellido y luego el nombre de pila.
 
 ### Implementación sin lambda
+
+Exite un método que imprime los datos de la persona por cada estilo:
 
 ``` java
 public void printWesternName() {
@@ -689,15 +669,15 @@ public void printEasternName() {
 }
 ```
 
-Exite un método que imprime los datos de la persona por cada estilo.
-
 ### La interfaz `Function`
 
-La interfaz `Function` nos resulta útil para resolver este problema. Sólo tiene un método, `apply`, con la siguiente firma:
+Esta interfaz nos resulta útil para resolver este problema. Sólo tiene el método `apply` con la siguiente firma:
 
-`public R apply(T t) { }`
+``` java
+public R apply(T t) { }
+```
 
-Toma una clase genérica T como parámetro y retorna otra clase genérica R. Para este ejemplo, se le pasa como parámetro a `Person` y retorna el tipo `String`.
+Toma una clase genérica **T** como parámetro y retorna otra clase genérica **R**. Para este ejemplo, se le pasa como parámetro a `Person` y retorna el tipo `String`.
 
 Entonces, una forma más versátil del método que muestra los nombres prodría definirse así:
 
@@ -765,7 +745,7 @@ public class NameTestNew {
 }
 ```
 
-La primera iteración imprime el primer nombre y la dirección de email, aunque expresión se puede pasar al método `printCustom`. Los estilos orientales y occidentales están definidos con expresiones lambda y se almacenan en una variable. Luego estas variables son pasadas como parámetro en las dos iteraciones siguientes. 
+La primera iteración imprime el nombre de pila y la dirección de email y la expresión lambda se pasa directamente como parámetro. Los estilos orientales y occidentales también están definidos con expresiones lambda que se almacenan en una variable. Luego estas variables son pasadas como parámetro en las dos iteraciones siguientes. 
 
 Las expresiones lambda podrían ser incorporadas en un `Map` para hacer su reúso mucho más fácil. Esto muestra la gran flexibilidad que estas expresiones proveen.
 
@@ -881,7 +861,7 @@ En el ejemplo previo se introdujo la interfaz `Function` y se terminó con ejemp
 
 ### Adiciones de clase
 
-Los criterios de búsqueda de los pilotos, los reclutas y los chofores han sido encapsulados en la clase `SearchCriteria`.
+Los criterios de búsqueda de los pilotos, los reclutas y los choferes han sido encapsulados en la clase `SearchCriteria`.
 
 ``` java
 package com.example.lambda;
@@ -890,10 +870,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.function.Predicate;
 
-/**
- *
- * @author MikeW
- */
 public class SearchCriteria {
 
   private final Map<String, Predicate<Person>> searchMap = new HashMap<>();
@@ -932,7 +908,7 @@ public class SearchCriteria {
 }
 ```
 
-Los criterios de búsqueda basados en el `Predicate` están alamcenados en este clase y disponibles para nuestros métodos de test.
+Los criterios de búsqueda basados en el `Predicate` están almacenados en esta clase y disponibles para nuestros métodos de test.
 
 ### Iteraciones
 
@@ -961,7 +937,7 @@ public class Test01ForEach {
 
 El primer ejemplo muestra una expresión lambda estándar que llama al método `printWesternName` para imprimir cada persona de la lista. El segundo, muestra una **referencia a método** que llama a `printEasternName`. En el caso donde un método exista para ejecutar una operación en la clase, esta sintaxis puede ser usada en vez de la expresión lambda que hemos visto antes. Finalmente, el último ejemplo muestra como el método `printCustom` es implementado dentro del bloque de la expresión lambda. Notar de este último la variación en el nombre de las variables usadas cuando una expresión se incluye dentro de otra.
 
-Se puede iterar a través de cualquier colección de esta manera. La estructura bpasica es similar a la mejorada en el loop `for`. Sin embargo, incluir un mecanismo de iteración dentro de la clase provee ciertos beneficios.
+Se puede iterar a través de cualquier colección de esta manera. La estructura básica es similar a la mejorada en el loop `for`. Sin embargo, incluir un mecanismo de iteración dentro de la clase provee ciertos beneficios.
 
 ### Encadenando y filtrando
 
@@ -983,7 +959,6 @@ public class Test02Filter {
     pl.stream().filter(search.getCriteria("allPilots"))
       .forEach(Person::printWesternName);
     
-   
     System.out.println("\n=== Eastern Draftee Phone List ===");
 
     pl.stream().filter(search.getCriteria("allDraftees"))
@@ -993,7 +968,7 @@ public class Test02Filter {
 }
 ```
 
-El primero y último loop demuestra como la `List` es filtrada en base al criterio de búsqueda. La salida sería la siguiente:
+El primer y último loop demuestra como la `List` es filtrada en base al criterio de búsqueda. La salida sería la siguiente:
 
 ```
 === Eastern Draftee Phone List ===
@@ -1020,8 +995,131 @@ La razón es porque esto le permite a los desarrolladores de Java hacer más opt
 
 #### El método `stream`
 
-En el código de ejemplo anterior, el método `stream` es llamado antes que el filtrado y la iteración comiencen. Este método toma una `Collection` como input y retorna una interfaz de tipo `java.util.stream.Stream` como output. Un `Stream` representa una secuencia de elementos en la cual varios métodos pueden ser encadenados. Por defecto, una vez que los elementos son consumidos ya no están disponibles desde el stream. En consecuencia, una cadena de operaciones pueden ocurrir solo una vez en un stream particular. Además, un stream puede ser _serial_ (por defecto) o _parallel_ dependiendo en el método llamado.
+En el código de ejemplo anterior, el método stream es llamado antes que el filtrado y la iteración comiencen. Este método toma una `Collection` como input y retorna una interfaz de tipo `java.util.stream.Stream` como output. Un stream representa una secuencia de elementos en la cual varios métodos pueden ser encadenados. Por defecto, una vez que los elementos son consumidos ya no están disponibles desde el stream. En consecuencia, una cadena de operaciones pueden ocurrir solo una vez en un stream particular. Además, un stream puede ser _serial_ (por defecto) o _parallel_ dependiendo en el método llamado.
 
 ### Mutación y resultados
 
-Como se acaba de mencionar, un `Stream` se borra luego de su uso. Por lo tanto, los elementos en una colección no pueden ser cambiados o mutados con un `Stream`. Sin embargo, ¿Qué pasa si queremos mantener los elementos retornados por nuestra?
+Como se acaba de mencionar, un stream se borra luego de su uso. Por lo tanto, los elementos en una colección no pueden ser cambiados o mutados con streams. Sin embargo, ¿Qué pasa si queremos mantener los elementos retornados por nuestra cadena de operaciones? 
+
+La solución es que se pueden salvar en una nueva colección. A continuación se muestra como hacerlo:
+
+``` java
+public class Test03toList {
+  
+  public static void main(String[] args) {
+    
+    List<Person> pl = Person.createShortList();
+    
+    SearchCriteria search = SearchCriteria.getInstance();
+    
+    // Make a new list after filtering.
+    List<Person> pilotList = pl
+            .stream()
+            .filter(search.getCriteria("allPilots"))
+            .collect(Collectors.toList());
+    
+    System.out.println("\n=== Western Pilot Phone List ===");
+    pilotList.forEach(Person::printWesternName);
+
+  }
+
+}
+```
+
+El método `collect` es comúnmente usado con un `filter`. El método toma una propiedad de una clase y ejecuta alguna operación. El siguiente ejemplo demuestra esto mediante la ejecución de cálculos basados en la edad.
+
+``` java
+public class Test04Map {
+
+  public static void main(String[] args) {
+    List<Person> pl = Person.createShortList();
+    
+    SearchCriteria search = SearchCriteria.getInstance();
+    
+    // Calc average age of pilots old style
+    System.out.println("== Calc Old Style ==");
+    int sum = 0;
+    int count = 0;
+    
+    for (Person p:pl){
+      if (p.getAge() >= 23 && p.getAge() <= 65 ){
+        sum = sum + p.getAge();
+        count++;
+      }
+    }
+    
+    long average = sum / count;
+    System.out.println("Total Ages: " + sum);
+    System.out.println("Average Age: " + average);
+    
+    
+    // Get sum of ages
+    System.out.println("\n== Calc New Style ==");
+    long totalAge = pl
+            .stream()
+            .filter(search.getCriteria("allPilots"))
+            .mapToInt(p -> p.getAge())
+            .sum();
+
+    // Get average of ages
+    OptionalDouble averageAge = pl
+            .parallelStream()
+            .filter(search.getCriteria("allPilots"))
+            .mapToDouble(p -> p.getAge())
+            .average();
+
+    System.out.println("Total Ages: " + totalAge);
+    System.out.println("Average Age: " + averageAge.getAsDouble());    
+    
+  }
+  
+}
+```
+
+Dando como salida:
+
+```
+== Calc Old Style ==
+
+Total Ages: 150
+Average Age: 37
+
+== Calc New Style ==
+
+Total Ages: 150
+Average Age: 37.5
+```
+
+El programa calcula la edad promedio de los pilotos de nuestra lista. La primera iteración muestra la vieja forma de calcular este número usando el loop `for`. La segunda iteración usa el método `map` para obtener la edad de cada persona en un stream. Notar que _totalAge_ es un `long` y que el método _map_ retorna un objeto de tipo `IntStream`, el cual contiene el método `sum` que retorna un _long_.
+
+Para computar el promedio la segunda vez, calcular la suma de las edades es innecesario. Sin embargo, es instructivo mostrar un ejemplo con el método `sum`.
+
+El último loop computa la edad promedio desde un stream. Cabe destacar que el método `parallelStream` es usado para obtener streams en paralelo de modo que los valores puedan ser computados concurrentemente. El tipo de retorno también es un poco diferente.
+
+## Conclusiones
+
+En este post se mostró como usar:
+
+- Clases internas anónimas en java.
+- Expresiones lambda que reemplazan las clases internas anónimas en Java SE 8.
+- La sintáxis correcta para las expresiones lambda.
+- La interfaz `Predicate` para ejecutar búsquedas en una lista.
+- La interfaz `Function` para procesar un objeto y producir otro con un tipo diferente.
+- Nuevas características agregadas a `Collections` en Java SE 8 que soportan expresiones lambda.
+
+## Recursos 
+
+Para más información sobre Java SE 8 y las expresiones lambda visitar los siguientes links (en inglés):
+
+- [Java 8](http://openjdk.java.net/projects/jdk8/)
+- [Project Lambda](http://openjdk.java.net/projects/lambda/)
+- [State of the Lambda](http://cr.openjdk.java.net/~briangoetz/lambda/lambda-state-4.html)
+- [State ef the Lambda Collections](http://cr.openjdk.java.net/~briangoetz/lambda/sotc3.html)
+- [Jump-Starting Lambda JavaOne 2012 (You Tube)](http://www.youtube.com/watch?v=bzO5GSujdqI)
+- Para aprender más sobre Java y tópicos relacionados: [Oracle Learning Library](http://www.oracle.com/goto/oll)
+
+## Créditos
+
+- Lead Curriculum Developer: Michael Williams
+- QA: Juan Quesada Nunez
+- Translator: Damian Fanaro
