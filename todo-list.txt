@@ -1,0 +1,6 @@
+Lista de post pendientes
+========================
+
+- Java Collections
+- Java 8 - Default methods
+- Conexión JDBC pura y PreparedStatements
