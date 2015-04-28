@@ -44,17 +44,13 @@ blockquote {
     font-size: 1.3em;
 }
 
-.sidebar a {
-    color: #428bca;
+.sidebar a, .sidebar a:hover {
+    color: #15c;
 }
 
 .sidebar li {
     margin-top: .7em;
     line-height: 1em;
-}
-
-.sidebar a:hover {
-    color: #3071a9;
 }
 
 .container-left {
@@ -67,48 +63,44 @@ blockquote {
 }
 
 .author {
-    color: #ee4444;
-}
-
-.author a {
-    color: #337ab7;
+  color: #ee4444;
 }
 
 .well {
-    background-color: #ffffff;
-    padding: 0px;
+  background-color: #ffffff;
+  padding: 0px;
 
 }
 
 .well h1 {
-    color: #000000;
+  color: #000000;
 }
 
 #headerButtons > li > a:hover, .nav .navbar-nav > li > a:focus {
-    color: white;
-    background-color: #428bca !important;
+  color: white;
+  background: -webkit-linear-gradient(top, #4387fd, #4683ea);
 }
 
 .pad-top {
-    padding-top: 20px;
+  padding-top: 20px;
 }
 
 .page_number {
-    color: white;
+  color: white;
 }
 
 ul li ul {
-    display: none;
+  display: none;
 }
 
 ul li:hover ul {
-    display: block;
+  display: block;
 }
 
 pre {
-    background-color: ##dee3e9;
-    margin-bottom: 25px;
-    margin-top: 20px;
+  background-color: ##dee3e9;
+  margin-bottom: 25px;
+  margin-top: 20px;
 }
 
 code {
@@ -116,42 +108,33 @@ code {
 }
 
 pre code {
-    overflow: auto;
-    word-wrap: normal;
-    white-space: pre;
+  overflow: auto;
+  word-wrap: normal;
+  white-space: pre;
 }
 
 hr {
-    border-top: 1px solid #17181B;
-}
-
-table {
-    background-color: white;
-}
-
-thead {
-    background: #428bca;
-    color: white;
+  border-top: 1px solid #17181B;
 }
 
 .td-bottom-line {
-    border-bottom: 1px solid rgb(51, 122, 188);
+  border-bottom: 1px solid rgb(51, 122, 188);
 }
 
 #disqus_thread {
-    padding-top: 60px;
+  padding-top: 60px;
 }
 
 .category-label {
-    color: white;
+  color: white;
 }
 
 a.list-group-item:focus, a.list-group-item:hover {
-  background-color: #428bca;
+  background: -webkit-linear-gradient(top, #4387fd, #4683ea);
 }
 
 a.list-group-item:hover > h5 {
-    color: white;
+  color: white;
 }
 
 .dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
@@ -169,8 +152,8 @@ a.list-group-item:hover > h5 {
 }
 
 iframe {
-    padding-top: 5px;
-    padding-bottom: 25px;
+  padding-top: 5px;
+  padding-bottom: 25px;
 }
 
 .label {
@@ -193,4 +176,17 @@ iframe {
 .table>tbody>tr:hover {
   color: white;
   background-color: #c7254e;
+}
+
+table {
+  background-color: white;
+}
+
+thead {
+  background: #575757;
+  color: white;
+}
+
+a, a:hover {
+  color: #15c;
 }
