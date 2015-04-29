@@ -5,6 +5,18 @@ body {
     font-size: 13px;
 }
 
+/* WebKit/Blink Browsers */
+::selection {
+  color: #fff;
+  background: #191919;
+}
+
+/* Gecko Browsers */
+::-moz-selection {
+  color: #fff;
+  background: #191919;
+}
+
 .h5, h5 {
   font-size: 13px;
 }
