@@ -202,3 +202,21 @@ thead {
 a, a:hover {
   color: #15c;
 }
+
+/* D3 CSS */
+
+.node circle {
+  fill: #fff;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.node {
+  font: 10px sans-serif;
+}
+
+.link {
+  fill: none;
+  stroke: #ccc;
+  stroke-width: 1.5px;
+}

@@ -9,7 +9,7 @@ tags: [spring, mvc, web-frameworks]
 
 ![Spring]({{ site.baseurl }}/images/spring-logo.png)
 
-### Spring overview
+## Spring overview
 
 1. **What is Spring?** Spring is an open source development framework for Enterprise Java. The core features of the Spring Framework can be used in developing any Java application, but there are extensions for building web applications on top of the Java EE platform. Spring framework targets to make Java EE development easier to use and promote good programming practice by enabling a POJO-based programming model.
 2. **What are the benefits of Spring Framework?** 
