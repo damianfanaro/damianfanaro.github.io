@@ -9,7 +9,9 @@ $(document).ready(function() {
 						data[i].html_url + 
 						"\" class=\"list-group-item\" target=\"_blank\"><h5 class=\"list-group-item-heading\">" + 
 						data[i].name + 
-						"</h5></a>";
+						"</h5><p class=\"list-group-item-text\">" + 
+						data[i].description + 
+						"</p></a>";
 			$("#projects-list").append(item);
 		}
 
