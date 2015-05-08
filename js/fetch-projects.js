@@ -8,9 +8,9 @@ $(document).ready(function() {
 			
 			var item = "<a href=\"" + 
 						data[i].html_url + 
-						"\" class=\"list-group-item\" target=\"_blank\"><h5 class=\"list-group-item-heading\">" + 
+						"\" class=\"list-group-item\" target=\"_blank\"><h5 class=\"list-group-item-heading\"><b>" + 
 						data[i].name + 
-						"</h5><p class=\"list-group-item-text\" style=\"padding-top: 5px;\">" + 
+						"</b></h5><p class=\"list-group-item-text\" style=\"padding-top: 5px;\">" + 
 						data[i].description + 
 						"</p></a>";
 			
