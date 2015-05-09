@@ -1,16 +1,40 @@
-// GLOBAL VARIABLES
-var baseURL = window.location.protocol + "//" + window.location.host + "/";
+//////////////////////
+//                  //
+// GLOBAL VARIABLES //
+//                  //
+//////////////////////
 
+var baseURL = window.location.protocol + "//" + window.location.host + "/";
+var loadSVG_1 = false;
+
+////////////////////
+//                //
+// DOCUMENT READY //
+//                //
+////////////////////
 
 $(document).ready(function() {
 
 	$("table").addClass("table table-bordered");
-
-  drawSVGTree("/json/java-collections-interfaces.json", "#core-collection-interfaces", 840);
+  checkResourcesToLoad();
 
 });
 
-function drawSVGTree(data, domElement, width) {
+///////////////
+//           //
+// FUNCTIONS //
+//           //
+///////////////
+
+function checkResourcesToLoad() {
+
+  if (loadSVG_1) {
+    SVGTree_1("/json/java-collections-interfaces.json", "#core-collection-interfaces", 700);
+  }
+
+}
+
+function SVGTree_1(data, domElement, width) {
 
   var height = width / 2;
   var tree = d3.layout.tree().size([height, width]);
@@ -20,7 +44,7 @@ function drawSVGTree(data, domElement, width) {
       		.attr("width", width)
       		.attr("height", height)
     			.append("g")
-  			.attr("transform", "translate(40,0)");
+  			.attr("transform", "translate(-50,0)");
 
   d3.json(data, function(error, json) {
     var nodes = tree.nodes(json),
@@ -39,11 +63,11 @@ function drawSVGTree(data, domElement, width) {
         .attr("transform", function(d) { return "translate(" + d.y + "," + d.x + ")"; })
 
     node.append("circle")
-        .attr("r", 4.5);
+        .attr("r", 10);
 
     node.append("text")
-        .attr("dx", function(d) { return d.children ? -8 : 8; })
-        .attr("dy", 3)
+        .attr("dx", 25)
+        .attr("dy", 30)
         .attr("text-anchor", function(d) { return d.children ? "end" : "start"; })
         .text(function(d) { return d.name; });
   });
