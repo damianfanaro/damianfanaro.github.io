@@ -13,7 +13,7 @@ Este artículo esta dedicado a cubrir los aspectos fundamentales del framework *
 
 Tener un buen entendimiento sobre esta herramienta nos permite mejorar nuestras capacidades como desarrollador, evitar reinventar la rueda y escribir aplicaciones eficientes, entre otras grandes ventajas.
 
-<script type="text/javascript">drawSVGTree("/json/java-collections-interfaces.json", "#core-collection-interfaces")</script>
+<script type="text/javascript">drawSVGTree("/json/java-collections-interfaces.json", "#core-collection-interfaces", 840)</script>
 <div id="core-collection-interfaces"></div>
 
 ## Recursos

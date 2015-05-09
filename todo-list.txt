@@ -9,3 +9,5 @@ Lista de post pendientes
 - JMS y ActiveMQ - Proyecto de ejemplo en Github
 - Java Exceptions
 - Java Keywords
+- AngularJS
+- NodeJS
