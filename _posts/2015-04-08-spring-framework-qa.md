@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Spring Framework - Q&A"
+title: "Spring Framework - Questions and Answers"
 date: 2015-04-08
 comments: true
 category: programming
