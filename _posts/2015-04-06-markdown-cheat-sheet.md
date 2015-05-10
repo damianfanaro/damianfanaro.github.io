@@ -7,8 +7,6 @@ category: blogging
 tags: [markdown, cheat-sheet]
 ---
 
-![Markdown]({{ site.baseurl }}/images/markdown-logo.png)
-
 ## Desde la Wiki:
 
 > Markdown es un lenguaje de marcado ligero creado originalmente por John Gruber y Aaron Swartz que trata de conseguir la máxima legibilidad y "publicabilidad" tanto en sus forma de entrada como de salida, inspirándose en muchas convenciones existentes para marcar mensajes de correo electrónico usando texto plano. Markdown convierte el texto marcado en documentos XHTML bien formados, reemplazando el signo 'menor que' ('<') y los et por sus correspondientes referencias de entidad de caracteres. Markdown fue implementado originariamente en Perl por Gruber, pero desde entonces ha sido traducido a multitud de lenguajes de programación, incluyendo PHP, Python, Ruby, Java y Common Lisp. Se distribuye bajo licencia BSD y se distribuye como plugin (o al menos está disponible) en diferentes sistemas de gestión de contenidos (CMS).

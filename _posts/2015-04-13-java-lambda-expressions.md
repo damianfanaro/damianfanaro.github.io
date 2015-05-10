@@ -8,8 +8,6 @@ tags: [java, jdk-se-8]
 authors: [damianfanaro]
 ---
 
-![Java - Lambda Expressions]({{ site.baseurl }}/images/java-lambda.png)
-
 ## Guía rápida de las expresiones Lambda en Java SE 8
 
 > El presente post es una traducción del [tutorial de Oracle](http://www.oracle.com/webfolder/technetwork/tutorials/obe/java/Lambda-QuickStart/index.html).

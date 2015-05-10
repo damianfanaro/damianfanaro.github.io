@@ -7,8 +7,6 @@ category: programming
 tags: [java, regex]
 ---
 
-![Regular Expressions in Java]({{ site.baseurl }}/images/regex.png)
-
 ## Expresiones regulares
 
 Desde la [wiki](http://es.wikipedia.org/wiki/Expresi%C3%B3n_regular):

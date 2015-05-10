@@ -7,8 +7,6 @@ category: programming
 tags: [java, interviews, j2ee]
 ---
 
-![Java]({{ site.baseurl }}/images/java-logo.png)
-
 ## Guides for mastering Java to the edge
 
 In any technology say Java or some other language, it is more important and valuable to know the language fundamentals thoroughly (OOP concepts, interfaces, class, objects, threading, etc.) rather than specific frameworks or syntax. It's always easy to quickly learn new technologies when you master the fundamentals.

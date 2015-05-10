@@ -7,8 +7,6 @@ category: blogging
 tags: [jekyll, markdown, cheat-sheet]
 ---
 
-![Jekyll]({{ site.baseurl }}/images/jekyll-logo.png)
-
 ## Qué es Jekyll?
 
 [Jekyll](http://jekyllrb.com) es un generador de sitios estáticos, una herramienta de código abierto para crear simples pero poderosos sitios web de todas las formas y tamaños. Desde [la página oficial](http://jekyllrb.com/docs/home/):
