@@ -217,17 +217,15 @@ public class Sort {
 ```
 Ejecutando: `javac Sort.java && java Sort i walk the line` se produce como salida: _[i, line, the, walk]_.
 
-La otra forma de ordenar toma un _Comparator_ como parámetro en adición a la lista que se ordena. Supongamos que queremos imprimir los grupos de anagramas del ejemplo anterior en orden reverso de su tamaño (los grupos de anagramas más largos van primero).
+La otra forma de ordenar toma un _Comparator_ como parámetro en adición a la lista que se ordena. Supongamos que queremos imprimir grupos de anagramas en orden reverso respecto de su tamaño (los grupos de anagramas más largos van primero).
 
-Vale recordar que los grupos de anagramas son almacenados como valores en un _Map_, en la forma de instancias de _List_.
-
-sadsadsa
+Vale aclarar que los grupos de anagramas son almacenados como valores en un _Map_, en la forma de instancias de _List_. El código itera a través de los valores del mapa, poniendo cada lista que pasa el test de tamaño mínimo en una lista de listas. Luego el código ordena esta lista resultante, usando un comparador que espera instancias de _List_, e implementa un ordenamiento reverso por tamaño. Finalmente, el código itera a través de la lista ordenada imprimiendo sus elementos (los grupos de anagramas).
 
 ``` java
 // Make a List of all anagram groups above size threshold.
 List<List<String>> winners = new ArrayList<List<String>>();
 for (List<String> l : m.values())
-    if (l.size() >= minGroupSize)
+    if (l.size() >= minGroupSize) // Being: minGroupSize = 8
         winners.add(l);
 
 // Sort anagram groups according to size
@@ -241,7 +239,31 @@ for (List<String> l : winners)
     System.out.println(l.size() + ": " + l);
 ```
 
+El programa da como salida las siguientes secuencias:
+
+```
+12: [apers, apres, asper, pares, parse, pears, prase, presa, rapes, reaps, spare, spear]
+11: [alerts, alters, artels, estral, laster, ratels, salter, slater, staler, stelar, talers]
+10: [least, setal, slate, stale, steal, stela, taels, tales, teals, tesla]
+ 9: [estrin, inerts, insert, inters, niters, nitres, sinter, triens, trines]
+ 9: [capers, crapes, escarp, pacers, parsec, recaps, scrape, secpar, spacer]
+ 9: [palest, palets, pastel, petals, plates, pleats, septal, staple, tepals]
+ 9: [anestri, antsier, nastier, ratines, retains, retinas, retsina, stainer, stearin]
+ 8: [lapse, leaps, pales, peals, pleas, salep, sepal, spale]
+ 8: [aspers, parses, passer, prases, repass, spares, sparse, spears]
+ 8: [enters, nester, renest, rentes, resent, tenser, ternes, treens]
+ 8: [arles, earls, lares, laser, lears, rales, reals, seral]
+ 8: [earings, erasing, gainers, reagins, regains, reginas, searing, seringa]
+ 8: [peris, piers, pries, prise, ripes, speir, spier, spire]
+ 8: [ates, east, eats, etas, sate, seat, seta, teas]
+ 8: [carets, cartes, caster, caters, crates, reacts, recast, traces]
+```
+
 #### Shuffling
+
+El algoritmo de _shuffling_ es el opuesto en cuanto al objetivo del _sort_, ya que destruye cualquier par ordenado presente en una lista. Es útil cuando se implementan juegos de azar. Por ejemplo, podría ser usado para abarajar una lista de objetos de tipo _Cards_ en un juego de cartas; como así también, para generar casos de test.
+
+Esta operación tiene dos formas: una toma una lista y usa una fuente por defecto de aleatoriedad y la otra requiere que el invocador de la operación especifique el objeto `Random` que será usado como fuente de aleatoriedad.
 
 #### Routine Data Manipulation
 
@@ -254,6 +276,18 @@ La clase `Collections` provee 5 algoritmos para hacer manipulación de datos sob
 - **addAll**: Agrega todos los elementos especificados a una colección. Los elementos a ser agregados pueden estar especificados individualmente o como un arreglo.
 
 #### Searching
+
+El algoritmo _binarySearch_ busca un elemento específico en una lista ordenada y tiene dos formas de uso. La primera toma una lista y un elemento a buscar (clave de búsqueda). Esta forma asume que la lista está ordenada de forma ascendente acorde al ordenamiento natural de sus elementos. La segunda toma un `Comparator` en adición a la lista y a la clave de búsqueda, y asume que la lista está ordenada de forma ascendente acorde al comparador especificado. El algoritmo _sort_ puede ser usado previamente a la invocación de _binarySearch_.
+
+El valor de retorno es el mismo para ambas formas. Si la lista contiene la clave de búsqueda, su índice es retornado; si no, entonces el valor de retorno es: `(-(punto de inserción) - 1)`, donde el punto de inserción es la posición en la cual el valor hubiese sido insertado en la lista. Este punto será el índice del primer elemento más grande que el valor buscado, o bien, el tamaño de la lista (_list.size()_) si todos los elementos de la lista son menores que el valor especificado. Esta fórmula garantiza que el valor de retorno será siempre >= 0 si y solo si la clave de búsqueda es encontrada. Es una conveniencia para combinar un _boolean_ (found) y un _integer_ (index) en un simple valor de retorno de tipo _int_.
+
+El siguiente modismo, útil para ambas formas del algoritmo, busca un elemento en una lista y lo inserta en la posición apropiada si no está presente:
+
+``` java
+int pos = Collections.binarySearch(list, key);
+if (pos < 0)
+   l.add(-pos-1, key);
+```
 
 #### Composition
 
