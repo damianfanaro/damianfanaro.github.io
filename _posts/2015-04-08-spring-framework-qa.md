@@ -7,7 +7,15 @@ category: programming
 tags: [spring, mvc, web-frameworks]
 ---
 
-## Spring overview
+El presente artículo es una compaginación de preguntas y respuestas que generalmente se toman en las entrevistas de trabajo y que cubre varios aspectos fundamentales del framework. Para más detalle siempre es recomendable consultar la [documentación oficial](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/).
+
+El artículo original se puede ver [aquí](http://www.javacodegeeks.com/2014/05/spring-interview-questions-and-answers.html).
+
+## Spring: Nociones generales
+
+> Qué es Spring?
+
+Spring es un framework de desarrollo de código abierto
 
 1. **What is Spring?** Spring is an open source development framework for Enterprise Java. The core features of the Spring Framework can be used in developing any Java application, but there are extensions for building web applications on top of the Java EE platform. Spring framework targets to make Java EE development easier to use and promote good programming practice by enabling a POJO-based programming model.
 2. **What are the benefits of Spring Framework?** 
