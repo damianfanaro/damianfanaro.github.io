@@ -110,9 +110,10 @@ ul li:hover ul {
 }
 
 pre {
-  background-color: ##dee3e9;
+  background-color: #f7f7f7;
   margin-bottom: 25px;
   margin-top: 20px;
+  border: none;
 }
 
 code {
