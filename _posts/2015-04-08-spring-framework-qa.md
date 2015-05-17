@@ -7,9 +7,7 @@ category: programming
 tags: [spring, mvc, web-frameworks]
 ---
 
-El presente artículo es una compaginación de preguntas y respuestas que generalmente se toman en las entrevistas de trabajo y que cubre varios aspectos fundamentales del framework. Para más detalle siempre es recomendable consultar la [documentación oficial](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/).
-
-El post original se puede ver [aquí](http://www.javacodegeeks.com/2014/05/spring-interview-questions-and-answers.html).
+El presente artículo es una compaginación de preguntas y respuestas que generalmente se toman en las entrevistas de trabajo y que cubre varios aspectos fundamentales del framework. Para más detalle siempre es recomendable consultar la [documentación oficial](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/). El post original se puede ver [aquí](http://www.javacodegeeks.com/2014/05/spring-interview-questions-and-answers.html).
 
 ## Spring: Nociones generales
 
@@ -20,59 +18,66 @@ Spring es un framework de desarrollo de código abierto para aplicaciones Java E
 > Cuáles son sus beneficios?
 
 - **Lightweight:** Spring es liviano en términos de tamaño y transparencia. La versión básica pesa alrededor de 2MB.
-- **Inversion of control (IOC):** El bajo acoplamiento es alcanzado en Spring mediante la técnica de inversión de control. Los objetos exponen sus dependencias en vez de crearlas o buscar los objetos dependientes.
-- **Aspect oriented (AOP):** Spring soporta la programación orientada a aspectos y separa la lógica de negocios de los servicios del sistema.
+- **Inversion of Control (IOC):** El bajo acoplamiento es alcanzado en Spring mediante la técnica de inversión de control. Los objetos exponen sus dependencias en vez de crearlas o buscar los objetos dependientes.
+- **Aspect Oriented (AOP):** Spring soporta la programación orientada a aspectos y separa la lógica de negocios de los servicios del sistema.
 - **Container:** Spring contiene y administra el ciclo de vida y configuración de los objetos de la aplicación.
 - **MVC Framework:** El modulo web de Spring es una herramienta bien diseñada y adoptada que sigue el modelo MVC (Model View Controller), el cual provee una gran alternativa para el desarrollo de aplicaciones web.
 - **Transaction Management:** Spring provee una consistente interfaz para la administración de transacciones que puede escalar para transacciones locales o transacciones globales (JTA).
 - **Exception Handling:** Spring provee una conveniente API para traducir excepciones específicas de una tecnología (arrojadas por JDBC, Hibernate, JDO, etc.) en consistentes excepciones sin chequear.
 
-> **Which are the Spring framework modules?**
+> Cuáles son los modulos básicos de Spring?
 
-	The basic modules of the Spring framework are:
-	- Core module
-	- Bean module
-	- Context module
-	- Expression Language module
-	- JDBC module
-	- ORM module
-	- OXM module
-	- Java Messaging Service(JMS) module
-	- Transaction module
-	- Web module
-	- Web-Servlet module
-	- Web-Struts module
-	- Web-Portlet module
+![Spring Modules]({{ site.baseurl }}/images/spring-overview.png)
 
-> **Explain the Core Container (Application context) module:** This is the basic Spring module, which provides the fundamental functionality of the Spring framework. BeanFactory is the heart of any spring-based application. Spring framework was built on the top of this module, which makes the Spring container.
+> Explicar el módulo Core Container
 
-> **BeanFactory – BeanFactory implementation example:** A BeanFactory is an implementation of the factory pattern that applies Inversion of Control to separate the application’s configuration and dependencies from the actual application code.
-The most commonly used BeanFactory implementation is the XmlBeanFactory class.
+Es el módulo básico de Spring, el cual provee la funcionalidad fundamental del framework. **BeanFactory** es el corazón de cualquier aplicación basada en Spring. El framework entero está construido sobre el tope de este último y compone una pieza esencial del Core Container.
 
-> **XMLBeanFactory:** The most useful one is org.springframework.beans.factory.xml.XmlBeanFactory, which loads its beans based on the definitions contained in an XML file. This container reads the configuration metadata from an XML file and uses it to create a fully configured system or application.
+BeanFactory es una implementación del patrón de diseño _factory_ que aplica la inversión de control (IoC) para separar las dependencias y configuración de una aplicación del código actual de dicha aplicación. La implementación más comúnmente usada es la clase `XMLBeanFactory`.
 
-> **Explain the AOP module:** The AOP module is used for developing aspects for our Spring-enabled application. Much of the support has been provided by the AOP Alliance in order to ensure the interoperability between Spring and other AOP frameworks. This module also introduces metadata programming to Spring.
+XmlBeanFactory está en el paquete _org.springframework.beans.factory.xml_. Se encarga de cargar sus beans basándose en las definiciones contenidas en archivos XML. El contenedor lee los metadatos de configuración de un archivo XML y lo usa para crear un sistema o aplicación completamente configurado.
 
-> **Explain the JDBC abstraction and DAO module:** With the JDBC abstraction and DAO module we can be sure that we keep up the database code clean and simple, and prevent problems that result from a failure to close database resources. It provides a layer of meaningful exceptions on top of the error messages given by several database servers. It also makes use of Spring’s AOP module to provide transaction management services for objects in a Spring application.
+Actualmente se puede lograr el mismo objetivo de forma programática, es decir, mediante la programación de clases Java.
 
-> **Explain the object/relational mapping integration module:** Spring also supports for using of an object/relational mapping (ORM) tool over straight JDBC by providing the ORM module. Spring provides support to tie into several popular ORM frameworks, including Hibernate, JDO, and iBATIS SQL Maps. Spring’s transaction management supports each of these ORM frameworks as well as JDBC.
+> Explicar el módulo AOP
 
-> **Explain the web module:** The Spring web module is built on the application context module, providing a context that is appropriate for web-based applications. This module also contains support for several web-oriented tasks such as transparently handling multipart requests for file uploads and programmatic binding of request parameters to your business objects. It also contains integration support with Jakarta Struts.
+AOP es usado para desarrollar aspectos para nuestra aplicación Spring. Mucho del soporte ha sido provisto por la AOP Alliance para asegurar la interoperabilidad entre Spring y otros frameworks AOP. Este módulo también introduce programación de metadatos a Spring.amming to Spring.
 
-> **Explain the Spring MVC module:** MVC framework is provided by Spring for building web applications. Spring can easily be integrated with other MVC frameworks, but Spring’s MVC framework is a better choice, since it uses IoC to provide for a clean separation of controller logic from business objects. With Spring MVC you can declaratively bind request parameters to your business objects.
+> Explicar el módulo DAO y la abstracción JDBC
 
-> **Spring configuration file:** Spring configuration file is an XML file. This file contains the classes information and describes how these classes are configured and introduced to each other.
+Con el módulo DAO (del inglés, Data Access Object) y la abstracción JDBC, podemos asegurar que mantenemos el código de base de datos limpio y simple y que prevenimos problemas que resultan de una falla al cerrar los recursos de las bases de datos. Provee una capa de excepciones significativas acorde a los mensajes de error dados por varios servidores de bases de datos. También hace uso del módulo AOP de Spring para proveer servicios de administración de transacciones para objetos en una aplicación Spring.
 
-> **What is Spring IoC container?** The Spring IoC is responsible for creating the objects,managing them (with dependency injection (DI)), wiring them together, configuring them, as also managing their complete lifecycle.
+> Explicar el módulo de integración de mapeo objeto/relacional
 
-> **What are the benefits of IOC?** IOC or dependency injection minimizes the amount of code in an application. It makes easy to test applications, since no singletons or JNDI lookup mechanisms are required in unit tests. Loose coupling is promoted with minimal effort and least intrusive mechanism. IOC containers support eager instantiation and lazy loading of services.
+Spring también soporta el uso de ORM's (del inglés, Object Relational Mapping) directamente sobre JDBC mediante el módulo ORM. Se ajusta a varios frameworks ORM populares, incluyendo Hibernate, JDO e iBATIS SQL Maps. La administración de transacciones de Spring soporta cada uno de estos frameworks así como también JDBC.
 
-> **What are the common implementations of the ApplicationContext?** 
-	- The FileSystemXmlApplicationContext container loads the definitions of the beans from an XML file. The full path of the XML bean configuration file must be provided to the constructor.
-	- The ClassPathXmlApplicationContext container also loads the definitions of the beans from an XML file. Here, you need to set CLASSPATH properly because this container will look bean configuration XML file in CLASSPATH.
-	- The WebXmlApplicationContext: container loads the XML file with definitions of all beans from within a web application.
+> Explicar el módulo WEB
 
-> **What is the difference between Bean Factory and ApplicationContext?** Application contexts provide a means for resolving text messages, a generic way to load file resources (such as images), they can publish events to beans that are registered as listeners. In addition, operations on the container or beans in the container, which have to be handled in a programmatic fashion with a bean factory, can be handled declaratively in an application context. The application context implements MessageSource, an interface used to obtain localized messages, with the actual implementation being pluggable.
+Está construido en el módulo del contexto de aplicación, dando un contexto que es apropiado para aplicaciones basades en la web. También contiene soporte para varias tareas orientadas a la web tales como el manejo transparente de _multipart requests_ para la carga de archivos y el _binding_ programático de los parámetros de una request a objetos del negocio.
+
+De aquí se desprende el framework MVC de Spring que sirve para construir aplicaciones web. Spring puede fácilmente integrarse con otros frameworks MVC, pero Spring MVC es la mejor opción ua que usa IoC para proveer una limpia separación de la lógica de los controladores y los objetos del negocio. Con Spring MVC se puede declarativamente ligar parámetros de una request a objetos Java del negocio.
+
+> Archivos de configuración de Spring
+
+Estos archivos contienen la información de las clases y describe como éstas están configuradas y relacionadas unas con otras.
+
+> Qué es Spring IoC?
+
+Spring IoC es responsable de la creación de objetos, su administración (con injección de dependencias (DI)), su configuración y control completo de su ciclo de vida.
+
+> Cuáles son los beneficios de la IoC?
+
+La IoC junto con la DI (del inglés, Dependency Injection) minimizan la cantidad de código en una aplicación. Hace que sea fácil testear aplicaciones ya que no son requeridos mecanismos de búsqueda JNDI o _singletons_ en los tests de unidad. Bajo acoplamiento es promovido con mínimo esfuerzo y menos mecanismos intrusivos. Los contenedores de IoC soportan instanciación _eager_ y carga _lazy_ de servicios.
+
+> Cuáles son las implementaciones comunes del **ApplicationContext**?
+
+- El contenedor **FileSystemXmlApplicationContext** que carga las definiciones de los beans desde un archivo XML. La ruta completa de estos archivos tiene que se provista al constructor.
+- El contenedor **ClassPathXmlApplicationContext** que también carga las definiciones desde un archivo XML. Aquí, se necesita configurar correctamente el CLASSPATH ya que el contenedor buscará los archivos de configuración que se encuentren dentro del mismo.
+- El contenedor **WebXmlApplicationContext** que carga las definiciones que estén en archivos XML de todos los beans dentro de una aplicación web.
+
+Los ApplicationContext's proveen un medio para resolver mensajes de texto, una forma genérica de cargar archivos de recursos (como imágenes por ejemplo). Pueden publicar eventos a beans que están registrados como _listeners_. Además, las operaciones en el contenedor o beans en el contenedor (el cual tiene que estar manejados de modo programático con un BeanFactory),
+
+Application contexts provide a means for resolving text messages, a generic way to load file resources (such as images), they can publish events to beans that are registered as listeners. In addition, operations on the container or beans in the container, which have to be handled in a programmatic fashion with a bean factory, can be handled declaratively in an application context. The application context implements MessageSource, an interface used to obtain localized messages, with the actual implementation being pluggable.
 
 > **What does a Spring application look like?** 
 	- An interface that defines the functions.
