@@ -110,7 +110,7 @@ ul li:hover ul {
 }
 
 pre {
-  background-color: #f7f7f7;
+  background-color: rgba(170, 170, 170, 0.21);
   margin-bottom: 25px;
   margin-top: 20px;
   border: none;
