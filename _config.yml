@@ -1,11 +1,11 @@
 # Jekyll configuration
 
-name: JBlog
-description: Java Blog
+name: Damian Fanaro
+description: Blog personal donde comparto y escribo artículos de interés relacionados con tecnología
 
 # url is currently only used only for the RSS feed in feed.xml
 
-url: http://damianfanaro.github.io
+url: http://damianfanaro.com
 
 # baseurl will often be '', but for a project page on gh-pages, it needs to
 # be the project name.
@@ -20,7 +20,7 @@ github: 'damianfanaro/damianfanaro.github.io'
 
 # Set this to your UA-# value, or '' to disable the block completely
 
-gaaccount: ''
+gaaccount: 'UA-67086722-1'
 
 # Set this to your disqus shortname to enable comments. Note that the 'comments'
 # setting below must also be true. Individual posts can override 'comments' to
