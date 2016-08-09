@@ -32,6 +32,6 @@ comments: true
 permalink: /post/:title
 paginate: 3
 
-highlighter: pygments
+highlighter: rouge
 
 exclude: ['README.md', 'LICENSE']
