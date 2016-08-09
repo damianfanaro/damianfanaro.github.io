@@ -124,4 +124,6 @@ PLATFORMS
 
 DEPENDENCIES
   github-pages
-  redcarpet
+
+BUNDLED WITH
+   1.11.2
