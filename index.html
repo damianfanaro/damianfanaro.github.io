@@ -2,31 +2,6 @@
 layout: default
 ---
 
-<div>
-
-	<h2 style="padding-left: 25px;">Bienvenidos a JBlog!</h2>
-	
-	<blockquote>
-		<p>
-			El presente blog intenta cubrir temas relacionados con Java y sus frameworks subyacentes. También se incluyen algunas temáticas generales como por ejemplo <a href="{{ site.baseurl }}/post/ascii-table/" target="blank">la tabla ASCII</a> o <a href="{{ site.baseurl }}/post/java-regex/" target="blank">las expresiones regulares</a>.
-		</p>
-		<p>
-			Hay artículos extensos y otros no tanto. Algunos escritos en español y otros en inglés. Siempre que se tome información de otra fuente habrá un link o cita a la misma.
-		</p>
-		<p>
-			El sitio completo esta hosteado en Github así que pueden clonarlo y/o forkearlo. Fue creado con Jekyll que es una herramienta generadora de sitios estáticos (por defecto es la usada en Github).
-		</p>
-		<br>
-		<p>
-			<code style="font-size: 1.2em;">Sugerencias, contribuciones y comentarios serán altamente apreciados!</code>
-		</p>
-		<br>
-		<a href="https://github.com/damianfanaro/damianfanaro.github.io" target="blank" style="color: black;"><i class="fa fa-github-alt" style="font-size: 4em; margin-right: 10px;"></i></a>
-		<a href="{{ site.baseurl }}/feed.xml" target="blank" style="color: black;"><i class="fa fa-rss" style="font-size: 4em;"></i></a>
-	</blockquote>
-
-</div>
-
 {% for post in paginator.posts %}
 <div class="article">
     <div class="well">
