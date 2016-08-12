@@ -30,7 +30,7 @@ disqus: 'damianfanaro'
 comments: true
 
 permalink: /post/:title
-paginate: 3
+paginate: 10
 
 highlighter: rouge
 
