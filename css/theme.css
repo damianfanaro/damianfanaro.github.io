@@ -3,6 +3,7 @@ body {
     padding-bottom: 0px;
     background-color: #fff;
     font-size: 13px;
+    background: url(img/dots_body.png) repeat;
 }
 
 .row {
