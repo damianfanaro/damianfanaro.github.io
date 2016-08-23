@@ -11,6 +11,7 @@ tags: [unix]
 
 Generally they works in Debian-based distros.
 
+```
 Tar to file: tar -zcvf tarfile.tar.gz foldername_tocompress
 Untar to folder: tar zxvf file.tar.gz -C /path/to/somedirectory
 Open SSH Server - File config: /etc/ssh/sshd_config
@@ -30,6 +31,7 @@ Disable service from startup: update-rc.d -f apache2 remove
 Remove old kernels: dpkg -l 'linux-*' | sed '/^ii/!d;/'"$(uname -r | sed "s/\(.*\)-\([^0-9]\+\)/\1/")"'/d;s/^[^ ]* [^ ]* \([^ ]*\).*/\1/;/[0-9]/!d' | xargs sudo apt-get -y purge
 Add user with password and home directory: useradd -g users -p testpwd -d /home/testuser -m testuser
 Firewall:
-- sudo ufw enable/disable
-- sudo ufw allow <port>
-- sudo ufw status verbose
+* sudo ufw enable/disable
+* sudo ufw allow <port>
+* sudo ufw status verbose
+```
