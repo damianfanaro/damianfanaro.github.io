@@ -9,7 +9,7 @@ tags: [unix]
 
 ## Useful Unix commands
 
-Generally they works in Debian-based distros.
+Generally they work in Debian-based distros.
 
 ```
 Tar to file: tar -zcvf tarfile.tar.gz foldername_tocompress
