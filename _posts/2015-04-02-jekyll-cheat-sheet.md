@@ -5,6 +5,7 @@ date: 2015-04-02
 comments: true
 category: blogging
 tags: [jekyll, markdown, cheat-sheet]
+description: Brief introduction to Jekyll, the static site generator of this blog.
 ---
 
 ## Qué es Jekyll?

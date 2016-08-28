@@ -5,6 +5,7 @@ date: 2015-04-14
 comments: true
 category: programming
 tags: [java, regex]
+description: Post about how to use regular expressions to recognize and validate string patterns.
 ---
 
 ## Expresiones regulares

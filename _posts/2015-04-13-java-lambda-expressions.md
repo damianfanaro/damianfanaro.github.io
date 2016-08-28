@@ -6,6 +6,7 @@ comments: true
 category: programming
 tags: [java, jdk-se-8]
 authors: [damianfanaro]
+description: Explanation and examples of one the major changes introduced in Java SE8.
 ---
 
 ## Guía rápida de las expresiones Lambda en Java SE 8

@@ -5,6 +5,7 @@ date: 2015-04-07
 comments: true
 category: programming
 tags: [java, interviews, j2ee]
+description: Summarizes a compilation of Java interview questions for those who want to be ready for taking a new job or just improve the Java knowledge.
 ---
 
 ## Guides for mastering Java to the edge

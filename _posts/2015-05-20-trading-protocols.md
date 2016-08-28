@@ -5,6 +5,7 @@ date: 2015-05-20
 comments: true
 category: general
 tags: [trading, financial-markets, java]
+description: Brief description about existing trading protocols in the financial market.
 ---
 
 ## Trading Protocols

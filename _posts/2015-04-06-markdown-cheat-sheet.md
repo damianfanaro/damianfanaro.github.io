@@ -5,6 +5,7 @@ date: 2015-04-06
 comments: true
 category: blogging
 tags: [markdown, cheat-sheet]
+description: Basic tips for creating text in Markdown format style.
 ---
 
 ## Desde la Wiki:
