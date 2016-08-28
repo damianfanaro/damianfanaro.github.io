@@ -84,9 +84,9 @@ Script at system startup:
 update-rc.d <SCRIPT> defaults
 ```
 
-Generate SHA password:
+Encrypt with SHA256:
 ```
-echo -n "YourPassword{dfanaro}" | sha256sum
+echo -n "SomethingToEncrypt" | sha256sum
 ```
 
 Disable service from startup:
