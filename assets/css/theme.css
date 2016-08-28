@@ -6,6 +6,10 @@ body {
     background: url(img/dots_body.png) repeat;
 }
 
+.btc-box {
+    width: 300px;
+}
+
 .row {
     margin-right: 0;
     margin-left: 0;
