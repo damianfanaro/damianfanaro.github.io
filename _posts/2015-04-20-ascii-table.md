@@ -6,14 +6,15 @@ comments: true
 category: general
 tags: [cheat-sheet]
 authors: [damianfanaro]
+description: The ASCII table presented online, XLSX format for edition and PDF ready to download and print.
 ---
 
 ## The periodic table for software developers
 
 **Download it here**:
 
-- [Ready to print version]({{ site.baseurl }}/files/ASCII-TABLE.pdf)
-- [XLS for edition version]({{ site.baseurl }}/files/ASCII-TABLE.xlsx)
+- [Ready to print version]({{ site.baseurl }}/assets/files/ASCII-TABLE.pdf)
+- [XLSX for edition version]({{ site.baseurl }}/assets/files/ASCII-TABLE.xlsx)
 
 |    Dec|    Hex|    Oct|          HTML|      Chr|               Description|    
 |-------|-------|-------|--------------|---------|--------------------------|    

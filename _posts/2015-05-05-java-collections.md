@@ -5,6 +5,7 @@ date: 2015-05-05
 comments: true
 category: programming
 tags: [java]
+description: An overview of the collections framework in Java. It goes over the most essentials ones.
 ---
 
 ## Colecciones en Java
@@ -21,7 +22,7 @@ Un framework de colecciones es una arquitectura unificada que contiene lo siguie
 
 En este contexto, las interfaces son la base del framework. A continuación se muestra como las mismas forman una estructura jerárquica:
 
-![Core Collection Interfaces]({{ site.baseurl }}/images/colls-coreInterfaces.gif)
+![Core Collection Interfaces]({{ site.baseurl }}/assets/images/colls-coreInterfaces.gif)
 
 Un `Set` es un tipo especial de `Collection`; un `SortedSet` es un tipo especial de `Set`; y así sucesivamente. La jerarquía consiste de dos árboles ya que `Map` no es una verdadera `Collection`.
 

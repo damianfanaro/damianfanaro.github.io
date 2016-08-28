@@ -1,7 +1,7 @@
-<div style="position:absolute; left:0; top:20px; bottom: 0; width: 250px;">
+<div>
 
     <div class="sidebar well">
-        <h1>Recent articles</h1>
+        <h1>Latest 5 articles</h1>
         <ul>
             {% for post in site.posts limit:5 %}
             <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>

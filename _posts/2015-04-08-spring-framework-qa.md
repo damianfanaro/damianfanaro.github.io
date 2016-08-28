@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "Spring - Questions and Anwsers"
+title: "Spring - Questions and Answers"
 date: 2015-04-08
 comments: true
 category: programming
 tags: [spring, mvc, web-frameworks]
+description: Interview questions regarding Spring Framework.
 ---
 
 El presente artículo es una compaginación de preguntas y respuestas que generalmente se toman en las entrevistas de trabajo y que cubre varios aspectos fundamentales del framework. Para más detalle siempre es recomendable consultar la [documentación oficial](http://docs.spring.io/spring/docs/current/spring-framework-reference/html/). El post original se puede ver [aquí](http://www.javacodegeeks.com/2014/05/spring-interview-questions-and-answers.html).
@@ -27,7 +28,7 @@ Spring es un framework de desarrollo de código abierto para aplicaciones Java E
 
 > Cuáles son los modulos básicos de Spring?
 
-![Spring Modules]({{ site.baseurl }}/images/spring-overview.png)
+![Spring Modules]({{ site.baseurl }}/assets/images/spring-overview.png)
 
 > Explicar el módulo Core Container
 

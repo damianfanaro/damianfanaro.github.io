@@ -609,18 +609,18 @@ Example:
 Images have a similar syntax to links but include a preceding exclamation point.
 
 ``` 
-![Java]({{ site.baseurl }}/images/java-logo.png)
+![Java]({{ site.baseurl }}/assets/images/java-logo.png)
 ```
 
-![Java]({{ site.baseurl }}/images/java-logo.png)
+![Java]({{ site.baseurl }}/assets/images/java-logo.png)
 
 or
 
 ``` 
-![Java]({{ site.baseurl }}/images/java-logo.png "This is a Java logo")
+![Java]({{ site.baseurl }}/assets/images/java-logo.png "This is a Java logo")
 ```
 
-![Java]({{ site.baseurl }}/images/java-logo.png "This is a Java logo")
+![Java]({{ site.baseurl }}/assets/images/java-logo.png "This is a Java logo")
 
 Like links, images also have a footnote style syntax:
 
@@ -631,6 +631,6 @@ Like links, images also have a footnote style syntax:
 
 With a reference later in the document defining the URL location:
 
-[id]: {{ site.baseurl }}/images/java-logo.png "Java"
+[id]: {{ site.baseurl }}/assets/images/java-logo.png "Java"
 
-    [id]: {{ site.baseurl }}/images/java-logo.png  "Java"
+    [id]: {{ site.baseurl }}/assets/images/java-logo.png  "Java"
