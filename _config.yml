@@ -1,9 +1,9 @@
 # Jekyll configuration
 
 name: Damian Fanaro
-description: Blog personal donde comparto y escribo artículos de interés relacionados con tecnología
+description: Personal blog where I share tech knowledge
 
-# url is currently only used only for the RSS feed in feed.xml
+# url is currently only used for the RSS feed in feed.xml
 
 url: http://damianfanaro.com
 

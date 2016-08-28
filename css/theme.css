@@ -13,31 +13,30 @@ body {
 
 /* WebKit/Blink Browsers */
 ::selection {
-  color: #fff;
-  background: #191919;
+    color: #fff;
+    background: #191919;
 }
 
 /* Gecko Browsers */
 ::-moz-selection {
-  color: #fff;
-  background: #191919;
+    color: #fff;
+    background: #191919;
 }
 
 .h5, h5 {
-  font-size: 13px;
+    font-size: 13px;
 }
 
-
 .h4, h4 {
-  font-size: 16px;
+    font-size: 16px;
 }
 
 .h3, h3 {
-  font-size: 20px;
+    font-size: 20px;
 }
 
 .h2, h2 {
-  font-size: 24px;
+    font-size: 24px;
 }
 
 blockquote {
@@ -81,45 +80,43 @@ blockquote {
 }
 
 .author {
-  color: #ee4444;
+    color: #ee4444;
 }
 
 .well {
-  background-color: #ffffff;
-  padding: 0px;
-
+    padding: 0;
 }
 
 .well h1 {
-  color: #000000;
+    color: #000000;
 }
 
 #headerButtons > li > a:hover, .nav .navbar-nav > li > a:focus {
-  color: white;
-  background: -webkit-linear-gradient(top, #4387fd, #4683ea);
+    color: white;
+    background: -webkit-linear-gradient(top, #4387fd, #4683ea);
 }
 
 .pad-top {
-  padding-top: 20px;
+    padding-top: 20px;
 }
 
 .page_number {
-  color: white;
+    color: white;
 }
 
 ul li ul {
-  display: none;
+    display: none;
 }
 
 ul li:hover ul {
-  display: block;
+    display: block;
 }
 
 pre {
-  background-color: rgba(170, 170, 170, 0.21);
-  margin-bottom: 25px;
-  margin-top: 20px;
-  border: none;
+    background-color: rgba(170, 170, 170, 0.21);
+    margin-bottom: 25px;
+    margin-top: 20px;
+    border: none;
 }
 
 code {
@@ -127,52 +124,52 @@ code {
 }
 
 pre code {
-  overflow: auto;
-  word-wrap: normal;
-  white-space: pre;
+    overflow: auto;
+    word-wrap: normal;
+    white-space: pre;
 }
 
 hr {
-  border-top: 1px solid #17181B;
+    border-top: 1px solid #17181B;
 }
 
 .td-bottom-line {
-  border-bottom: 1px solid rgb(51, 122, 188);
+    border-bottom: 1px solid rgb(51, 122, 188);
 }
 
 #disqus_thread {
-  padding-top: 60px;
+    padding-top: 60px;
 }
 
 .category-label {
-  color: white;
+    color: white;
 }
 
 a.list-group-item:focus, a.list-group-item:hover {
-  background: -webkit-linear-gradient(top, #4387fd, #4683ea);
+    background: -webkit-linear-gradient(top, #4387fd, #4683ea);
 }
 
 a.list-group-item:hover > h5 {
-  color: white;
+    color: white;
 }
 
-.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
-  color: white;
-  text-decoration: none;
-  background-color: #c7254e;
+.dropdown-menu > li > a:focus, .dropdown-menu > li > a:hover {
+    color: white;
+    text-decoration: none;
+    background-color: #c7254e;
 }
 
 .dropdown-menu {
-  font-size: 12px; 
+    font-size: 12px;
 }
 
 #post-header {
-  padding-bottom: 15px;
+    padding-bottom: 15px;
 }
 
 iframe {
-  padding-top: 5px;
-  padding-bottom: 25px;
+    padding-top: 5px;
+    padding-bottom: 25px;
 }
 
 .label {
@@ -180,50 +177,50 @@ iframe {
 }
 
 .list-group-item-heading {
-  margin-top: 0px;
-  margin-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
 }
 
-.table>thead>tr>th {
-  padding: 7px;
+.table > thead > tr > th {
+    padding: 7px;
 }
 
-.table>tbody>tr>td {
-  padding: 3px;
+.table > tbody > tr > td {
+    padding: 3px;
 }
 
-.table>tbody>tr:hover {
-  color: white;
-  background-color: #c7254e;
+.table > tbody > tr:hover {
+    color: white;
+    background-color: #c7254e;
 }
 
 table {
-  background-color: white;
+    background-color: white;
 }
 
 thead {
-  background: #575757;
-  color: white;
+    background: #575757;
+    color: white;
 }
 
 a, a:hover {
-  color: #15c;
+    color: #15c;
 }
 
 /* D3 CSS */
 
 .node circle {
-  fill: #fff;
-  stroke: steelblue;
-  stroke-width: 1.5px;
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
 }
 
 .node {
-  font: 10px sans-serif;
+    font: 10px sans-serif;
 }
 
 .link {
-  fill: none;
-  stroke: #ccc;
-  stroke-width: 1.5px;
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
 }

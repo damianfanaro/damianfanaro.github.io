@@ -1,6 +1,6 @@
-## Java Blog
+## Java Blog and related stuff
 
-Language: Spanish and English.
+Language: English.
 
 
 This blog uses Jekyll-Clean Theme as basis

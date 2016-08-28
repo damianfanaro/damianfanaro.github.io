@@ -11,21 +11,21 @@ layout: default
     <div id="post-content">
 
         {% for tag in site.data.tags %}
-            
-            {% if forloop.first %}
-                <div class="list-group">
+
+        {% if forloop.first %}
+        <div class="list-group">
             {% endif %}
-            
+
             <a href="{{ site.baseurl}}/jblog/tag/{{ tag.slug }}/" class="list-group-item">
                 <h5 class="list-group-item-heading">{{ tag.name }}</h5>
             </a>
 
             {% if forloop.last %}
-                </div>
-            {% endif %}
+        </div>
+        {% endif %}
 
         {% endfor %}
-    
+
     </div>
 
 </div>

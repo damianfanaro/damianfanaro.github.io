@@ -7,11 +7,11 @@ layout: default
 <!-- Article -->
 
 <div class="article">
-  
+
   <div class="well">
 
       <!-- Article title -->
-      
+
       <h1><a href="{{ site.baseurl}}{{ page.url }}">{{ page.date | date: "%b %-d, %Y" }} - {{ page.title }}</a></h1>
 
       <!-- Tags and categories content -->
@@ -47,19 +47,33 @@ layout: default
       {% endif %}
 
       <p id="post-meta">Posted {{ category_content }}{{ tags_content }}</p>
-      
+
       <!-- Disqus comments link -->
 
       {% if site.comments == true and page.comments == true and site.disqus != '' %}
         <p class="author"><a href="#disqus_thread">Comments</a></p>
       {% endif %}
-      
+
       <!-- Article content -->
 
       <div class="post-content">
         {{ content }}
       </div>
-  
+
+      <!-- Pagination -->
+
+      <div class="pagination well">
+
+          {% if page.next %}
+          <a class="btn btn-default" href="{{ site.baseurl}}{{ page.next.url }}" class="next"><< Recent</a>
+          {% endif %}
+
+          {% if page.previous %}
+          <a class="btn btn-default" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">Older >></a>
+          {% endif %}
+
+      </div>
+
       <!-- Disqus comments -->
 
       {% if page.comments %}
@@ -72,21 +86,5 @@ layout: default
   </div>
 
 </div>
-
-<!-- Pagination -->
-
-<!--
-<div class="pagination">
-    
-    {% if page.next %}
-      <a class="btn btn-default" href="{{ site.baseurl}}{{ page.next.url }}" class="next">Recientes</a>
-    {% endif %}
-    
-    {% if page.previous %}
-      <a class="btn btn-default" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">Anteriores</a>
-    {% endif %}
-
-</div>
--->
 
 {% include disqus-comments.html %}
