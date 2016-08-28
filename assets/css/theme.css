@@ -91,6 +91,13 @@ blockquote {
     padding: 0;
 }
 
+.well2 {
+    padding: 10px;
+    background-color: #ececec;
+    border: 0px solid;
+    border-radius: 10px;
+}
+
 .well h1 {
     color: #000000;
 }
