@@ -106,6 +106,10 @@ blockquote {
     background: -webkit-linear-gradient(top, #4387fd, #4683ea);
 }
 
+.navbar-inverse {
+    background-image: url("img/navbar_bg.png");
+}
+
 .pad-top {
     padding-top: 20px;
 }
