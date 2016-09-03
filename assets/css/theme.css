@@ -5,6 +5,12 @@ body {
     background: #fff url(img/dots_body.png) repeat;
 }
 
+* {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
 .btc-box {
     width: 300px;
 }
