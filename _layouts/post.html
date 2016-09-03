@@ -65,11 +65,11 @@ layout: default
       <div class="pagination well">
 
           {% if page.next %}
-          <a class="btn btn-default" href="{{ site.baseurl}}{{ page.next.url }}" class="next"><< Recent</a>
+          <a class="btn btn-default" href="{{ site.baseurl}}{{ page.next.url }}" class="next"><< {{ page.next.title }}</a>
           {% endif %}
 
           {% if page.previous %}
-          <a class="btn btn-default" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">Older >></a>
+          <a class="btn btn-default" href="{{ site.baseurl}}{{ page.previous.url }}" class="previous">{{ page.previous.title }} >></a>
           {% endif %}
 
       </div>
