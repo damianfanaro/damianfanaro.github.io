@@ -8,33 +8,38 @@ tags: [markdown, cheat-sheet]
 description: Basic tips for creating text in Markdown format style.
 ---
 
-## Desde la Wiki:
+Markdown is the markup language used on this blog, mainly to write the posts. Check [this post](https://raw.githubusercontent.com/damianfanaro/damianfanaro.github.io/master/_posts/2015-04-06-markdown-cheat-sheet.md) in Markdown format to get an idea. Formally, [Wikipedia says](https://en.wikipedia.org/wiki/Markdown):
 
-> Markdown es un lenguaje de marcado ligero creado originalmente por John Gruber y Aaron Swartz que trata de conseguir la máxima legibilidad y "publicabilidad" tanto en sus forma de entrada como de salida, inspirándose en muchas convenciones existentes para marcar mensajes de correo electrónico usando texto plano. Markdown convierte el texto marcado en documentos XHTML bien formados, reemplazando el signo 'menor que' ('<') y los et por sus correspondientes referencias de entidad de caracteres. Markdown fue implementado originariamente en Perl por Gruber, pero desde entonces ha sido traducido a multitud de lenguajes de programación, incluyendo PHP, Python, Ruby, Java y Common Lisp. Se distribuye bajo licencia BSD y se distribuye como plugin (o al menos está disponible) en diferentes sistemas de gestión de contenidos (CMS).
+> Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
 
-## Headings
+In the following sections are some tips to start creating text in Markdown format.
+
+### Headings
 
 Headings from `h1` through `h6` are constructed with a `#` for each level:
 
-``` 
-# h1 Heading
-## h2 Heading
-### h3 Heading
-#### h4 Heading
-##### h5 Heading
-###### h6 Heading
-```
+    # h1 Heading
+    ## h2 Heading
+    ### h3 Heading
+    #### h4 Heading
+    ##### h5 Heading
+    ###### h6 Heading
 
 Renders to:
 
 # h1 Heading
+
 ## h2 Heading
+
 ### h3 Heading
+
 #### h4 Heading
+
 ##### h5 Heading
+
 ###### h6 Heading
 
-HTML:
+HTML output:
 
 ``` html
 <h1>h1 Heading</h1>
@@ -45,13 +50,13 @@ HTML:
 <h6>h6 Heading</h6>
 ```
 
-## Horizontal Rules
+### Horizontal Rules
 
-The HTML `<hr>` element is for creating a "thematic break" between paragraph-level elements. In , you can create a `<hr>` with any of the following:
+The HTML `<hr>` element is for creating a "thematic break" between paragraph-level elements. In Markdown, you can create a `<hr>` with any of the following:
 
-* `___`: three consecutive underscores
-* `---`: three consecutive dashes
-* `***`: three consecutive asterisks
+* `___` three consecutive underscores
+* `---` three consecutive dashes
+* `***` three consecutive asterisks
 
 Renders to:
 
@@ -61,7 +66,7 @@ ___
 
 ***
 
-## Body Copy 
+### Body Copy 
 
 Body copy written as normal, plain text will be wrapped with `<p></p>` tags in the rendered HTML.
 
@@ -70,15 +75,16 @@ So this body copy:
 ``` 
 Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.
 ```
+
 Renders to this HTML:
 
 ``` html
 <p>Lorem ipsum dolor sit amet, graecis denique ei vel, at duo primis mandamus. Et legere ocurreret pri, animal tacimates complectitur ad cum. Cu eum inermis inimicus efficiendi. Labore officiis his ex, soluta officiis concludaturque ei qui, vide sensibus vim ad.</p>
 ```
 
-## Emphasis
+### Emphasis
 
-### Bold
+#### Bold
 For emphasizing a snippet of text with a heavier font-weight.
 
 The following snippet of text is **rendered as bold text**.
@@ -86,6 +92,7 @@ The following snippet of text is **rendered as bold text**.
 ``` 
 **rendered as bold text**
 ```
+
 Renders to:
 
 **rendered as bold text**
@@ -96,7 +103,7 @@ And this HTML:
 <strong>rendered as bold text</strong>
 ```
 
-### Italics
+#### Italics
 For emphasizing a snippet of text with italics.
 
 The following snippet of text is _rendered as italicized text_.
@@ -115,30 +122,31 @@ And this HTML:
 <em>rendered as italicized text</em>
 ```
 
-### Strikethrough
+#### Strikethrough
 In GFM you can do strickthroughs. 
 
 ``` 
 ~~Strike through this text.~~
 ```
+
 Which renders to:
 
 ~~Strike through this text.~~
 
-### Resumen de elementos HTML inline
+### HTML Inline Elements
 
-La lista completa se puede encontrar en [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
+See the complete list in [Mozilla Developer Network](https://developer.mozilla.org/en-US/docs/Web/HTML/Element).
 
-- **Texto en negrita**, usar `<strong>`.
-- *Texto en cursiva*, use `<em>`.
-- En abreviaciones, como <abbr title="HyperText Markup Langage">HTML</abbr>, usar `<abbr>` con el atributo opcional `title` para la frase completa.
-- En citas, como <cite>&mdash; John Doe</cite>, usar `<cite>`.
-- Con <del>texto borrado</del> usar `<del>` e `<ins>` para <ins>texto insertado</ins>.
-- Para supertexto <sup>texto</sup> usar `<sup>` y `<sub>` para subtexto <sub>text</sub>.
+- **Text in bold**, use `<strong>`.
+- *Text in italics*, use `<em>`.
+- On abbreviations like <abbr title="HyperText Markup Langage">HTML</abbr>, use `<abbr>` as the optional attribute `title` for the whole phrase.
+- On quotes, like <cite>&mdash; John Doe</cite>, use `<cite>`.
+- With <del>deleted text</del> use `<del>` and `<ins>` for <ins>inserted text</ins>.
+- For supertext <sup>text</sup> use `<sup>` and `<sub>` for subtext <sub>text</sub>.
 
-La mayoría de los navegadores le dan estilo a estos elementos sin modificación necesaria por parte del desarrollador.
+Mostly, browsers put style to these elements automatically without user intervention.
 
-## Blockquotes
+### Blockquotes
 For quoting blocks of content from another source within your document.
 
 Add `>` before any text you want to quote. 
@@ -180,9 +188,9 @@ odio non est accumsan facilisis. Aliquam id turpis in dolor tincidunt mollis ac 
 Nunc augue augue, aliquam non hendrerit ac, commodo vel nisi. 
 
 
-## Lists
+### Lists
 
-### Unordered
+#### Unordered
 A list of items in which the order of the items does not explicitly matter.
 
 You may use any of the following symbols to denote bullets for each list item:
@@ -209,6 +217,7 @@ For example
 + Aenean sit amet erat nunc
 + Eget porttitor lorem
 ```
+
 Renders to:
 
 + Lorem ipsum dolor sit amet
@@ -246,7 +255,7 @@ And this HTML:
 </ul>
 ```
 
-### Ordered
+#### Ordered
 
 A list of items in which the order of items does explicitly matter.
 
@@ -260,6 +269,7 @@ A list of items in which the order of items does explicitly matter.
 7. Aenean sit amet erat nunc
 8. Eget porttitor lorem
 ```
+
 Renders to:
 
 1. Lorem ipsum dolor sit amet
@@ -310,9 +320,9 @@ Renders to:
 7. Aenean sit amet erat nunc
 8. Eget porttitor lorem
 
-## Code
+### Code
 
-### Inline code
+#### Inline code
 Wrap inline snippets of code with `` ` ``.
 
 For example, `<section></section>` should be wrapped as "inline".
@@ -321,7 +331,7 @@ For example, `<section></section>` should be wrapped as "inline".
 For example, `<section></section>` should be wrapped as "inline".
 ```
 
-### Indented code
+#### Indented code
 
 Or indent several lines of code by at least four spaces, as in:
 
@@ -351,7 +361,7 @@ Sample text here...
 Sample text here...
 ```
 
-HTML:
+HTML output:
 
 ``` html
 <pre>
@@ -359,9 +369,9 @@ HTML:
 </pre>
 ```
 
-### Syntax highlighting
+### Syntax Highlighting
 
-GFM, or "GitHub Flavored " also supports syntax highlighting. To activate it, simply add the file extension of the language you want to use directly after the first code "fence", ` ``` js `, and syntax highlighting will automatically be applied in the rendered HTML. For example, to apply syntax highlighting to JavaScript code:
+GFM, or "GitHub Flavored" also supports syntax highlighting. To activate it, simply add the file extension of the language you want to use directly after the first code "fence", ` ``` js `, and syntax highlighting will automatically be applied in the rendered HTML. For example, to apply syntax highlighting to JavaScript code:
 
 <pre>
 ``` javascript
@@ -480,7 +490,7 @@ function apply_template($tpl_file, $vars = array(), $include_globals = true)
 
 Click [here](https://github.com/github/linguist/blob/master/lib/linguist/languages.yml) for a full list of supported languages.
 
-## Tables
+### Tables
 Tables are created by adding pipes as dividers between each cell, and by adding a line of dashes (also separated by bars) beneath the header. Note that the pipes do not need to be vertically aligned.
 
 ``` 
@@ -520,7 +530,7 @@ And this HTML:
 </table>
 ```
 
-### Right aligned text
+#### Right aligned text
 
 Adding a colon on the right side of the dashes below any heading will right align text for that column.
 
@@ -539,9 +549,9 @@ Adding a colon on the right side of the dashes below any heading will right alig
 | ext    | extension to be used for dest files. |
 
 
-## Links
+### Links
 
-### Basic link
+#### Basic link
 
 ``` 
 [Assemble](http://assemble.io)
@@ -557,8 +567,7 @@ HTML:
 <a href="http://assemble.io">Assemble</a>
 ```
 
-
-### Add a title
+#### Add a title
 
 ``` 
 [Upstage](https://github.com/upstage/ "Visit Upstage!")
@@ -606,7 +615,7 @@ Example:
   * [Blockquotes](#blockquotes)
 
 
-## Images
+### Images
 Images have a similar syntax to links but include a preceding exclamation point.
 
 ``` 
@@ -628,6 +637,7 @@ Like links, images also have a footnote style syntax:
 ``` 
 ![Alt text][id]
 ```
+
 ![Alt text][id]
 
 With a reference later in the document defining the URL location:
