@@ -176,29 +176,28 @@ Looking at the list of things it really feels difficult for a person to know eac
 - Define serialization? What do you mean by serialization in Java?
 - Why is serialization required? What is the need to serialize?
 - What is the Difference between `Externalizable` and `Serializable` interfaces?
-- When will you use Serializable or Externalizable interface? and why?
-- What are the ways to speed up Object Serialization? How to improve Serialization performance?
-- What is a Serial Version UID (serialVersionUID) and why should I use it? How to generate one?
-- What would happen if the SerialVersionUID of an object is not defined?
-- Does setting the serialVersionUID class field improve Java serialization performance?
-- What are the alternatives to Serialization? If Serialization is not used, is it possible to persist or transfer an object using any other approach?
-- What are transient variables? What role do they play in Serialization process?
+- When will you use `Serializable` or `Externalizable` interface? and why?
+- What are the ways to speed up object serialization? How to improve serialization performance?
+- What is a serial version UID (`serialVersionUID`) and why should I use it? How to generate one?
+- What would happen if the `serialVersionUID` of an object is not defined?
+- Does setting the `serialVersionUID` class field improve Java serialization performance?
+- What are the alternatives to serialization? If serialization is not used, is it possible to persist or transfer an object using any other approach?
+- What are `transient` variables? What role do they play in serialization process?
 - Why does serialization NOT save the value of static class attributes? Why static variables are not serialized?
-- How to Serialize a collection in java? How to serialize a ArrayList, Hashmap or Hashset object in Java?
-- Is it possible to customize the serialization process? How can we customize the Serialization process?
-- How can a subclass of Serializable superclass avoid serialization? If serializable interface is implemented by the superclass of a class, how can the serialization of the class be avoided?
-- What changes are compatible and incompatible to the mechanism of java Serialization?
+- How to serialize a collection in Java? How to serialize a `ArrayList`, `HashMap` or `HashSet` object in Java?
+- Is it possible to customize the serialization process? How can we customize the serialization process?
+- How can a subclass of `Serializable` superclass avoid serialization? If serializable interface is implemented by the superclass of a class, how can the serialization of the class be avoided?
+- What changes are compatible and incompatible to the mechanism of serialization?
 - How do you make something serializable?
-- Are static variables saved as part of serialization?
 - What will be the value of transient variables after deserialization?
 - What happens when a serializable object containing a reference to a non-serializable object is serialized?
 
 ### Generics
 
 - What are generics and when would you use them?
-- What are the alternatives? What are the advantages / disadvantages?
-- What does this declaration mean? ``` Collection<?> generic = ... ``` ?
-- Regarding declaration in previous question. Is this statement valid generic.add(new String("")); ?
+- What are the alternatives? What are the advantages/disadvantages?
+- What does this declaration mean: `Collection<?> generic = ...`?
+- Regarding declaration in previous question. Is this statement valid: `generic.add(new String(""));`?
 - What is an upper bound parameter? Give an example, and explain why this feature exists.
 
 ### Annotations
@@ -210,24 +209,24 @@ Looking at the list of things it really feels difficult for a person to know eac
 
 ### Reflection
 
-- What is Reflection, and when would you use it?
-- Name some of the classes in Reflection API.
-- Can Reflection be used to know the type of a generified object?
-- Can Reflection be used to know the annotation applied to a Class, Method or Property?
+- What is reflection in general, and when would you use it?
+- Name some of the classes in Java reflection API.
+- Can reflection be used to know the type of a generified object?
+- Can reflection be used to know the annotation applied to a class, method or property?
 
 ### J2EE
 
-- What is the purpose of the web.xml file?
-- What is the structure of a WAR file?
-- Name the services provided by a container?
-- What is the difference between Session Bean and Entity Bean?
+- What is the purpose of the `web.xml` file?
+- What is the structure of a **WAR** file?
+- Name the services provided by a container.
+- What is the difference between **Session Bean** and **Entity Bean**?
 - What is a servlet?
 
 ### JSP
 
 - Explain the life cycle methods of a JSP?
-- What is the relationship between JSPs and Servlets?
-- What are the elements <%, <%= and <%@ used for?
+- What is the relationship between JSPs and servlets?
+- What are the elements `<%`, `<%=` and `<%@` used for?
 - What is the difference between a forward and a redirect?
 - What are implicit objects? Can you list them?
 - Can static objects be declared in a scriptlet? Why or why not?
@@ -235,12 +234,12 @@ Looking at the list of things it really feels difficult for a person to know eac
 ### Web Services
 
 - What is a WSDL?
-- Describe some of the differences between SOAP web service and RESTfull web service.
+- Describe some of the differences between SOAP and RESTfull.
 - What is JAXB and JAXP? Where are they used?
 
 ### Security
 
-- What are the differences between http and https?
+- What are the differences between `http` and `https`?
 - Describe some common ways of attacking websites, and how to defend against them.
 
 ### Garbage Collector
@@ -248,48 +247,47 @@ Looking at the list of things it really feels difficult for a person to know eac
 - When does an object become eligible for garbage collection?
 - Can memory leaks occur in Java?
 - What is the meaning of “GC Overhead Limit Exceeded”?
-- What is the purpose of overriding the finalize() method?
+- What is the purpose of overriding the `finalize()` method?
 
 ### Classpath
 
-- Why Java uses Classpath parameter or environment variables?
-- When does Java read values of Classpath environment variable?
-- How to set Java Classpath on Windows, Unix, Linux and Mac?
-- How do I check the CLASSPATH variable is set in my machine?
-- How to set Multiple Jar Files in Java Classpath?
-- What is the difference between NoClassDefFoundError and ClassNotFoundException? When NoClassDefFoundError and ClassNotFoundException are thrown?
-- How can we include Jar within a Jar in java classpath?
-- How to read a file from CLASSPATH in java?
-- How to find which jar file is being used by Java run-time?
+- Why Java uses classpath parameter or environment variables?
+- When does Java read values of classpath environment variable?
+- How to set Java classpath on Windows, Unix, Linux and Mac?
+- How do I check the `CLASSPATH` variable is set in my machine?
+- How to set multiple JAR files in Java classpath?
+- What is the difference between `NoClassDefFoundError` and `ClassNotFoundException`? When `NoClassDefFoundError` and `ClassNotFoundException` are thrown?
+- How can we include JAR within a JAR in Java classpath?
+- How to read a file from `CLASSPATH` in Java?
+- How to find which JAR file is being used by Java run-time?
 - How to find the load location of a Java class file at run-time?
-- How Java handles Two classes with same name in classpath
-- How to Add A Jar File To Java Load Path At Run Time
-- Why calling System.setProperty() does not affect the classpath at run-time?
-- How to Add A Jar File To Java System Classpath At Run-time?
+- How Java handles two classes with same name in classpath?
+- How to add a JAR file to Java load path at run-time?
+- Why calling `System.setProperty()` does not affect the classpath at run-time?
+- How to add A JAR file to Java system classpath at run-time?
 - How to get a list of resources from a directory in Java classpath?
 
 ### Java Architecture Scalability
 
-- What Do You Mean By High Availability?
-- What Is Scalability?
-- What Is A Cluster?
-- Why Do You Need Clustering?
-- What Is Middle Tier Clustering?
-- What Is Load Balancing?
-- What Is Sticky Session (session Affinity) Load Balancing? What Do You Mean By 'session Affinity'?
-- Why Sticky Session?
-- How It Is Done?
-- What Are The Issues With Sticky Session?
-- What Is IP Address Affinity Technique For Load Balancing?
-- What Is Failover?
-- What Is Session Replication?
-- What Does Distributable Tag Means In Web.xml ?
-- What Are The Requirements For Making A Java EE Application Session Replication Enabled?
-- What Are Different Mechanism Of Session Replication?
-- What Is CAP Theorem?
-- What Is Sharding?
-- What Is ACID Property Of A System?
-- What Is BASE Property Of A System?
-- What Do You Mean By Eventual Consistency? What Does Eventually Consistent Mean?
-- What Is Shared Nothing Architecture? How Does It Scale?
-- How Do You Update A Live Heavy Traffic Site With Minimum Or Zero Down Time?
+- What do you mean by high availability?
+- What is scalability?
+- What is a cluster?
+- Why do you need clustering?
+- What is middle tier clustering?
+- What is load balancing?
+- What is sticky session (session affinity) load balancing? What do you mean by 'session affinity'?
+- Why sticky session? How it is done?
+- What are the issues with sticky session?
+- What is IP address affinity technique for load balancing?
+- What is failover?
+- What is session replication?
+- What does distributable tag means in `web.xml`?
+- What are the requirements for making a JEE application session replication enabled?
+- What are different mechanism of session replication?
+- What is CAP theorem?
+- What is sharding?
+- What is ACID property of a system?
+- What is BASE property of a system?
+- What do you mean by eventual consistency? What does eventually consistent mean?
+- What is **shared nothing** architecture? How does it scale?
+- How do you update a live heavy traffic site with minimum or zero down time?
