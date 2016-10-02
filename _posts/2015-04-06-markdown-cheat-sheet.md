@@ -10,7 +10,7 @@ description: Basic tips for creating text in Markdown format style.
 
 Markdown is the markup language used on this blog, mainly to write the posts. Check [this post](https://raw.githubusercontent.com/damianfanaro/damianfanaro.github.io/master/_posts/2015-04-06-markdown-cheat-sheet.md) in Markdown format to get an idea. Formally, [Wikipedia says](https://en.wikipedia.org/wiki/Markdown):
 
-> Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format readme files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
+> Markdown is a lightweight markup language with plain text formatting syntax designed so that it can be converted to HTML and many other formats using a tool by the same name. Markdown is often used to format _readme_ files, for writing messages in online discussion forums, and to create rich text using a plain text editor.
 
 In the following sections are some tips to start creating text in Markdown format.
 

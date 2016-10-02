@@ -6,7 +6,7 @@ comments: true
 category: general
 tags: [cheat-sheet]
 authors: [damianfanaro]
-description: The ASCII table presented online, XLSX format for edition and PDF ready to download and print.
+description: The ASCII table presented on-line, XLSX format for edition and PDF ready to download and print.
 ---
 
 ## The periodic table for software developers
