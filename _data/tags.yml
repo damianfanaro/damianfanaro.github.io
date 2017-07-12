@@ -19,9 +19,6 @@
 - slug: mvc
   name: MVC
 
-- slug: jekyll
-  name: Jekyll
-
 - slug: markdown
   name: Markdown
 
