@@ -5,7 +5,7 @@ description: Personal blog where I share tech knowledge
 
 # url is currently only used for the RSS feed in feed.xml
 
-url: http://damianfanaro.com
+url: http://damianfanaro.github.io/
 
 # baseurl will often be '', but for a project page on gh-pages, it needs to
 # be the project name.
