@@ -1,0 +1,43 @@
+---
+layout: default
+title: Contact Me
+---
+
+<section class="ftco-section contact-section">
+  <div class="container mt-5">
+    <div class="row d-flex mb-5 contact-info">
+      <div class="col-md-12 mb-4">
+        <h2 class="h4">Contact Information</h2>
+      </div>
+      <div class="w-100"></div>
+      <div class="col-md-3">
+        <p><span>Phone:</span> <a href="tel://+34617077959">(+34) 617 077 959</a></p>
+      </div>
+      <div class="col-md-4">
+        <p><span>Email:</span> <a href="mailto:damianfanaro@gmail.com">damianfanaro@gmail.com</a></p>
+      </div>
+      <div class="col-md-3">
+        <p><span>Location:</span> Barcelona, Spain</p>
+      </div>
+    </div>
+    <div class="row block-9">
+      <div class="col-md-6 pr-md-5">
+        <form action="https://formspree.io/damianfanaro@gmail.com" method="POST">
+          <div class="form-group">
+            <input type="text" class="form-control" name="_replyto" placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <textarea name="name" id="" cols="30" rows="11" class="form-control" placeholder="Message"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+          </div>
+        </form>
+      </div>
+      <div class="col-md-6" id="map"></div>
+    </div>
+  </div>
+</section>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+<script src="{{ 'js/google-map.js' | prepend: site.baseurl }}"></script>

@@ -1,0 +1,17 @@
+title: Damián Fanaro
+description: Personal Website
+
+url: https://damianfanaro.com
+baseurl: ""
+
+markdown: kramdown
+highlighter: rouge
+
+social:
+  youtube: damianfanaro
+  github: damianfanaro
+  twitter: DamianFanaro
+  linkedin: damianfanaro
+  email: damianfanaro@gmail.com
+
+google_analytics: "UA-67086722-1"
