@@ -6,7 +6,7 @@ title: About Me
 <section class="ftco-section about-section">
 	<div class="container">
 		<div class="row d-flex my-5" data-scrollax-parent="true">
-			<div class="col-md-4 author-img" style="background-image: url(images/damianfanaro.jpg);"
+			<div class="col-md-4 author-img" style="background-image: url({{ site.url }}/images/damianfanaro.jpg);"
 				data-scrollax=" properties: { translateY: '-5%'}"></div>
 			<div class="col-md-2"></div>
 			<div class="col-md-6 wrap ftco-animate">
