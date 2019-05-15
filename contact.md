@@ -17,7 +17,7 @@ title: Contact Me
         <p><span>Email:</span> <a href="mailto:{{ site.social.email }}">{{ site.social.email }}</a></p>
       </div>
       <div class="col-md-3">
-        <p><span>Location:</span> Barcelona, Spain</p>
+        <p><span>Location:</span> <a href="">Barcelona, Spain</a></p>
       </div>
     </div>
     <div class="row block-9">
