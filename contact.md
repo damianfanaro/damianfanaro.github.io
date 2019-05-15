@@ -14,7 +14,7 @@ title: Contact Me
         <p><span>Phone:</span> <a href="tel://+34617077959">(+34) 617 077 959</a></p>
       </div>
       <div class="col-md-4">
-        <p><span>Email:</span> <a href="mailto:damianfanaro@gmail.com">damianfanaro@gmail.com</a></p>
+        <p><span>Email:</span> <a href="mailto:{{ site.social.email }}">{{ site.social.email }}</a></p>
       </div>
       <div class="col-md-3">
         <p><span>Location:</span> Barcelona, Spain</p>
@@ -22,7 +22,7 @@ title: Contact Me
     </div>
     <div class="row block-9">
       <div class="col-md-6 pr-md-5">
-        <form action="https://formspree.io/damianfanaro@gmail.com" method="POST">
+        <form action="https://formspree.io/{{ site.social.email }}" method="POST">
           <div class="form-group">
             <input type="text" class="form-control" name="_replyto" placeholder="Your Email">
           </div>
@@ -38,6 +38,3 @@ title: Contact Me
     </div>
   </div>
 </section>
-
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-<script src="{{ 'js/google-map.js' | prepend: site.baseurl }}"></script>

@@ -17,15 +17,15 @@ title: About Me
 						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia,
 							there live
 							the blind texts. Separated they live in.</p>
-						<p><a href="#">Checkout my resume</a></p>
+						<p><a href="#">Find me on social media</a></p>
 						<ul class="ftco-footer-social list-unstyled mt-4">
-							<li><a href="https://twitter.com/DamianFanaro"><span class="icon-twitter"></span></a></li>
-							<li><a href="https://linkedin.com/in/damianfanaro"><span class="icon-linkedin"></span></a></li>
-							<li><a href="https://github.com/damianfanaro"><span class="icon-github"></span></a></li>
+							<li><a href="https://twitter.com/{{ site.social.twitter }}"><span class="icon-twitter"></span></a></li>
+							<li><a href="https://linkedin.com/in/{{ site.social.linkedin }}"><span class="icon-linkedin"></span></a></li>
+							<li><a href="https://github.com/{{ site.social.github }}"><span class="icon-github"></span></a></li>
 						</ul>
 						<h5>Contact me here!</h5>
-						<p>Email: <a href="#">damianfanaro@gmail.com</a></p>
-						<p>Phone: <a href="#">(+34) 617 077 959</a></p>
+						<p>Email: <a href="mailto:{{ site.social.email }}">{{ site.social.email }}</a></p>
+						<p>Phone: <a href="tel://+34617077959">(+34) 617 077 959</a></p>
 					</div>
 				</div>
 			</div>
