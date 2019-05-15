@@ -7,6 +7,16 @@ baseurl: ""
 markdown: kramdown
 highlighter: rouge
 
+navigation:
+  - title: Home
+    url: /
+  - title: About Me
+    url: /about
+  - title: Contact Me
+    url: /contact
+  - title: Services
+    url: /services
+
 social:
   youtube: damianfanaro
   github: damianfanaro
