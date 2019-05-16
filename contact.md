@@ -7,7 +7,7 @@ title: Contact
   <div class="container mt-5">
     <div class="row d-flex mb-5 contact-info">
       <div class="col-md-12 mb-4">
-        <h2 class="h4">Contact Information</h2>
+        <h2 class="h2">Contact Information</h2>
       </div>
       <div class="w-100"></div>
       <div class="col-md-3">
@@ -21,7 +21,7 @@ title: Contact
       </div>
     </div>
     <div class="row block-9">
-      <div class="col-md-6 pr-md-5">
+      <div class="col-md-8 pr-md-8">
         <form action="https://formspree.io/{{ site.social.email }}" method="POST">
           <div class="form-group">
             <input type="text" class="form-control" name="_replyto" placeholder="Your Email">
@@ -30,7 +30,7 @@ title: Contact
             <textarea name="name" id="" cols="30" rows="11" class="form-control" placeholder="Message"></textarea>
           </div>
           <div class="form-group">
-            <input type="submit" value="Send Message" class="btn btn-primary py-3 px-5">
+            <input type="submit" value="Send Message" class="btn btn-outline-primary py-3 px-5">
           </div>
         </form>
       </div>
