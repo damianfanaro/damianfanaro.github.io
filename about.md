@@ -5,29 +5,6 @@ title: About Me
 
 <section class="ftco-section about-section">
 	<div class="container">
-		<div class="row d-flex my-5" data-scrollax-parent="true">
-			<div class="col-md-4 author-img" style="background-image: url({{ site.url }}/images/damianfanaro.jpg);"
-				data-scrollax=" properties: { translateY: '-5%'}"></div>
-			<div class="col-md-2"></div>
-			<div class="col-md-6 wrap ftco-animate">
-				<div class="about-desc">
-					<h1 class="bold-text">About</h1>
-					<div class="p-5">
-						<h2 class="mb-5">Hi! I'm Damián Fanaro</h2>
-						<p>Software Engineer passionate about technology, financial markets and the mix of both worlds.</p>
-						<p><a href="#">Find me on social media</a></p>
-						<ul class="ftco-footer-social list-unstyled mt-4">
-							<li><a href="https://twitter.com/{{ site.social.twitter }}"><span class="icon-twitter"></span></a></li>
-							<li><a href="https://linkedin.com/in/{{ site.social.linkedin }}"><span class="icon-linkedin"></span></a></li>
-							<li><a href="https://github.com/{{ site.social.github }}"><span class="icon-github"></span></a></li>
-						</ul>
-						<h5>Contact me here!</h5>
-						<p>Email: <a href="mailto:{{ site.social.email }}">{{ site.social.email }}</a></p>
-						<p>Phone: <a href="tel://+34617077959">(+34) 617 077 959</a></p>
-					</div>
-				</div>
-			</div>
-		</div>
 		<div class="row d-flex justify-content-end mt-5">
 			<div class="col-md-10">
 				<div class="profile ftco-animate">
