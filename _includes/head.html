@@ -1,11 +1,11 @@
 <head>
 
-  <title>{{ page.title }} • Damián Fanaro</title>
+  <title>{{ page.title }} • {{ site.title }}</title>
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,700" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,700">
   <link rel="stylesheet" href="{{ '/css/open-iconic-bootstrap.min.css' | prepend: site.url }}">
   <link rel="stylesheet" href="{{ '/css/animate.css' | prepend: site.url }}">
   <link rel="stylesheet" href="{{ '/css/owl.carousel.min.css' | prepend: site.url }}">
@@ -19,6 +19,6 @@
   <link rel="stylesheet" href="{{ '/css/icomoon.css' | prepend: site.url }}">
   <link rel="stylesheet" href="{{ '/css/style.css' | prepend: site.url }}">
 
-  <!-- {% include google_analytics.html %} -->
+  {% include google_analytics.html %}
 
 </head>
