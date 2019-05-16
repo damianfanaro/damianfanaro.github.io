@@ -12,7 +12,7 @@ navigation:
     url: /
   - title: Resume
     url: /resume
-  - title: Contact Me
+  - title: Contact
     url: /contact
   - title: Services
     url: /services

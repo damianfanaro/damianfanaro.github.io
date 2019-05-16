@@ -2,25 +2,27 @@
 <!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"><![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie9 lt-ie8" <![endif]-->
 <!--[if IE 8]><html class="no-js lt-ie9" <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
 
 {% include head.html %}
 
 <body>
 
-   {% include progress_bar.html %}
+  {% include progress_bar.html %}
 
-   <div class="page">
-      {% include navigation.html %}
-      <div id="colorlib-page">
-         {% include header.html %}
-         {{ content }}
-      </div>
-   </div>
+  <div class="page">
+    {% include navigation.html %}
+    <div id="colorlib-page">
+      {% include header.html %}
+      {{ content }}
+    </div>
+  </div>
 
-   {% include footer.html %}
-   {% include loader.html %}
-   {% include scripts.html %}
+  {% include footer.html %}
+  {% include loader.html %}
+  {% include scripts.html %}
 
 </body>
 
