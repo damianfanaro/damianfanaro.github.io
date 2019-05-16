@@ -10,8 +10,8 @@ highlighter: rouge
 navigation:
   - title: Home
     url: /
-  - title: About Me
-    url: /about
+  - title: Resume
+    url: /resume
   - title: Contact Me
     url: /contact
   - title: Services

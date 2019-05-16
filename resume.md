@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About Me
+title: Resume
 ---
 
 <section class="ftco-section about-section">
