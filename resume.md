@@ -9,24 +9,10 @@ title: Resume
 			<div class="col-md-10">
 				<div class="profile ftco-animate">
 					<h2 class="mb-4">Profile</h2>
-					<h4 class="mb-4">I'm a UI/UX Designer &amp; Frontend Developer from London, UK. I aim to make a
-						difference
-						through my creative solution.</h4>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-						live the
-						blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-						language
-						ocean.</p>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-						live the
-						blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-						language
-						ocean.</p>
-					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there
-						live the
-						blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large
-						language
-						ocean.</p>
+					<h4 class="mb-4">I'm a Software Engineer with a specialization in financial markets and algorithmic trading.</h4>
+					<p>A few years ago, I had my first contact with the capital market while managing a family investment and it was at that time that it aroused in me a strong interest in connecting the world of technology with that of finance and investments.</p>
+					<p>This led me to make the decision to move to Buenos Aires, the big city! There, I had the opportunity to work in large companies in the FinTech sector such as CME Group, Caja de Valores S.A. and Primary S.A. (Rofex Group); as well as in a North American startup called Coinsetter where I was part of an exceptional team.</p>
+					<p>I have also taken the opportunity to train in financial markets through specialized studies taught by the Argentine Capital Market Institute.</p>
 				</div>
 				<div class="exp mt-5 ftco-animate">
 					<h2 class="mb-4">Experience</h2>
