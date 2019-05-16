@@ -18,38 +18,47 @@ title: Resume
 					<h2 class="mb-4">Experience</h2>
 					<div class="exp-wrap py-4">
 						<div class="desc">
-							<h4>UX &amp; Interaction Designer <span> - Google Company</span> </h4>
-							<p class="location">Germany - Berlin</p>
+							<h4>Senior Software Engineer <span> - Zopa</span> </h4>
+							<p class="location">Barcelona - Spain</p>
 						</div>
 						<div class="year">
-							<p>2017 - Present</p>
+							<p>2019 - Present</p>
 						</div>
 					</div>
 					<div class="exp-wrap py-4">
 						<div class="desc">
-							<h4>UX &amp; UI Designer <span> - QBootstrap.com</span> </h4>
-							<p class="location">Germany - Berlin</p>
+							<h4>Senior Software Engineer <span> - Weekendesk</span> </h4>
+							<p class="location">Barcelona - Spain</p>
 						</div>
 						<div class="year">
-							<p>2015 - 2017</p>
+							<p>2017 - 2018</p>
 						</div>
 					</div>
 					<div class="exp-wrap py-4">
 						<div class="desc">
-							<h4>Designer &amp; Developer <span> - Themeforest.net</span> </h4>
-							<p class="location">Germany - Berlin</p>
+							<h4>Software Engineer <span> - Primary &amp; Rofex</span> </h4>
+							<p class="location">Buenos Aires - Argentina</p>
+						</div>
+						<div class="year">
+							<p>2016 - 2017</p>
+						</div>
+					</div>
+					<div class="exp-wrap py-4">
+						<div class="desc">
+							<h4>Senior Java Developer <span> - Coinsetter</span> </h4>
+							<p class="location">Remote</p>
+						</div>
+						<div class="year">
+							<p>2015 - 2015</p>
+						</div>
+					</div>
+					<div class="exp-wrap py-4">
+						<div class="desc">
+							<h4>Senior Java Developer <span> - CME Group</span> </h4>
+							<p class="location">Buenos Aires - Argentina</p>
 						</div>
 						<div class="year">
 							<p>2014 - 2015</p>
-						</div>
-					</div>
-					<div class="exp-wrap py-4">
-						<div class="desc">
-							<h4>Front-End Developer <span> - Big Comany</span> </h4>
-							<p class="location">Germany - Berlin</p>
-						</div>
-						<div class="year">
-							<p>2012 - 2014</p>
 						</div>
 					</div>
 				</div>
@@ -57,38 +66,20 @@ title: Resume
 					<h2 class="mb-4">Education</h2>
 					<div class="exp-wrap py-4">
 						<div class="desc">
-							<h4>Master Degree in Computer Science<span> - Harvard University</span> </h4>
-							<p class="location">Germany - Berlin</p>
+							<h4>Expert in Capital Markets<span> - Argentine Capital Market Institute</span> </h4>
+							<p class="location">Buenos Aires - Argentina</p>
 						</div>
 						<div class="year">
-							<p>2013 - 2014</p>
+							<p>2016 - 2016</p>
 						</div>
 					</div>
 					<div class="exp-wrap py-4">
 						<div class="desc">
-							<h4>Bacheclor of Science in Computer Science<span> - Harvard University</span> </h4>
-							<p class="location">Germany - Berlin</p>
+							<h4>Bachelor's of Science in Computer Science<span> - UNICEN University</span> </h4>
+							<p class="location">Tandil - Argentina</p>
 						</div>
 						<div class="year">
-							<p>2009 - 2012</p>
-						</div>
-					</div>
-					<div class="exp-wrap py-4">
-						<div class="desc">
-							<h4>Diploma in Information Technology<span> - Oxford University</span> </h4>
-							<p class="location">Germany - Berlin</p>
-						</div>
-						<div class="year">
-							<p>2008 - 2010</p>
-						</div>
-					</div>
-					<div class="exp-wrap py-4">
-						<div class="desc">
-							<h4>Front-End Developer <span> - Big Comany</span> </h4>
-							<p class="location">Germany - Berlin</p>
-						</div>
-						<div class="year">
-							<p>2012 - 2014</p>
+							<p>2006 - 2012</p>
 						</div>
 					</div>
 				</div>

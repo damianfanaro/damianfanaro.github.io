@@ -16,9 +16,9 @@ title: Services
         <div class="media block-6 services p-3 py-4 d-block text-center">
           <div class="icon mb-3"><span class="icon-layers"></span></div>
           <div class="media-body">
-            <h3 class="heading">UI/UX Design</h3>
-            <h3 class="heading">Mobile App Design</h3>
-            <h3 class="heading">Responsive Design</h3>
+            <h3 class="heading">Software Development</h3>
+            <h3 class="heading">Backend Applications</h3>
+            <h3 class="heading">System Design</h3>
           </div>
         </div>
       </div>
@@ -26,9 +26,9 @@ title: Services
         <div class="media block-6 services p-3 py-4 d-block text-center">
           <div class="icon mb-3"><span class="icon-gears"></span></div>
           <div class="media-body">
-            <h3 class="heading">Product Strategy</h3>
-            <h3 class="heading">Design Sprints</h3>
-            <h3 class="heading">UX Strategy</h3>
+            <h3 class="heading">TDD/BDD/DDD</h3>
+            <h3 class="heading">Architecture Design</h3>
+            <h3 class="heading">Project Planning</h3>
           </div>
         </div>
       </div>
@@ -36,8 +36,8 @@ title: Services
         <div class="media block-6 services p-3 py-4 d-block text-center">
           <div class="icon mb-3"><span class="icon-code"></span></div>
           <div class="media-body">
-            <h3 class="heading">HTML/CSS</h3>
-            <h3 class="heading">Prototyping</h3>
+            <h3 class="heading">Java/Kotlin/Python</h3>
+            <h3 class="heading">SQL</h3>
             <h3 class="heading">User Testing</h3>
           </div>
         </div>
