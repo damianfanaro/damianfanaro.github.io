@@ -10,18 +10,18 @@
 
 <body>
 
-  {% include progress_bar.html %}
+  {% include header.html %}
+  {% include navigation.html %}
 
   <div class="page">
-    {% include navigation.html %}
     <div id="colorlib-page">
-      {% include header.html %}
       {{ content }}
     </div>
   </div>
 
   {% include footer.html %}
   {% include loader.html %}
+  {% include progress_bar.html %}
   {% include scripts.html %}
 
 </body>

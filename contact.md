@@ -34,7 +34,6 @@ title: Contact
           </div>
         </form>
       </div>
-      <div class="col-md-6" id="map"></div>
     </div>
   </div>
 </section>
