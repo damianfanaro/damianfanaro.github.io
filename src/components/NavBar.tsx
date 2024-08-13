@@ -55,17 +55,17 @@ const NavBar = () => {
               <DrawerBody>
                 <VStack spacing={4}>
                   <Link to="inicio" smooth={true} offset={-70} duration={500} onClick={onClose}>
-                    <Text _hover={linkHoverStyle} color="gray.800" cursor="pointer">
+                    <Text _hover={linkHoverStyle} color="gray.100" cursor="pointer">
                       {t('inicio')}
                     </Text>
                   </Link>
                   <Link to="blog" smooth={true} offset={-70} duration={500} onClick={onClose}>
-                    <Text _hover={linkHoverStyle} color="gray.800" cursor="pointer">
+                    <Text _hover={linkHoverStyle} color="gray.100" cursor="pointer">
                       {t('blog')}
                     </Text>
                   </Link>
                   <Link to="contacto" smooth={true} offset={-70} duration={500} onClick={onClose}>
-                    <Text _hover={linkHoverStyle} color="gray.800" cursor="pointer">
+                    <Text _hover={linkHoverStyle} color="gray.100" cursor="pointer">
                       {t('contacto')}
                     </Text>
                   </Link>
