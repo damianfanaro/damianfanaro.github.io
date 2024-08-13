@@ -1,17 +1,18 @@
+import { Box, HStack, Link as ChakraLink } from '@chakra-ui/react'
 import { FaGithub, FaLinkedin } from 'react-icons/fa'
 
 const SocialLinks = () => {
   return (
-    <section id="social-links" className="text-center">
-      <div className="d-flex justify-content-center">
-        <a href="https://github.com/damianfanaro" target="_blank" rel="noopener noreferrer" className="mx-3">
+    <Box as="section" id="social-links" textAlign="center" mt={4}>
+      <HStack justifyContent="center" spacing={6}>
+        <ChakraLink href="https://github.com/damianfanaro" target="_blank" rel="noopener noreferrer">
           <FaGithub size={32} />
-        </a>
-        <a href="https://linkedin.com/in/damianfanaro" target="_blank" rel="noopener noreferrer" className="mx-3">
+        </ChakraLink>
+        <ChakraLink href="https://linkedin.com/in/damianfanaro" target="_blank" rel="noopener noreferrer">
           <FaLinkedin size={32} />
-        </a>
-      </div>
-    </section>
+        </ChakraLink>
+      </HStack>
+    </Box>
   )
 }
 

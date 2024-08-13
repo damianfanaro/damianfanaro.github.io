@@ -1,7 +1,8 @@
 import { useTranslation } from 'react-i18next'
+import { Button } from '@chakra-ui/react'
 
 const LanguageSwitch = () => {
-  const { i18n, t } = useTranslation()
+  const { i18n } = useTranslation()
 
   const toggleLanguage = () => {
     const newLang = i18n.language === 'es' ? 'en' : 'es'
@@ -10,7 +11,9 @@ const LanguageSwitch = () => {
 
   return (
     <div id="language-switch">
-      <button onClick={toggleLanguage}>{t(i18n.language === 'es' ? 'switchToEnglish' : 'switchToSpanish')}</button>
+      <Button onClick={toggleLanguage} variant="ghost" fontSize="24px">
+        {i18n.language === 'es' ? '🇺🇸' : '🇦🇷'}
+      </Button>
     </div>
   )
 }

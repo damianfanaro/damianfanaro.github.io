@@ -1,35 +1,24 @@
-import { Container, Row, Col } from 'react-bootstrap'
-import { useTranslation } from 'react-i18next'
-import AboutMe from './AboutMe'
-// import Articles from "./Articles";
+import Blog from '../Blog'
 import Footer from './Footer'
+import Home from './Home'
+// import Contacto from './Contacto' 
+
 import NavBar from './NavBar'
-import ProfilePicture from './ProfilePicture'
-import SocialLinks from './SocialLinks'
 
 const App = () => {
-  const { t } = useTranslation()
   return (
     <>
-      <header className="text-center my-4">
-        <NavBar />
-      </header>
-      <Container className="align-items-center">
-        <Row>
-          <Col md={4} className="text-center">
-            <h1>{t('welcome')}</h1>
-            <ProfilePicture src="../profile.svg" alt="Profile Picture" />
-          </Col>
-          <Col md={8}>
-            <AboutMe />
-            {/* <Articles /> */}
-          </Col>
-          <Col md={4}>
-            <SocialLinks />
-          </Col>
-        </Row>
-        <Footer />
-      </Container>
+      <NavBar />
+      <div id="inicio">
+        <Home />
+      </div>
+      <div id="blog">
+        <Blog/>
+      </div>
+      <div id="contacto">
+        {/* <Contacto /> */}
+      </div>
+      <Footer />
     </>
   )
 }

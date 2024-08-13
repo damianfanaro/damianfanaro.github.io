@@ -1,21 +1,16 @@
+import { Box, Text } from '@chakra-ui/react'
+import { useTranslation } from 'react-i18next'
+
 const Footer = () => {
+  const { t } = useTranslation()
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="text-center my-4">
-      <p>© {currentYear} Damián Fanaro. Todos los derechos reservados.</p>
-      <p>
-        Desarrollado con{' '}
-        <a href="https://vitejs.dev" target="_blank" rel="noopener noreferrer">
-          Vite
-        </a>{' '}
-        y{' '}
-        <a href="https://reactjs.org" target="_blank" rel="noopener noreferrer">
-          React
-        </a>
-        .
-      </p>
-    </footer>
+    <Box as="footer" textAlign="center" fontSize="0.9em"  p={4} bg="gray.900" color="white">
+      <Text mb={2}>
+        © {currentYear} {t('footer.rightsReserved')}
+      </Text>
+    </Box>
   )
 }
 
