@@ -1,35 +1,35 @@
 import React from 'react'
-import { Box, Button, Center, FormControl, FormLabel, Input, Textarea, Heading, Text, Image, useToast } from '@chakra-ui/react'
+import { Box, Button, Center, FormControl, FormLabel, Input, Textarea, Heading, Text, Image } from '@chakra-ui/react' //agregar aca el useToast
 import { useTranslation } from 'react-i18next'
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com'
+// import emailjs, { EmailJSResponseStatus } from 'emailjs-com'
 
 const Contact: React.FC = () => {
   const { t } = useTranslation()
-  const toast = useToast()
+//   const toast = useToast()
 
   const sendEmail = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
 
-    emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.currentTarget, 'YOUR_USER_ID').then( //Hay qie cambiar esto por tu url de email.js
-      () => {
-        toast({
-          title: t('contact.successTitle'),
-          description: t('contact.successMessage'),
-          status: 'success',
-          duration: 5000,
-          isClosable: true
-        })
-      },
-      () => {
-        toast({
-          title: t('contact.errorTitle'),
-          description: t('contact.errorMessage'),
-          status: 'error',
-          duration: 5000,
-          isClosable: true
-        })
-      }
-    )
+    // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', e.currentTarget, 'YOUR_USER_ID').then( //Hay qie cambiar esto por tu url de email.js
+    //   () => {
+    //     toast({
+    //       title: t('contact.successTitle'),
+    //       description: t('contact.successMessage'),
+    //       status: 'success',
+    //       duration: 5000,
+    //       isClosable: true
+    //     })
+    //   },
+    //   () => {
+    //     toast({
+    //       title: t('contact.errorTitle'),
+    //       description: t('contact.errorMessage'),
+    //       status: 'error',
+    //       duration: 5000,
+    //       isClosable: true
+    //     })
+    //   }
+    // )
 
     e.currentTarget.reset()
   }
