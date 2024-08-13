@@ -9,9 +9,9 @@ const NavBar = () => {
   const { t } = useTranslation()
 
   const linkHoverStyle = {
-    color: '#63b3ed', // Color de hover personalizado
+    color: '#63b3ed', 
     transform: 'scale(1.1)',
-    transition: 'all 0.2s ease-in-out' // Aplica la transición suave
+    transition: 'all 0.2s ease-in-out' 
   }
 
   return (

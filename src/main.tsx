@@ -5,7 +5,7 @@ import App from './components/App'
 import './index.css'
 import './i18n'
 
-// Configuración para forzar el modo oscuro
+
 const config: ThemeConfig = {
   initialColorMode: 'dark',
   useSystemColorMode: false

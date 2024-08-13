@@ -4,8 +4,6 @@ import SocialLinks from './SocialLinks'
 
 const Home = () => {
   const { t } = useTranslation()
-
-  // Determina si SocialLinks debe estar dentro o fuera de la Card según el tamaño de la pantalla
   const isSocialLinksInCard = useBreakpointValue({ base: false, md: true })
 
   return (
