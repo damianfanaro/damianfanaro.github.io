@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
   return (
     <Box id="contact" py={10} px={{ base: 4, md: 8 }} maxW="800px" mx="auto">
       <Center flexDirection="column" mb={6}>
-        <Image src="/public/profile.svg" alt="contact image" boxSize="150px" mb={4} borderRadius="full" />
+        <Image src="/public/profile.webp" alt="contact image" boxSize="150px" mb={4} borderRadius="full" />
         <Heading as="h2" size="lg" mb={4} textAlign="center">
           {t('contact.title')}
         </Heading>
