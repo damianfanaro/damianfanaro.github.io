@@ -1,14 +1,23 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import { ChakraProvider } from '@chakra-ui/react'
+import { ChakraProvider, extendTheme, ThemeConfig, ColorModeScript } from '@chakra-ui/react'
 import App from './components/App'
 import './index.css'
 import './i18n'
 
+// Configuración para forzar el modo oscuro
+const config: ThemeConfig = {
+  initialColorMode: 'dark',
+  useSystemColorMode: false
+}
+
+const theme = extendTheme({ config })
+
 createRoot(document.getElementById('root')!).render(
-  <ChakraProvider>
   <StrictMode>
-    <App />
+    <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode="dark" />
+      <App />
+    </ChakraProvider>
   </StrictMode>
-  </ChakraProvider>
 )
