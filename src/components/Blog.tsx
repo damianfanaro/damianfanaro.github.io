@@ -1,5 +1,5 @@
 import { Box, Grid, GridItem, Heading, Text } from '@chakra-ui/react'
-import { LinkedInPost1, LinkedInPost2, LinkedInPost3 } from './components/LinkedInPosts'
+import { LinkedInPost1, LinkedInPost2, LinkedInPost3 } from './LinkedInPosts'
 import { useTranslation } from 'react-i18next'
 
 const Blog = () => {

@@ -9,9 +9,9 @@ const NavBar = () => {
   const { t } = useTranslation()
 
   const linkHoverStyle = {
-    color: '#63b3ed', 
+    color: '#63b3ed',
     transform: 'scale(1.1)',
-    transition: 'all 0.2s ease-in-out' 
+    transition: 'all 0.2s ease-in-out'
   }
 
   return (

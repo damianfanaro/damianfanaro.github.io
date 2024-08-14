@@ -1,9 +1,7 @@
-import Blog from '../Blog'
+import Blog from './Blog'
 import Contact from './Contact'
 import Footer from './Footer'
 import Home from './Home'
-
-
 import NavBar from './NavBar'
 
 const App = () => {
@@ -14,10 +12,10 @@ const App = () => {
         <Home />
       </div>
       <div id="blog">
-        <Blog/>
+        <Blog />
       </div>
       <div id="contacto">
-        <Contact/>
+        <Contact />
       </div>
       <Footer />
     </>

@@ -15,7 +15,7 @@ const resources = {
 
       // Footer
       footer: {
-        rightsReserved: 'Damián Fanaro. All rights reserved.',
+        rightsReserved: 'Damián Fanaro. All rights reserved.'
       },
 
       // Contact Section
@@ -32,7 +32,7 @@ const resources = {
         successTitle: 'Message Sent',
         successMessage: 'Your message was sent successfully.',
         errorTitle: 'Error',
-        errorMessage: 'There was an error sending your message. Please try again later.',
+        errorMessage: 'There was an error sending your message. Please try again later.'
       },
 
       // Otros textos
@@ -57,7 +57,7 @@ const resources = {
 
       // Footer
       footer: {
-        rightsReserved: 'Damián Fanaro. Todos los derechos reservados.',
+        rightsReserved: 'Damián Fanaro. Todos los derechos reservados.'
       },
 
       // Contact Section
@@ -74,7 +74,7 @@ const resources = {
         successTitle: 'Mensaje Enviado',
         successMessage: 'Tu mensaje fue enviado con éxito.',
         errorTitle: 'Error',
-        errorMessage: 'Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.',
+        errorMessage: 'Hubo un error al enviar tu mensaje. Por favor, inténtalo de nuevo más tarde.'
       },
 
       // Otros textos
@@ -90,10 +90,10 @@ const resources = {
 
 i18n.use(initReactI18next).init({
   resources,
-  lng: 'es', 
-  fallbackLng: 'en', 
+  lng: 'es',
+  fallbackLng: 'en',
   interpolation: {
-    escapeValue: false 
+    escapeValue: false
   }
 })
 
