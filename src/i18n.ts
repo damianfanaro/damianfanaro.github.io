@@ -50,7 +50,7 @@ const resources = {
         paragraph:
           'In 2024, I founded Igrowker with the conviction that IT talent isn’t built solely in universities—it’s forged through hands-on experience. Our goal is clear: to offer a learning journey that truly prepares people for the real challenges of today’s tech industry.',
         description:
-          'At Igrowker, we’re committed to a Project-Based Learning (PBL) model, powered by a multi-agent AI system with specialized agents supporting each team role. This approach strengthens the key skills of the future: adaptability, technical judgment, and real-world problem-solving.',
+          'At Igrowker, we’re committed to a Project-Based Learning (PBL) model, powered by a multi-agent AI system with specialized agents supporting each team role. This approach strengthens the key skills for the future: adaptability, technical judgment, and real-world problem-solving.',
         button: 'Visit Igrowker'
       }
     }
@@ -101,7 +101,7 @@ const resources = {
       igrowker: {
         title: 'Sobre Igrowker',
         paragraph:
-          'En 2024 fundé Igrowker con la convicción de que el talento en IT se construye no sólo en las universidades, sino también en la práctica . Tenemos un objetivo claro, ofrecer una experiencia formativa que prepare a las personas para los desafíos reales del mercado technologico.',
+          'En 2024 fundé Igrowker con la convicción de que el talento en IT se construye no sólo en las universidades, sino también en la práctica. Tenemos un objetivo claro, ofrecer una experiencia formativa que prepare a las personas para los desafíos reales del mercado technologico.',
         description:
           'En Igrowker apostamos por un modelo de Aprendizaje Basado en Proyectos(PBL), impulsado por un sistema multiagente de IA especializados que acompañan a cada rol del equipo. Así fortalecemos las habilidades clave del futuro: adaptabilidad, criterio técnico y resolución de problemas reales.',
 

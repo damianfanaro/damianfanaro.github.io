@@ -69,7 +69,7 @@ const Blog = () => {
         </GridItem>
       </Grid>
       {/* Sección Igrowker */}
-      <Box mt={16} mb={8} w="100%" maxW="900px" mx="auto" px="4">
+      <Box mt={16} mb={8} w="100%" maxW="1200px" mx="auto" px="4">
         <a href="https://igrowker.com" target="_blank" rel="noopener noreferrer">
           <img src="/igrowker.png" alt="Igrowker logo" style={{ height: '40px', width: 'auto', display: 'inline-block', verticalAlign: 'middle' }} />
         </a>

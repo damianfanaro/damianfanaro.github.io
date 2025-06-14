@@ -5,6 +5,7 @@ import SocialLinks from './SocialLinks'
 const Home = () => {
   const { t } = useTranslation()
   const isSocialLinksInCard = useBreakpointValue({ base: false, md: true })
+  const shouldShowSocialLinks = useBreakpointValue({ base: false, md: true })
 
   return (
     <Box
@@ -49,19 +50,19 @@ const Home = () => {
               const aboutMe = t('aboutMeParagraph', { returnObjects: true })
               const paragraphs = Array.isArray(aboutMe) ? aboutMe : [aboutMe]
               return paragraphs.map((p: string, idx: number) => (
-                <Text key={idx} fontSize="1em" textAlign={{ base: 'center', md: 'left' }} mt={idx === 0 ? 4 : 2} color="gray.50">
+                <Text key={idx} fontSize="1em" textAlign={{ base: 'left', md: 'left' }} mt={idx === 0 ? 4 : 2} color="gray.50">
                   {p}
                 </Text>
               ))
             })()}
           </Box>
-          {isSocialLinksInCard && (
+          {shouldShowSocialLinks && isSocialLinksInCard && (
             <Box mt={{ base: 4, md: 8 }}>
               <SocialLinks />
             </Box>
           )}
         </Card>
-        {!isSocialLinksInCard && (
+        {shouldShowSocialLinks && !isSocialLinksInCard && (
           <Box position="absolute" bottom={8} left="50%" transform="translateX(-50%)" w="100%" display="flex" justifyContent="center" mt={4}>
             <SocialLinks />
           </Box>
