@@ -83,7 +83,7 @@ const Blog = () => {
           {t('igrowker.description')}
         </Text>
         <Box display="flex" alignItems="center" justifyContent="start" gap={4}>
-          <Text>{t('igrowker.button')} →</Text>
+          <Text color="gray.900">{t('igrowker.button')} →</Text>
           <a href="https://igrowker.com" target="_blank" rel="noopener noreferrer" style={{ color: '#2563eb', fontWeight: 600, fontSize: '1.1em', textDecoration: 'underline' }}>
             igrowker.com
           </a>
