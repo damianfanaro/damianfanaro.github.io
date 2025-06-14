@@ -20,17 +20,19 @@ const Home = () => {
       px={{ base: 4, md: 8 }}
       py={{ base: 2, md: 0 }}
       position="relative">
-      <Box color="gray.50" maxW={{ base: '90%', md: 'container.md' }} mx={{ base: 'auto', md: '0' }}>
-        <Card bgColor="gray.800" h={{ base: '240px', md: 'auto' }} p={{ base: 4, md: 8 }} ml={{ base: 0, md: '5vw' }} mt={{ base: '-37vh', lg: '5vh' }} rounded="xl" opacity={0.9}>
-          <Text fontSize={{ base: '1.2em', md: '5xl' }} as="b" textAlign={{ base: 'center', md: 'left' }}>
+      <Box color="gray.50" maxW={{ base: '100%', md: 'container.md' }} mx={{ base: 'auto', md: '0' }}>
+        <Card bgColor="gray.800" minH={{ base: 'auto', md: 'auto' }} p={{ base: 4, md: 8 }} ml={{ base: 0, md: '5vw' }} mt={{ base: '15vh', lg: '5vh' }} rounded="xl" opacity={0.9} w="100%">
+          <Text fontSize={{ base: '1.2em', md: '5xl' }} as="b" textAlign={{ base: 'center', md: 'left' }} color="gray.50">
             {t('homeHeader')}
           </Text>
-          <Text fontSize={{ base: 'sm', md: '2em' }} textAlign={{ base: 'center', md: 'left' }}>
+          <Text fontSize={{ base: 'sm', md: '2em' }} textAlign={{ base: 'center', md: 'left' }} color="gray.50">
             {t('homeSubHeader')}
           </Text>
           <Box
-            maxH="200px"
-            overflowY="auto"
+            maxW={{ base: '100%', md: '700px' }}
+            w={{ base: '100%', md: 'auto' }}
+            maxH="none"
+            minH="auto"
             sx={{
               '&::-webkit-scrollbar': {
                 width: '6px'
@@ -43,9 +45,15 @@ const Home = () => {
                 backgroundColor: 'rgba(26, 32, 44, 0.8)'
               }
             }}>
-            <Text fontSize="1em" textAlign={{ base: 'center', md: 'left' }}>
-              {t('aboutMeParagraph')}
-            </Text>
+            {(() => {
+              const aboutMe = t('aboutMeParagraph', { returnObjects: true })
+              const paragraphs = Array.isArray(aboutMe) ? aboutMe : [aboutMe]
+              return paragraphs.map((p: string, idx: number) => (
+                <Text key={idx} fontSize="1em" textAlign={{ base: 'center', md: 'left' }} mt={idx === 0 ? 4 : 2} color="gray.50">
+                  {p}
+                </Text>
+              ))
+            })()}
           </Box>
           {isSocialLinksInCard && (
             <Box mt={{ base: 4, md: 8 }}>

@@ -5,7 +5,7 @@ const SocialLinks = () => {
   return (
     <Box as="section" id="social-links" textAlign="center" mt={4}>
       <HStack justifyContent="center" spacing={6}>
-        <ChakraLink href="https://github.com/damianfanaro" target="_blank" rel="noopener noreferrer">
+        <ChakraLink href="https://github.com/damianfanaro" target="_blank" rel="noopener noreferrer" color={'gray.50'}>
           <FaGithub
             size={32}
             style={{
@@ -13,7 +13,7 @@ const SocialLinks = () => {
             }}
           />
         </ChakraLink>
-        <ChakraLink href="https://linkedin.com/in/damianfanaro" target="_blank" rel="noopener noreferrer">
+        <ChakraLink href="https://linkedin.com/in/damianfanaro" target="_blank" rel="noopener noreferrer" color={'gray.50'}>
           <FaLinkedin
             size={32}
             style={{

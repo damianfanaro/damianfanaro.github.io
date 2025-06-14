@@ -47,8 +47,8 @@ const NavBar = () => {
 
         <Drawer isOpen={isOpen} placement="right" onClose={onClose}>
           <DrawerOverlay>
-            <DrawerContent>
-              <DrawerCloseButton />
+            <DrawerContent bgColor="gray.800" position="relative">
+              <DrawerCloseButton color="gray.50" top={2} right={2} _hover={{ bg: 'gray.700' }} />
               <DrawerHeader>
                 <Image src="/logo.webp" alt="Logo" boxSize="50px" />
               </DrawerHeader>
