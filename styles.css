@@ -1,9 +1,8 @@
 /* ============================================
    Damián Fanaro — Personal Website
-   Plain HTML + CSS
    ============================================ */
 
-/* --- Reset & Base --- */
+/* --- Reset --- */
 *,
 *::before,
 *::after {
@@ -13,15 +12,19 @@
 }
 
 html {
-  scroll-behavior: smooth;
+  height: 100%;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar {
+  display: none;
 }
 
 body {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-    Ubuntu, Cantarell, sans-serif;
-  line-height: 1.6;
-  color: #1a202c;
-  background: #f7fafc;
+  height: 100%;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 300;
+  overflow-x: hidden;
 }
 
 a {
@@ -29,138 +32,140 @@ a {
   text-decoration: none;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
 /* --- Hero --- */
 .hero {
-  min-height: 100vh;
-  width: 100%;
-  background: url('/mobile.webp') center / cover no-repeat;
+  position: relative;
+  overflow: hidden;
+  min-height: 100dvh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 24px 16px;
+  padding: 48px 24px;
+}
+
+/* Background photo — blurred & dimmed */
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: -30px;
+  background: url('/background-mobile.webp') center / cover no-repeat;
+  filter: blur(1px) brightness(0.7) saturate(0.8);
+  z-index: 0;
+}
+
+/* Radial vignette — darkens edges, keeps center slightly lighter */
+.hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse 90% 85% at 50% 50%,
+    rgba(0, 0, 0, 0.25) 0%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+  z-index: 1;
 }
 
 @media (min-width: 768px) {
-  .hero {
-    background: url('/fondo.webp') center / cover no-repeat;
-    justify-content: center;
-    padding: 0 32px;
+  .hero::before {
+    background: url('/background.webp') center / cover no-repeat;
+    filter: blur(1px) brightness(0.7) saturate(0.8);
   }
 }
 
-.hero .card {
-  background: #1a202c;
-  opacity: 0.92;
-  border-radius: 16px;
-  padding: 24px;
+/* --- Content --- */
+.content {
+  position: relative;
+  z-index: 2;
   width: 100%;
-  max-width: 720px;
-  color: #f7fafc;
+  max-width: 640px;
+  text-align: center;
+  color: #fff;
 }
 
-@media (min-width: 768px) {
-  .hero .card {
-    padding: 48px;
-  }
-}
-
-.hero .card h1 {
-  font-size: 1.8em;
+/* --- Name --- */
+h1 {
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: 700;
-  text-align: center;
-  margin-bottom: 4px;
+  font-size: clamp(2.6rem, 7vw, 4.2rem);
+  letter-spacing: -0.01em;
+  line-height: 1.08;
+  color: #ffffff;
+  margin-bottom: 12px;
 }
 
-@media (min-width: 768px) {
-  .hero .card h1 {
-    font-size: 3rem;
-  }
+/* --- Subtitle --- */
+.subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.38);
+  margin-bottom: 44px;
 }
 
-.hero .card .subtitle {
-  font-size: 0.9rem;
-  text-align: center;
-  margin-bottom: 20px;
-  color: #cbd5e0;
+/* --- Bio --- */
+.bio {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 32px;
+  text-align: left;
 }
 
-@media (min-width: 768px) {
-  .hero .card .subtitle {
-    font-size: 1.25rem;
-    margin-bottom: 28px;
-  }
+.bio p {
+  font-size: 0.88rem;
+  line-height: 1.85;
+  color: rgba(255, 255, 255, 0.62);
+  margin-bottom: 18px;
 }
 
-.hero .card .bio p {
-  font-size: 0.95rem;
-  color: #e2e8f0;
-  line-height: 1.7;
-  margin-bottom: 14px;
-}
-
-@media (min-width: 768px) {
-  .hero .card .bio p {
-    font-size: 1rem;
-    margin-bottom: 16px;
-  }
-}
-
-.hero .card .bio p:last-child {
+.bio p:last-child {
   margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .bio p {
+    font-size: 0.92rem;
+  }
 }
 
 /* --- Social Links --- */
 .social-links {
   display: flex;
   justify-content: center;
-  gap: 28px;
-  margin-top: 28px;
-  padding-top: 24px;
+  gap: 36px;
+  margin-top: 44px;
+  padding-top: 36px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@media (min-width: 768px) {
-  .social-links {
-    gap: 36px;
-    margin-top: 36px;
-    padding-top: 28px;
-  }
-}
-
 .social-links a {
-  color: #e2e8f0;
-  transition: color 0.2s, transform 0.2s;
+  color: rgba(255, 255, 255, 0.4);
   display: inline-flex;
+  transition: color 0.25s ease, transform 0.25s ease;
 }
 
 .social-links a:hover {
-  color: #63b3ed;
-  transform: scale(1.15);
+  color: rgba(255, 255, 255, 0.95);
+  transform: translateY(-4px);
 }
 
 .social-links svg {
-  width: 32px;
-  height: 32px;
+  width: 26px;
+  height: 26px;
 }
 
 @media (min-width: 768px) {
   .social-links svg {
-    width: 36px;
-    height: 36px;
+    width: 28px;
+    height: 28px;
   }
 }
 
-/* --- Footer --- */
-.footer {
-  text-align: center;
-  font-size: 0.85em;
-  padding: 16px;
-  background: #171923;
-  color: #a0aec0;
+/* --- Copyright --- */
+.copyright {
+  font-size: 0.68rem;
+  color: rgba(255, 255, 255, 0.15);
+  margin-top: 28px;
+  letter-spacing: 0.06em;
 }
