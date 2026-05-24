@@ -1,6 +1,3 @@
-# React + TypeScript + Vite
+# Damián Fanaro — Personal Website
 
-```bash
-npm install
-npm run dev
-```
+Static HTML + CSS + JS site. No build step needed — open `index.html` or serve with any static file server.
